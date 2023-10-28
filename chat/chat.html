@@ -1,0 +1,11 @@
+<!-- chat.html -->
+<form method="POST">
+    {% csrf_token %}
+    <input type="text" name="user_input" placeholder="Chat with us">
+    <button type="submit">Submit</button>
+</form>
+
+<div>
+    <p><strong>You:</strong> {{ user_input }}</p>
+    <p><strong>Bot:</strong> {{ bot_response }}</p>
+</div>

@@ -1,0 +1,414 @@
+{% extends "shop/base.html" %}
+{% load static %}
+{% block title %}
+{% if category %}{{ category.name }}{% else %}Products{% endif %}
+{% endblock %}
+
+{% block content %}
+
+
+{% endblock content %}
+{% block portfolio %}
+<div class="container mt-4">
+  <div class="row animate__animated animate__zoomIn">
+      <!-- Categories Section (Left) -->
+      <div class="col-md-3">
+          <h1 class="text-center mb-3" style="font-family: arapey;">Categories</h1>
+          <div id="sidebar">
+              <ul class="list-group list-group-flush">
+                  <li {% if not category %} {% endif %}>
+                      <a class="btn btn-outline-info btn-block" style="font-family: arapey;"
+                          href="{% url 'shop:product_list' %}">All</a>
+                  </li>
+                  {% for c in categories %}
+                  <li {% if category.slug == c.slug %} {% endif %}>
+                      <a class="btn btn-outline-info btn-block" href="{{ c.get_absolute_url }}">{{ c.name }}</a>
+                  </li>
+                  {% endfor %}
+              </ul>
+          </div>
+      </div>
+
+      <!-- Products Section (Right) -->
+      <div class="col-md-9">
+          <h1 class="text-center mb-3" style="font-family: arapey;">
+              {% if category %}{{ category.name }}{% else %}Products {% endif %}
+          </h1>
+          <form method="GET" action="{% url 'shop:filtered_products' %}" class="form-inline">
+              <div class="form-group">
+                  <label for="location"></label>
+                  <hr>
+                  <input type="text" class="form-control text m-2" id="name" name="name" placeholder="Enter name">
+              </div>
+              <button type="submit" class="btn btn-info">Filter</button>
+          </form>
+          <div class="row">
+              <!-- Product Cards -->
+              {% for product in products %}
+              <div class="col-md-4">
+                  <div class="m-2 shadow">
+                      <img src="/static/img/people/product1.jpg" style="height: 170px;" class="card-img-top"
+                          alt="Product Image">
+                      <div class="card-body">
+                          <h5 class="">{{product.name}}</h5>
+                          <p class="card-text">Ksh{{product.price}}</p>
+                          <a href="{{product.get_absolute_url}}" class="btn btn-outline-info">Details</a>
+                      </div>
+                  </div>
+              </div>
+              {% endfor %}
+          </div>
+          {% include "shop/product/pagination.html" with page=products %}
+      </div>
+  </div>
+</div>
+
+{% endblock portfolio %}
+
+{% block modal %}
+<div class="section text-center m-2">
+  <h2 class="text-center" style="font-family: arapey;">Animal Feeds Nutrition Specification</h2>
+  <div id="accordion-1" class="accordion" role="tablist">
+    <div class="accordion-item">
+      <h2 class="accordion-header" role="tab"><button class="accordion-button"
+          style="background-color: rgb(114, 110, 104);" type="button" data-bs-toggle="collapse"
+          data-bs-target="#accordion-1 .item-1" aria-expanded="true" aria-controls="accordion-1 .item-1">Farm Feeds
+          Poultry Products</button></h2>
+      <div class="accordion-collapse collapse show item-1" role="tabpanel" data-bs-parent="#accordion-1">
+        <div class="accordion-body">
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Metabolizable Energy</th>
+                  <th>Crude Protein</th>
+                  <th>Crude Fibre</th>
+                  <th>Fat</th>
+                  <th>Calcium</th>
+                  <th>Phosphorus</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Broiler Stater Mash</td>
+                  <td>2980 KCal/Kg</td>
+                  <td>20% Minimun</td>
+                  <td>6% Minimum</td>
+                  <td>10% Minimum</td>
+                  <td>1.0%</td>
+                  <td>0.45%</td>
+                </tr>
+                <tr>
+                  <td>Broiler Finisher Mash Mash</td>
+                  <td>3000 KCal/Kg</td>
+                  <td>18% Minimun</td>
+                  <td>6% Minimum</td>
+                  <td>10% Minimum</td>
+                  <td>1.2%</td>
+                  <td>0.5%</td>
+                </tr>
+                <tr>
+                  <td>Farm Gro Stater Mash</td>
+                  <td>3100 KCal/Kg</td>
+                  <td>21% Minimun</td>
+                  <td>6% Minimum</td>
+                  <td>10% Minimum</td>
+                  <td>1.2%</td>
+                  <td>0.5%</td>
+                </tr>
+                <tr>
+                  <td>Chick Mash</td>
+                  <td>2600 KCal/Kg</td>
+                  <td>18% Minimun</td>
+                  <td>6% Minimum</td>
+                  <td>10% Minimum</td>
+                  <td>1.2%</td>
+                  <td>0.5%</td>
+                </tr>
+                <tr>
+                  <td>Layers Mash</td>
+                  <td>2600 KCal/Kg</td>
+                  <td>15.5% Minimun</td>
+                  <td>7.5% Minimum</td>
+                  <td>6% Minimum</td>
+                  <td>3.5%</td>
+                  <td>1.25%</td>
+                </tr>
+                <tr>
+                  <td>Kienyeji Poultry Mash</td>
+                  <td>2300 KCal/Kg</td>
+                  <td>15% Minimun</td>
+                  <td>4% Minimum</td>
+                  <td>6% Minimum</td>
+                  <td>1.5%</td>
+                  <td>0.7%</td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" role="tab"><button style="background-color: rgb(114, 110, 104);"
+          class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#accordion-1 .item-2" aria-expanded="false" aria-controls="accordion-1 .item-2">More on Pig
+          Feeds</button></h2>
+      <div class="accordion-collapse collapse item-2" role="tabpanel" data-bs-parent="#accordion-1">
+        <div class="accordion-body">
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Metabolizable Energy</th>
+                  <th>Crude Protein</th>
+                  <th>Crude Fat</th>
+                  <th>Crude Fibre</th>
+                  <th>Calcium</th>
+                  <th>Phosphorus</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Sow and Weaner Premium</td>
+                  <td>300Kcal/Kg</td>
+                  <td>16.5% ge Min</td>
+                  <td>8.0%ge Max</td>
+                  <td>7.0% ge Min</td>
+                  <td>1.5% ge Min</td>
+                  <td>0.7% ge Min</td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item ">
+      <h2 class="accordion-header text-center" role="tab"><button style="background-color: rgb(114, 110, 104);"
+          class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#accordion-1 .item-3" aria-expanded="false" aria-controls="accordion-1 .item-3">More on Dairy
+          Products</button></h2>
+      <div class="accordion-collapse collapse item-3" role="tabpanel" data-bs-parent="#accordion-1">
+        <div class="accordion-body">
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Metabolizable Energy</th>
+                  <th>Crude Protein</th>
+                  <th>Crude Fibre</th>
+                  <th>Fat</th>
+                  <th>Calcium</th>
+                  <th>Phosphorus</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Calf Early Weaner Meal</td>
+                  <td>2600Kgcal/Kg</td>
+                  <td>17% Min</td>
+                  <td>8% Min</td>
+                  <td>10% Min</td>
+                  <td>0.5%</td>
+                  <td>0.45%</td>
+                </tr>
+                <tr>
+                  <td>Young Stock Meal</td>
+                  <td>2500Kgcal/Kg</td>
+                  <td>15.5% Min</td>
+                  <td>12% Min</td>
+                  <td>6% Min</td>
+                  <td>0.7%</td>
+                  <td>0.5%</td>
+                </tr>
+                <tr>
+                  <td>Farm Stock Meal</td>
+                  <td>2000Kgcal/Kg</td>
+                  <td>14% Min</td>
+                  <td>12% Min</td>
+                  <td>6% Min</td>
+                  <td>0.7%</td>
+                  <td>0.5%</td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header text-center" role="tab"><button style="background-color: rgb(114, 110, 104);"
+          class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#accordion-1 .item-4" aria-expanded="false" aria-controls="accordion-1 .item-3">More on Dog
+          food</button></h2>
+      <div class="accordion-collapse collapse item-4" role="tabpanel" data-bs-parent="#accordion-1">
+        <div class="accordion-body">
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Metabolizable Energy</th>
+                  <th>Crude Protein</th>
+                  <th>Crude Fibre</th>
+                  <th>Fat</th>
+                  <th>Calcium</th>
+                  <th>Phosphorus</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Skipa Dog Meal</td>
+                  <td>3150Kcal/Kg</td>
+                  <td>20% Min</td>
+                  <td>5% Min</td>
+                  <td>5% Min</td>
+                  <td>2.2% Min</td>
+                  <td>1.1% Min</td>
+                </tr>
+
+              </tbody>
+            </table>
+            <h3>Feeding Instructions</h3>
+            <p>1. Skipa Dog Meal must be cooked befor being fed to the dogs.</p>
+            <p>2. Add the dog meal to boiling water and cook by stirring for 15min to achieve a semi solid paste</p>
+            <p>3. Allow to cool amd provide to the dogs as per instructions on the food pack.</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+{% endblock modal %}
+
+{% block services %}
+
+<div class="section text-center m-2">
+  <h3 class="text-center" style="font-family: arapey;">Feeding Instructions</h3>
+  <div id="accordion-1" class="accordion" role="tablist">
+    <div class="accordion-item">
+
+      <h2 class="accordion-header" role="tab"><button class="accordion-button"
+          style="background-color: rgb(151, 202, 144);" type=" button" data-bs-toggle="collapse"
+          data-bs-target="#accordion-1 .item-6" aria-expanded="true" aria-controls="accordion-1 .item-6">Feeding
+          Instructions-Poultry</button></h2>
+      <div class="accordion-collapse collapse show item-6" role="tabpanel" data-bs-parent="#accordion-6">
+        <div class="accordion-body">
+          <table>
+            <tr>
+                <th>Product Type</th>
+                <th>Feeding Frequency</th>
+                <th>Feeding Amount</th>
+            </tr>
+            <tr>
+                <td>Layer Pellets</td>
+                <td>2 times a day</td>
+                <td>As much as they can consume in 20-30 minutes</td>
+            </tr>
+            <tr>
+                <td>Broiler Feed</td>
+                <td>3 times a day</td>
+                <td>As much as they can consume in 10-15 minutes</td>
+            </tr>
+            <tr>
+                <td>Chick Starter Feed</td>
+                <td>4-5 times a day</td>
+                <td>As much as they can consume in 10-15 minutes</td>
+            </tr>
+            <tr>
+                <td>Scratch Grains</td>
+                <td>Once a day</td>
+                <td>1-2 ounces per bird per feeding</td>
+            </tr>
+        </table>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" role="tab"><button class="accordion-button collapsed"
+          style="background-color:rgb(139, 194, 132);" type=" button" data-bs-toggle="collapse"
+          data-bs-target="#accordion-1 .item-7" aria-expanded="false" aria-controls="accordion-1 .item-7">Feeding
+          Istructions-Pig Feeds</button></h2>
+      <div class="accordion-collapse collapse item-7" role="tabpanel" data-bs-parent="#accordion-1">
+        <div class="accordion-body">
+          <table>
+            <tr>
+                <th>Feed Type</th>
+                <th>Feeding Frequency</th>
+                <th>Feeding Amount</th>
+            </tr>
+            <tr>
+                <td>Starter Feed</td>
+                <td>3 times a day</td>
+                <td>1/4 to 1/2 pound per pig per feeding</td>
+            </tr>
+            <tr>
+                <td>Grower Feed</td>
+                <td>2 times a day</td>
+                <td>1/2 to 1 pound per pig per feeding</td>
+            </tr>
+            <tr>
+                <td>Finisher Feed</td>
+                <td>2 times a day</td>
+                <td>1 to 2 pounds per pig per feeding</td>
+            </tr>
+            <tr>
+                <td>Supplemental Vegetables</td>
+                <td>Once a day</td>
+                <td>2-3 pounds per pig per feeding</td>
+            </tr>
+        </table>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" role="tab"><button class="accordion-button collapsed"
+          style="background-color: rgb(178, 206, 174);" type=" button" data-bs-toggle="collapse"
+          data-bs-target="#accordion-1 .item-8" aria-expanded="false" aria-controls="accordion-1 .item-8">Feeding
+          Instructions-Tilapia</button></h2>
+      <div class="accordion-collapse collapse item-8" role="tabpanel" data-bs-parent="#accordion-1">
+        <div class="accordion-body">
+          <table>
+            <tr>
+                <th>Food Type</th>
+                <th>Feeding Frequency</th>
+                <th>Feeding Amount</th>
+            </tr>
+            <tr>
+                <td>Pellets</td>
+                <td>2 times a day</td>
+                <td>As much as they can consume in 5 minutes</td>
+            </tr>
+            <tr>
+                <td>Flakes</td>
+                <td>2 times a day</td>
+                <td>Small pinch per fish</td>
+            </tr>
+            <tr>
+                <td>Live Food (e.g., worms)</td>
+                <td>Once a day</td>
+                <td>A few worms per fish</td>
+            </tr>
+            <tr>
+                <td>Vegetables (e.g., lettuce)</td>
+                <td>Every other day</td>
+                <td>Small pieces per fish</td>
+            </tr>
+        </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock services %}

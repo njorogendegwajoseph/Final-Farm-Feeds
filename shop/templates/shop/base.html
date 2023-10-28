@@ -1,0 +1,246 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>{% block title %}Home{% endblock %}</title>
+    <link href="{% static 'css/base.css' %}" rel="stylesheet">
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Arapey&family=Frank+Ruhl+Libre:wght@300;900&family=Merriweather:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <title>My Website</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+<body style="background: linear-gradient(to right, rgb(198, 235, 203), #817979);">
+    {% block nav %}
+    <nav class="navbar navbar-expand-lg navbar-light py-lg-1" style="background: linear-gradient(to right, rgb(78, 78, 74), #eeecec);">
+        <a href="{% url 'shop:homepage' %}">
+            <div class="container custom-fade-in"><img src="/static/img/socials/FarmFeedsLogo.svg" style="height: 80px;" alt="">
+        </a>
+        <ul class="navbar-nav flex-row ms-auto order-lg-1 ps-2 pe-2">
+            <li class="nav-item"><a class="nav-link p-2 pb-3 ps-2 pe-2 pt-3" href="#" title="Search"><svg
+                        xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 24 24" width="1em"
+                        fill="currentColor" style="font-size: 23px;">
+                        <path d="M0 0h24v24H0z" fill="none"></path>
+                        <path
+                            d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">
+                        </path>
+                    </svg></a></li>
+            <li class="nav-item"><a class="nav-link p-2 pb-3 ps-2 pe-2 pt-3" href="{% url  'cart:cart_detail' %}"
+                    title="View Cart"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                        viewBox="0 0 24 24" fill="none" style="font-size: 23px;">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M5.79166 2H1V4H4.2184L6.9872 16.6776H7V17H20V16.7519L22.1932 7.09095L22.5308 6H6.6552L6.08485 3.38852L5.79166 2ZM19.9869 8H7.092L8.62081 15H18.3978L19.9869 8Z"
+                            fill="currentColor"></path>
+                        <path
+                            d="M10 22C11.1046 22 12 21.1046 12 20C12 18.8954 11.1046 18 10 18C8.89543 18 8 18.8954 8 20C8 21.1046 8.89543 22 10 22Z"
+                            fill="currentColor"></path>
+                        <path
+                            d="M19 20C19 21.1046 18.1046 22 17 22C15.8954 22 15 21.1046 15 20C15 18.8954 15.8954 18 17 18C18.1046 18 19 18.8954 19 20Z"
+                            fill="currentColor"></path>
+                    </svg><span class="small text-warning">
+                        {% with total_items=cart|length %}
+                        {% if total_items > 0 %}
+                        ({{ total_items }})
+
+                        {% else %}
+                        (0)
+                        {% endif %}
+                        {% endwith %}
+                    </span></a></li>
+            <li class="nav-item"><a class="nav-link pb-3 ps-2 pe-2 pt-3" href="{% url 'accounts:edit' %}" title="Account"><svg
+                        xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="1em"
+                        viewBox="0 0 24 24" width="1em" fill="currentColor" style="font-size: 23px;">
+                        <g>
+                            <rect fill="none" height="24" width="24"></rect>
+                        </g>
+                        <g>
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 4c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm0 14c-2.03 0-4.43-.82-6.14-2.88C7.55 15.8 9.68 15 12 15s4.45.8 6.14 2.12C16.43 19.18 14.03 20 12 20z">
+                            </path>
+                        </g>
+                    </svg>{% if request.user.is_authenticated %}Hi,
+                    {{request.user.username|title}}!{%else%}{%endif%}</a></li>
+        </ul><button data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown-3" class="navbar-toggler"
+            type="button" aria-controls="navbarNavDropdown-3" aria-expanded="false" aria-label="Toggle navigation"><span
+                class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown-3">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active px-lg-3 py-lg-4" aria-current="page"
+                        href="{% url 'shop:homepage' %}">Home</a></li>
+                <li class="nav-item"><a class="nav-link px-lg-3 py-lg-4" href="{% url 'shop:about' %}">About</a>
+                </li>
+                <li class="nav-item"><a class="nav-link px-lg-3 py-lg-4" href="{% url 'shop:production' %}">Production</a>
+                </li>
+                <li class="nav-item"><a class="nav-link px-lg-3 py-lg-4" href="{% url 'shop:distributors' %}"> All Distributors</a>
+                </li>
+                <li class="nav-item"><a class="nav-link px-lg-3 py-lg-4" href="{% url 'shop:product_list' %}">Shop</a>
+                </li>
+                {% if request.user.is_authenticated%}
+                <li class="nav-item"><a class="nav-link px-lg-3 py-lg-4" href="{% url 'accounts:logout' %}">Logout</a>
+                </li>
+                {% else %}
+                <li class="nav-item"><a class="nav-link px-lg-3 py-lg-4" href="{% url 'accounts:login' %}">Login</a>
+                </li>
+                {% endif %}
+                <li class="nav-item"><a class="nav-link px-lg-3 py-lg-4" href="{% url 'blog:post_list' %}">Blog</a>
+                </li>
+            </ul>
+
+        </div>
+        </div>
+
+    </nav>
+    {% endblock nav %}
+
+
+
+
+   <div class="row">
+    <div class="col-lg-12">
+        {% block content %}
+        {% if messages %}
+        {% for message in messages %}
+        {{message}}
+        {% endfor %} 
+        {% endif %}
+    
+        {% endblock content %}
+    
+        {% block portfolio %}
+        {% endblock portfolio %}
+    
+    
+        {% block modal %}
+        {% endblock modal %}
+    
+        {% block services %}
+        
+        {% endblock services %}
+    
+        {% block team %}
+        {% endblock team %}
+    
+        {% block contactus %}
+        {% endblock contactus %}
+    </div>
+   </div>
+
+    {% block footer %}
+    <footer class="text-light py-4" style="background: linear-gradient(to right, rgb(78, 78, 74), #eeecec);">
+        <div>
+            <a href="{% url 'shop:homepage' %}">
+                <div class="container custom-fade-in"><img src="/static/img/socials/FarmFeedsLogo.svg" style="height: 80px;" alt="">
+            </a>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h5 style='font-family: arapey;'>About Us</h5>
+                    <p style='font-family: arapey;'>We strive to bring you the best in every produce, a promise we made from inception of this company!</p>
+                </div>
+                <div class="col-md-3">
+                    <h5 style='font-family: arapey;'>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li style='font-family: arapey;'><a href="{% url 'shop:homepage' %}">Home</a></li>
+                        <li style='font-family: arapey;'><a href="{% url 'shop:production' %}">Production</a></li>
+                        <li style='font-family: arapey;'><a href="{% url 'shop:product_list' %}">Products</a></li>
+                        <li style='font-family: arapey;'><a href="#">Services</a></li>
+                        <li style='font-family: arapey;'><a href="{% url 'shop:about' %}">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5 style='font-family: arapey;'>Contact Us</h5>
+                    <p style='font-family: arapey;' style='font-family: arapey;'>Email: sales@farmfeeds.com<br>Phone: 0722209838</p>
+                </div>
+                <div class="col-md-3">
+                    <h5 style='font-family: arapey;'>Follow Us</h5>
+                    <ul class="list-inline">
+                        <li class="list-inline-item"><a href="https://www.facebook.com/profile.php?id=61552934873972"><i class="bi bi-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="bi bi-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="bi bi-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="mt-2">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="text-center" style='font-family: arapey;'>© 2023 Farm Feeds. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    {% endblock footer %}
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="valuesModal" tabindex="-1" role="dialog" aria-labelledby="valuesModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="valuesModalLabel">Our Values and Principles</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>We are committed to upholding certain core values and principles that define who we are and how we operate:</p>
+          <ul>
+            <li><strong>Integrity:</strong> We conduct our business with honesty, transparency, and ethics.</li>
+            <li><strong>Sustainability:</strong> We prioritize eco-friendly and sustainable practices in our production processes.</li>
+            <li><strong>Innovation:</strong> We continuously strive to innovate and improve our products to meet the evolving needs of our customers.</li>
+            <li><strong>Customer Focus:</strong> Our customers are at the heart of everything we do, and we are dedicated to meeting their expectations and needs.</li>
+            <!-- Add more values and principles as needed -->
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/js/main.js"></script>
+    <script src="/static/js/agency.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script>
+        // JavaScript
+window.addEventListener("scroll", function () {
+  var navbar = document.querySelector(".navbar");
+
+  if (window.scrollY > 0) {
+    navbar.classList.add("scrolled-navbar");
+  } else {
+    navbar.classList.remove("scrolled-navbar");
+  }
+});
+
+    </script>
+   
+
+</body>
+
+</html>

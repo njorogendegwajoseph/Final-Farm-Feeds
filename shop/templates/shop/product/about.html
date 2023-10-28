@@ -1,0 +1,167 @@
+{% extends 'shop/base.html' %}
+
+{% block portfolio %}
+
+<section id="about" style="background-color: rgb(247, 243, 243);">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center animate__animated animate__flip">
+                <h2 class="text-uppercase" style="font-family: arapey; font-size: 80px;">About Farm Feeds</h2>
+                <h3 class="text-muted section-subheading" style="font-family: merriweather; font-size: 13px;">We strive to bring you the best in every produce, a promise we made from inception of this company. Below is the journey!</h3>
+            </div>
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#valuesModal">
+                Our Values and Principles
+              </button>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="list-group timeline">
+                    <li class="list-group-item">
+                        <div class=""><img class="rounded-circle img-fluid" style="height: 300px;" src="/static/img/big5.jpg" /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="subheading" style="font-family:  merriweather;">Our Humble Beginnings</h4>
+                            </div>
+                            <div class="timeline-body">
+                                <p class="text-muted" style="font-family:  merriweather;">Economy Farm products (k) ltd has been providing your livestock with well balanced quality
+                                    feeds and distributed animal health products for maximum returns since 1998. Ever since then,
+                                    providing the farmer with the necessary tools for health, high yielding livestock has been our
+                                    main objective. Over the last 25 years, we have continued to grow in order to support you more
+                                    efficiently and effectively.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item timeline-inverted">
+                        <div class=""><img class="rounded-circle img-fluid" style="height: 300px;" src="/static/img/big4.jpg" /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="subheading" style="font-family: arapey;">Market Establishment</h4>
+                            </div>
+                            <div class="timeline-body">
+                                <p class="text-muted" style="font-family:  merriweather;">We have established a wide market network with 4 established regions to serve you more
+                                    efficiently. Region 1 is Nairobi and its environs; Region 2 is the Mt. Kenya region which includes
+                                    areas within Eastern and Central province; Region 3 which covers Eldoret, Kitale, Naivasha and
+                                    Nakuru is the North Rift region and The Western Region which covers Kakamega, Bungoma,
+                                    Webuye and Kiminini. Each of these regions have designated sales people to ensure the region’s
+                                    supply needs are met and distributors are promptly restocked.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class=""><img class="rounded-circle  fill img-fluid" style="height: 300px;" src="/static/img/big6.jpg" /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="subheading" style="font-family: arapey;">Transition to Full Service</h4>
+                            </div>
+                            <div class="timeline-body">
+                                <p class="text-muted" style="font-family:  merriweather;">To further demonstrate our desire for your farms to be successful, we have also provided
+                                    avenues for each farmer to remain up-to-date on the latest farming practices. Through our well
+                                    trained technical personnel, we provide technical follow-ups, seminars and field days. Be sure to
+                                    check the website’s bulletin board to remain updated on the next training within your region.
+                                    Farm Feeds currently has a labour force of 35 permanent employees and 70 casual. The work
+                                    force is tasked with ensuring our state of the art go down is running smoothly and consistently
+                                    producing the high quality of the feeds that you have come to expect and appreciate. The
+                                    employees are regularly trained in the latest first aid and fire fighting techniques. We also have
+                                    numerous delivery vans for the efficient delivery to the distributors across the 4 regions.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item timeline-inverted">
+                        <div class=""><img class="rounded-circle img-fluid" style="height: 300px;" src="/static/img/people/person1.jpg" /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="subheading" style="font-family: arapey;">Service_Oriented</h4>
+                            </div>
+                            <div class="timeline-body">
+                                <p class="text-muted" style="font-family:  merriweather;">We work tirelessly to ensure that each farmer we interact with feels heard and their needs are
+                                    responded to in a timely manner. We always strives to maintain the highest integrity within our
+                                    sector. Moreover, we work to ensure that the customers’ needs are met to ensure that farmers
+                                    maximise their production and achieve higher returns.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item timeline-inverted">
+                        <div class="timeline-image">
+                            <h4 style="font-family: arapey;">Be Part<br /> Of Our<br /> Story!</h4>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock portfolio %}
+{% block content %}
+<!-- <div class="text-center imaging text-white d-flex masthead" style="height: 300px; background-color: green;">
+    <div class="container my-auto">
+        <div class="row">
+            <div class="col-lg-10 mx-auto custom-fade-in">
+                <h1 class="text-uppercase animate__animated animate__flip" style="color: rgb(248, 43, 7); font-family: Arapey; font-size: 80px;"><strong>About us Page</strong></h1>
+                <hr />
+            </div>
+        </div>
+        
+    </div>
+</div> -->
+
+{% endblock content %}
+
+{% block modal %}
+<!-- Product promo  -->
+<section class="container my-5">
+    <h1 class="text-center p-3" style="font-family: merriweather;">Check Out Our products</h1>
+    <div class="row">
+      <div class="col-lg-6">
+        <img src="/static/img/newimages/Bags.jpg" alt="Farm Feeds" class="img-fluid rounded">
+      </div>
+      <div class="col-lg-6">
+        <h2 style="font-family: merriweather;">Welcome to Our Farm Feeds Store</h2>
+        <p style="font-family: arapey;">At Farm Feeds Company, we offer a wide range of high-quality feeds for your livestock. Our products are carefully crafted to meet the nutritional needs of your animals, ensuring their health and productivity.</p>
+        <p style="font-family: arapey;">Explore our selection of feeds, from poultry and livestock to specialty feeds, and find the perfect solution for your farm. We are committed to providing the best nutrition for your animals.</p>
+        <a href="{% url 'shop:product_list' %}" class="btn btn-info">Shop Now</a>
+      </div>
+    </div>
+  </section>
+
+<!-- Section for projects -->
+
+<!-- testimonials -->
+<div class="container-fluid mt-5">
+  <h1 class="text-center p-3" style="font-family: merriweather; color: rgb(7, 7, 7);">Customer Testimonials</h1>
+  <div class="row">
+    <div class="col-lg-4">
+      <div>
+        <img src="/static/img/people/person1.jpg" style="height:200px; border-radius: 10px;" class="card-img-top" alt="Testimonial Image 1">
+        <div class="card-body">
+          
+          <blockquote class="card-text"><em>"Great quality feeds and excellent customer service. Our farm has seen a significant improvement since we started using Farm Feeds Company products."</em></blockquote>
+          <h6 class="card-title" style="font-family: merriweather;">~John Nganga</h6>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div>
+        <img src="/static/img/people/person2.jpg" style="height:200px; border-radius: 10px;" class="card-img-top" alt="Testimonial Image 2">
+        <div class="card-body">
+         
+          <blockquote class="card-text"><em>"I'm impressed by the variety of feeds available. It's easy to find the right product for each of my animals. The results speak for themselves."</em></blockquote>
+          <h6 class="card-title" style="font-family: merriweather;">~Jane Wairimu</h6>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div>
+        <img src="/static/img/people/person3.jpg" style="height:200px; border-radius: 10px;" class="card-img-top" alt="Testimonial Image 3">
+        <div class="card-body">
+          
+          <blockquote class="card-text"><em>"Farm Feeds Company has been our trusted partner for years. They consistently deliver high-quality feeds, and our livestock is thriving."</em></blockquote>
+          <h6 class="card-title" style="font-family: merriweather;">~Stacy Mugure</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock modal %}
+

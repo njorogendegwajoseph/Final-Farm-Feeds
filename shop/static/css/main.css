@@ -1,0 +1,137 @@
+.team-member {
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .team-member img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .team-member:hover {
+    transform: scale(1.05);
+  }
+
+  .footer {
+    background-color: #f8f9fa;
+    padding: 30px 0;
+    color: #343a40;
+  }
+  .footer-links {
+    padding: 0;
+    list-style: none;
+  }
+  .footer-links li {
+    margin-bottom: 10px;
+  }
+  .footer-links li a {
+    color: #343a40;
+    text-decoration: none;
+  }
+  .footer-links li a:hover {
+    color: #007BFF;
+  }
+
+  .imaging {
+    background-position: bottom;
+    height: 300px;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .carousel-container {
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .carousel {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .carousel-slide {
+    min-width: 100%;
+    transition: transform 0.3s ease;
+  }
+  
+  .carousel img {
+    width: 100%;
+    height: auto;
+  }
+
+  
+  .timeline .timeline-image img {
+    width: 100%;
+    height: auto;
+}
+
+@keyframes customFadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Apply the custom animation to an element */
+.custom-fade-in {
+  animation: customFadeIn 3s;
+}
+
+
+.scrolled-navbar {
+  background-color: green; /* Change this to your desired color */
+  transition: background-color 0.3s;
+}
+
+
+/* Add this CSS to your stylesheet */
+
+.custom-table {
+  border-collapse: separate;
+  border-spacing: 0 10px; /* Adjust the spacing as needed */
+  width: 100%;
+}
+
+.custom-table th,
+.custom-table td {
+  padding: 10px;
+  text-align: center;
+}
+
+.custom-table th {
+  background-color: #3498db; /* Header background color */
+  color: #fff; /* Header text color */
+}
+
+.custom-table tbody tr:nth-child(odd) {
+  background-color: #f2f2f2; /* Alternate row background color */
+}
+
+.custom-table tbody tr:nth-child(even) {
+  background-color: #e6e6e6; /* Alternate row background color */
+}
+
+.custom-table a {
+  text-decoration: none;
+  color: #5aee7a; /* Link color */
+  font-weight: bold;
+}
+
+.custom-table a:hover {
+  color: #21618C; /* Link color on hover */
+}
+
+/* You can add background patterns using CSS, for example, striped patterns */
+
+.custom-table tbody tr:nth-child(odd) {
+  background: linear-gradient(45deg, transparent 49.5%, #f2f2f2 49.5%, #f2f2f2 50.5%, transparent 50.5%);
+}
+
+.custom-table tbody tr:nth-child(even) {
+  background: linear-gradient(45deg, transparent 49.5%, #e6e6e6 49.5%, #e6e6e6 50.5%, transparent 50.5%);
+}
+

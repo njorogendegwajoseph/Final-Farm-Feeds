@@ -1,0 +1,18 @@
+{% extends "shop/base.html" %}
+{% block title %}Logged out{% endblock %}
+{% block content %}
+<section class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h1 class="card-title">Thank You!</h1>
+                    <p class="card-text">We appreciate your time and look forward to serving you again.</p>
+                    <p><strong><a href="{% url 'accounts:login' %}">Login Again</a></strong>.</p>
+                    <a href="{% url 'shop:homepage' %}" class="btn btn-primary">Return to Homepage</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

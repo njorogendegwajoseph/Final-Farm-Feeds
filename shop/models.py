@@ -1,0 +1,71 @@
+from django.db import models
+from django.urls import reverse
+from taggit.managers import TaggableManager
+# Create your models here.
+class Category(models.Model):
+    name = models.CharField(max_length=100, db_index=True)
+    slug = models.SlugField(max_length=200, unique=True)
+
+    class Meta:
+        ordering = ('name',)
+        verbose_name = 'category'
+        verbose_name_plural = 'categories'
+    
+    def get_absolute_url(self):
+        return reverse('shop:product_list_by_category', args=[self.slug])
+
+    def __str__(self):
+        return self.name
+    
+class Product(models.Model):
+    WEIGHT = (
+        ('5', '5 Kgs'),
+        ('50', '50 Kgs'),
+        ('10', '10 Kgs'),
+        ('20', '20 Kgs'),
+        ('70', '70 Kgs'),
+    )
+
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='products')
+    name = models.CharField(max_length=100, db_index=True)
+    slug = models.SlugField(max_length=200, db_index=True)
+    image = models.ImageField(upload_to='produts/%Y/%m/%d', blank=True)
+    description = models.TextField()
+    price = models.DecimalField(decimal_places=2, max_digits=10)
+    weight = models.CharField(max_length=2, choices=WEIGHT, default=5)
+    available = models.BooleanField(default=True)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ('name',)
+        index_together = (('id', 'slug'),)
+
+    def get_absolute_url(self):
+        return reverse('shop:product_detail', args= [self.id, self.slug])
+
+    def __str__(self):
+        return self.name
+
+class Distributors(models.Model):
+    image = models.ImageField(upload_to='shops/', blank=True)
+    name = models.CharField(max_length=200)
+    slug = models.SlugField(max_length=200, db_index=True)
+    location = models.CharField(max_length=200)
+    contacts = models.PositiveIntegerField()
+    tag =TaggableManager()
+
+    def __str__(self):
+        return self.name
+    
+    def get_absolute_url(self):
+        return reverse('shop:distributors', args= [self.id, self.slug])
+
+
+
+class Subscription(models.Model):
+    email = models.EmailField(unique=True)
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.email

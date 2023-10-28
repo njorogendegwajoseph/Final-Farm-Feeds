@@ -1,0 +1,78 @@
+{% extends 'shop/base.html' %}
+
+{% load static %}
+
+{% block title %}
+{{product.name}}
+{% endblock title %}
+
+{% block content %}
+<div class="text-center imaging text-white d-flex masthead" style="background: linear-gradient(to right, rgb(198, 235, 203), #817979);">
+    <div class="container my-auto">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <h1 class="text-uppercase animate__animated animate__bounce" style="color: rgb(27, 26, 25); font-family: Arapey; font-size: 50px; "><strong>More On {{product.name}}</Details></strong></h1>
+                <hr />
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+
+
+{% block portfolio %}
+<!-- Product Details -->
+<div class="col text-center m-3">
+    <!-- Add a dropdown menu for weight categories -->
+    
+
+    <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/people/product1.jpg' %}{% endif %}" alt="">
+    <h2 style="font-family: arapey;">{{ product.name }}</h2>
+    <a href="{{ product.category.get_absolute_url }}">{{ product.category }}</a>
+    <p>{{ product.description|linebreaks }}.</p>
+    <label for="weight_category">Enter weight:</label>
+    <select id="weight_category" class="form-select mb-3" style="width: 150px; margin: 0 auto;">
+
+
+        <option value="">Weight</option>
+        {% for category in weight_categories %}
+            <option value="{{ category.name }}">{{ category.name }}</option>
+        {% endfor %}
+    </select>
+    <p><strong>Ksh.{{ product.price }}</strong></p>
+    <form action="{% url 'cart:cart_add' product.id %}" method="post">
+        {{ cart_product_form }}
+        {% csrf_token %}
+        <input type="submit" value="Add to Cart">
+    </form>
+</div>
+
+<script>
+    // JavaScript to handle the weight category selection and filtering
+    const weightCategoryDropdown = document.getElementById('weight_category');
+    weightCategoryDropdown.addEventListener('change', function() {
+        const selectedCategory = this.value;
+        const products = document.querySelectorAll('.col.text-center.m-3');
+
+        products.forEach(product => {
+            const productWeight = product.querySelector('strong').innerText;
+            if (selectedCategory && productWeight.includes(selectedCategory)) {
+                product.style.display = 'block';
+            } else {
+                product.style.display = 'none';
+            }
+        });
+    });
+</script>
+
+
+{% endblock portfolio %}
+
+   
+
+
+
+</body>
+
+</html>

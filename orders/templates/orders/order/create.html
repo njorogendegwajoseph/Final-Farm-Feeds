@@ -1,0 +1,67 @@
+{% extends "shop/base.html" %} {% block title %} Checkout {% endblock %}
+{% block content %}
+<!-- <div class="text-center text-white d-flex masthead"
+  style="height: 400px; background-image: url('/static/img/big4.jpg');">
+  <div class="container my-auto">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        <h1 class="text-uppercase" style="color: rgb(248, 43, 7); font-family: Arapey; font-size: 80px;"><strong>Check
+            out</strong></h1>
+        <hr />
+      </div>
+    </div>
+
+  </div>
+</div> -->
+
+{% endblock content %}
+
+{%block portfolio %}
+<!-- Security badges -->
+<div class="container">
+  <div class="security-section">
+    <ul class="list-unstyled">
+      <li>
+
+        <span style="font-family: merriweather;"> <i class="bi bi-shield-lock"></i>Secure Payments</span>
+
+      </li>
+      <li>
+
+        <span style="font-family: merriweather;"> <i class="bi bi-shield-check"></i>Trust Badge</span>
+      </li>
+
+    </ul>
+  </div>
+</div>
+
+
+
+<div class="container">
+  <div class="row shadow shadow-2">
+    <h1 style="font-family: arapey;">Checkout</h1>
+    <div class="order-info">
+      <h3 style="font-family: arapey;">Your order</h3>
+      <ul>
+        {% for item in cart %}
+        <li>
+          {{ item.quantity }}x {{ item.product.name }}
+          <span>Ksh.{{ item.total_price }}</span>
+        </li>
+        {% endfor %}
+      </ul>
+      <p>Total: Ksh.{{ cart.get_total_price }}</p>
+    </div>
+    <form method="post" class="order-form">
+      {{ form.as_p }}
+      <p><input type="submit" value="Place order" /></p>
+      {% csrf_token %}
+    </form>
+  </div>
+</div>
+{% endblock portfolio %}
+
+{% block team %}
+
+
+{% endblock team %}
