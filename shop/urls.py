@@ -17,6 +17,7 @@ urlpatterns = [
     path('map/',views.show_map, name='map'),
     path('subscribe/',views.subscribe, name='subscribe'),
     path('production/',views.production, name='production'),
+    path('team/',views.team, name='team'),
 
    
 

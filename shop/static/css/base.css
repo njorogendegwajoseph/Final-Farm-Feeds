@@ -394,3 +394,39 @@ form div.field {
     display: flex;
     justify-content: space-between;
    
+    .hero-section {
+        text-align: center;
+        color: #fff;
+    }
+    
+    .hero-content {
+        background: rgba(0, 0, 0, 0.5);
+        padding: 30px;
+        border-radius: 10px;
+    }
+    
+    /* Media queries for responsiveness */
+    @media (max-width: 768px) {
+        .hero-content {
+            font-size: 24px;
+        }
+    }
+    
+    /* Add this to your CSS file */
+.company-logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.company-logo img {
+    max-width: 80%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+}
+
+.company-logo img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}

@@ -1,79 +1,82 @@
 .team-member {
-    border-radius: 50%;
-    overflow: hidden;
-    position: relative;
-    transition: transform 0.3s ease-in-out;
-  }
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+}
 
-  .team-member img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
+.team-member img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 
-  .team-member:hover {
-    transform: scale(1.05);
-  }
+.team-member:hover {
+  transform: scale(1.05);
+}
 
-  .footer {
-    background-color: #f8f9fa;
-    padding: 30px 0;
-    color: #343a40;
-  }
-  .footer-links {
-    padding: 0;
-    list-style: none;
-  }
-  .footer-links li {
-    margin-bottom: 10px;
-  }
-  .footer-links li a {
-    color: #343a40;
-    text-decoration: none;
-  }
-  .footer-links li a:hover {
-    color: #007BFF;
-  }
+.footer {
+  background-color: #f8f9fa;
+  padding: 30px 0;
+  color: #343a40;
+}
+.footer-links {
+  padding: 0;
+  list-style: none;
+}
+.footer-links li {
+  margin-bottom: 10px;
+}
+.footer-links li a {
+  color: #343a40;
+  text-decoration: none;
+}
+.footer-links li a:hover {
+  color: #007bff;
+}
 
-  .imaging {
-    background-position: bottom;
-    height: 300px;
-  }
+.imaging {
+  background-position: bottom;
+  height: 300px;
+}
 
-  body {
-    font-family: Arial, sans-serif;
-  }
-  
-  .carousel-container {
-    width: 80%;
-    margin: 0 auto;
-  }
-  
-  .carousel {
-    display: flex;
-    overflow: hidden;
-    position: relative;
-  }
-  
-  .carousel-slide {
-    min-width: 100%;
-    transition: transform 0.3s ease;
-  }
-  
-  .carousel img {
-    width: 100%;
-    height: auto;
-  }
+body {
+  font-family: Arial, sans-serif;
+}
 
-  
-  .timeline .timeline-image img {
-    width: 100%;
-    height: auto;
+.carousel-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.carousel {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.carousel img {
+  width: 100%;
+  height: auto;
+}
+
+.timeline .timeline-image img {
+  width: 100%;
+  height: auto;
 }
 
 @keyframes customFadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /* Apply the custom animation to an element */
@@ -81,12 +84,10 @@
   animation: customFadeIn 3s;
 }
 
-
 .scrolled-navbar {
   background-color: green; /* Change this to your desired color */
   transition: background-color 0.3s;
 }
-
 
 /* Add this CSS to your stylesheet */
 
@@ -122,16 +123,98 @@
 }
 
 .custom-table a:hover {
-  color: #21618C; /* Link color on hover */
+  color: #21618c; /* Link color on hover */
 }
 
 /* You can add background patterns using CSS, for example, striped patterns */
 
 .custom-table tbody tr:nth-child(odd) {
-  background: linear-gradient(45deg, transparent 49.5%, #f2f2f2 49.5%, #f2f2f2 50.5%, transparent 50.5%);
+  background: linear-gradient(
+    45deg,
+    transparent 49.5%,
+    #f2f2f2 49.5%,
+    #f2f2f2 50.5%,
+    transparent 50.5%
+  );
 }
 
 .custom-table tbody tr:nth-child(even) {
-  background: linear-gradient(45deg, transparent 49.5%, #e6e6e6 49.5%, #e6e6e6 50.5%, transparent 50.5%);
+  background: linear-gradient(
+    45deg,
+    transparent 49.5%,
+    #e6e6e6 49.5%,
+    #e6e6e6 50.5%,
+    transparent 50.5%
+  );
 }
 
+.background-image {
+  background-image: url("/static/img/newimages/istockphoto-875237010-612x612.jpg"); /* Replace 'your-image-path.jpg' with the actual path to your image */
+  background-size: cover;
+  filter: brightness(1);
+  background-position: center;
+  background-attachment: fixed;
+  color: rgb(
+    201,
+    124,
+    124
+  ); /* You can adjust the text color for better visibility */
+}
+
+/* Team Members Section */
+.team-section {
+  background-color: #f9f9f9;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.team-title {
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.team-members {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.team-member {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  flex: 0 1 calc(25% - 30px);
+  text-align: center;
+}
+
+.member-image img {
+  border-radius: 50%;
+  max-width: 100%;
+}
+
+.member-info h3 {
+  font-size: 20px;
+  margin: 10px 0;
+  font-family: merriweather, serif;
+}
+
+.member-info p {
+  color: #888;
+  font-size: 16px;
+  font-family: merriweather, serif;
+}
+
+.description {
+  font-size: 14px;
+  margin-top: 10px;
+  font-family: merriweather, serif;
+}
+
+.social-links a {
+  font-size: 24px;
+  margin: 10px 10px 0;
+  color: #333;
+  text-decoration: none;
+}

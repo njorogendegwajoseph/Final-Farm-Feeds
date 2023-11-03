@@ -47,10 +47,10 @@
               {% for product in products %}
               <div class="col-md-4">
                   <div class="m-2 shadow">
-                      <img src="/static/img/people/product1.jpg" style="height: 170px;" class="card-img-top"
+                      <img src="/static/img/product1.webp" style="height: 170px;" class="card-img-top"
                           alt="Product Image">
                       <div class="card-body">
-                          <h5 class="">{{product.name}}</h5>
+                          <h5 style="font-family: merriweather;">{{product.name}}</h5>
                           <p class="card-text">Ksh{{product.price}}</p>
                           <a href="{{product.get_absolute_url}}" class="btn btn-outline-info">Details</a>
                       </div>
@@ -412,3 +412,25 @@
 </div>
 
 {% endblock services %}
+
+{% block team %}
+<!-- top_products.html -->
+<div class="container">
+  <h2 style="font-family: arapey;" class="text-center">Top Products</h2>
+  <div class="row m-2">
+      {% for product in top_products %}
+          <div class="col-md-4">
+              <div class="product-card">
+                  <span class="badge badge-primary">Top Products</span>
+                  <img src="/static/img/product1.webp" alt="{{ product.name }}" class="img-fluid">
+                  <h3 class="lead">{{ product.name }}</h3>
+                  <p>{{ product.description }}</p>
+                  <a href="{{product.get_absolute_url}}" class="btn btn-info">Details</a>
+                  <!-- Add more product details here -->
+              </div>
+          </div>
+      {% endfor %}
+  </div>
+</div>
+
+{% endblock  %}

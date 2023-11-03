@@ -27,7 +27,7 @@
     <!-- Add a dropdown menu for weight categories -->
     
 
-    <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/people/product1.jpg' %}{% endif %}" alt="">
+    <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static '/img/product1.webp' %}{% endif %}" alt="">
     <h2 style="font-family: arapey;">{{ product.name }}</h2>
     <a href="{{ product.category.get_absolute_url }}">{{ product.category }}</a>
     <p>{{ product.description|linebreaks }}.</p>
