@@ -7,7 +7,7 @@
 {% endblock title %}
 
 {% block content %}
-<div class="text-center imaging text-white d-flex masthead" style="background: linear-gradient(to right, rgb(198, 235, 203), #817979);">
+{% comment %} <div class="text-center imaging text-white d-flex masthead" style="background: linear-gradient(to right, rgb(198, 235, 203), #817979);">
     <div class="container my-auto">
         <div class="row">
             <div class="col-lg-10 mx-auto">
@@ -16,7 +16,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> {% endcomment %}
 
 {% endblock content %}
 
@@ -27,10 +27,10 @@
     <!-- Add a dropdown menu for weight categories -->
     
 
-    <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static '/img/product1.webp' %}{% endif %}" alt="">
+    <img style="height: 500px; width: 600px;" src="{% if product.image %}{{ product.image.url }}{% else %}{% static '/img/product1.webp' %}{% endif %}" alt="">
     <h2 style="font-family: arapey;">{{ product.name }}</h2>
     <a href="{{ product.category.get_absolute_url }}">{{ product.category }}</a>
-    <p>{{ product.description|linebreaks }}.</p>
+    <p>Description: {{ product.description|linebreaks }}.</p>
     <label for="weight_category">Enter weight:</label>
     <select id="weight_category" class="form-select mb-3" style="width: 150px; margin: 0 auto;">
 
@@ -68,6 +68,235 @@
 
 
 {% endblock portfolio %}
+
+{% block contactus %}
+<div class="section text-center m-2">
+  <h2 class="text-center" style="font-family: arapey;">Animal Feeds Nutrition Specification</h2>
+  <div id="accordion-1" class="accordion" role="tablist">
+    <div class="accordion-item" style="background-color: #457B9D;">
+      <h2 class="accordion-header" role="tab"><button class="accordion-button"
+           type="button" data-bs-toggle="collapse"
+          data-bs-target="#accordion-1 .item-1" aria-expanded="true" aria-controls="accordion-1 .item-1">Farm Feeds
+          Poultry Products</button></h2>
+      <div class="accordion-collapse collapse show item-1" role="tabpanel" data-bs-parent="#accordion-1">
+        <div class="accordion-body">
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Metabolizable Energy</th>
+                  <th>Crude Protein</th>
+                  <th>Crude Fibre</th>
+                  <th>Fat</th>
+                  <th>Calcium</th>
+                  <th>Phosphorus</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Broiler Stater Mash</td>
+                  <td>2980 KCal/Kg</td>
+                  <td>20% Minimun</td>
+                  <td>6% Minimum</td>
+                  <td>10% Minimum</td>
+                  <td>1.0%</td>
+                  <td>0.45%</td>
+                </tr>
+                <tr>
+                  <td>Broiler Finisher Mash Mash</td>
+                  <td>3000 KCal/Kg</td>
+                  <td>18% Minimun</td>
+                  <td>6% Minimum</td>
+                  <td>10% Minimum</td>
+                  <td>1.2%</td>
+                  <td>0.5%</td>
+                </tr>
+                <tr>
+                  <td>Farm Gro Stater Mash</td>
+                  <td>3100 KCal/Kg</td>
+                  <td>21% Minimun</td>
+                  <td>6% Minimum</td>
+                  <td>10% Minimum</td>
+                  <td>1.2%</td>
+                  <td>0.5%</td>
+                </tr>
+                <tr>
+                  <td>Chick Mash</td>
+                  <td>2600 KCal/Kg</td>
+                  <td>18% Minimun</td>
+                  <td>6% Minimum</td>
+                  <td>10% Minimum</td>
+                  <td>1.2%</td>
+                  <td>0.5%</td>
+                </tr>
+                <tr>
+                  <td>Layers Mash</td>
+                  <td>2600 KCal/Kg</td>
+                  <td>15.5% Minimun</td>
+                  <td>7.5% Minimum</td>
+                  <td>6% Minimum</td>
+                  <td>3.5%</td>
+                  <td>1.25%</td>
+                </tr>
+                <tr>
+                  <td>Kienyeji Poultry Mash</td>
+                  <td>2300 KCal/Kg</td>
+                  <td>15% Minimun</td>
+                  <td>4% Minimum</td>
+                  <td>6% Minimum</td>
+                  <td>1.5%</td>
+                  <td>0.7%</td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item" style="background-color: #457B9D;">
+      <h2 class="accordion-header" role="tab"><button 
+          class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#accordion-1 .item-2" aria-expanded="false" aria-controls="accordion-1 .item-2">More on Pig
+          Feeds</button></h2>
+      <div class="accordion-collapse collapse item-2" role="tabpanel" data-bs-parent="#accordion-1">
+        <div class="accordion-body">
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Metabolizable Energy</th>
+                  <th>Crude Protein</th>
+                  <th>Crude Fat</th>
+                  <th>Crude Fibre</th>
+                  <th>Calcium</th>
+                  <th>Phosphorus</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Sow and Weaner Premium</td>
+                  <td>300Kcal/Kg</td>
+                  <td>16.5% ge Min</td>
+                  <td>8.0%ge Max</td>
+                  <td>7.0% ge Min</td>
+                  <td>1.5% ge Min</td>
+                  <td>0.7% ge Min</td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item " style="background-color: #457B9D;">
+      <h2 class="accordion-header text-center" role="tab"><button 
+          class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#accordion-1 .item-3" aria-expanded="false" aria-controls="accordion-1 .item-3">More on Dairy
+          Products</button></h2>
+      <div class="accordion-collapse collapse item-3" role="tabpanel" data-bs-parent="#accordion-1">
+        <div class="accordion-body">
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Metabolizable Energy</th>
+                  <th>Crude Protein</th>
+                  <th>Crude Fibre</th>
+                  <th>Fat</th>
+                  <th>Calcium</th>
+                  <th>Phosphorus</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Calf Early Weaner Meal</td>
+                  <td>2600Kgcal/Kg</td>
+                  <td>17% Min</td>
+                  <td>8% Min</td>
+                  <td>10% Min</td>
+                  <td>0.5%</td>
+                  <td>0.45%</td>
+                </tr>
+                <tr>
+                  <td>Young Stock Meal</td>
+                  <td>2500Kgcal/Kg</td>
+                  <td>15.5% Min</td>
+                  <td>12% Min</td>
+                  <td>6% Min</td>
+                  <td>0.7%</td>
+                  <td>0.5%</td>
+                </tr>
+                <tr>
+                  <td>Farm Stock Meal</td>
+                  <td>2000Kgcal/Kg</td>
+                  <td>14% Min</td>
+                  <td>12% Min</td>
+                  <td>6% Min</td>
+                  <td>0.7%</td>
+                  <td>0.5%</td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item" style="background-color: #457B9D;">
+      <h2 class="accordion-header text-center" role="tab"><button 
+          class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#accordion-1 .item-4" aria-expanded="false" aria-controls="accordion-1 .item-3">More on Dog
+          food</button></h2>
+      <div class="accordion-collapse collapse item-4" role="tabpanel" data-bs-parent="#accordion-1">
+        <div class="accordion-body">
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Metabolizable Energy</th>
+                  <th>Crude Protein</th>
+                  <th>Crude Fibre</th>
+                  <th>Fat</th>
+                  <th>Calcium</th>
+                  <th>Phosphorus</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Skipa Dog Meal</td>
+                  <td>3150Kcal/Kg</td>
+                  <td>20% Min</td>
+                  <td>5% Min</td>
+                  <td>5% Min</td>
+                  <td>2.2% Min</td>
+                  <td>1.1% Min</td>
+                </tr>
+
+              </tbody>
+            </table>
+            <h3>Feeding Instructions</h3>
+            <p>1. Skipa Dog Meal must be cooked befor being fed to the dogs.</p>
+            <p>2. Add the dog meal to boiling water and cook by stirring for 15min to achieve a semi solid paste</p>
+            <p>3. Allow to cool amd provide to the dogs as per instructions on the food pack.</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+    
+{% endblock contactus %}
+
+
 
    
 

@@ -19,45 +19,46 @@
 
 
 {% block portfolio %}
-<div class="col-md-8 col-xl-6 text-center mx-auto animate__animated animate__zoomIn">
-  <h2 style="font-family: arapey; font-size: 100px;">Blogs</h2>
-  <p class="w-lg-50" style="font-family: merriweather;">Below, we include the success story of the company and all it's
-    accomplishments.</p>
-</div>
-{% for post in posts %}
-<div class="container py-2 py-xl-2 shadow shadow-2 my-2" style="background-color: aliceblue; border-radius: 10px;">
-  <div class="row mb-5">
-  </div>
-  <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3">
-    <div class="col">
-      {% if post.image %}
-      <div class="card"><img class="card-img-top w-100 d-block fit-cover" style="height: 400px;"
-          src="{{ post.image.url }}" />
-      </div>
-      {% endif %}
-      {% if post.video %}
-        <div class="embed-responsive embed-responsive-16by9">
-          <video class="embed-responsive-item" controls>
-            <source src="{{ post.video.url }}" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
-        {% endif %}
-      <div class="card-body p-4">
-        <h4 class="card-title" style="font-family: merriweather;"><a href="{{post.get_absolute_url}}">{{post.title}}</a></h4>
+<div class="container py-2 py-xl-2">
+  <div class="row mb-5"></div>
+  <div class="row gy-4">
+    {% for post in posts %}
+      <div class="col-12 col-md-6 col-xl-4">
+        <div class="shadow shadow-2 my-2" style="background-color: aliceblue; border-radius: 10px;">
+          {% if post.image %}
+            <div class="card">
+              <img class="card-img-top w-100 d-block fit-cover" style="height: 400px; width: 100px;" src="{{ post.image.url }}" />
+            </div>
+          {% endif %}
 
-        <p style="font-family: arapey;">{{ post.content }}</p>
-        <p class="card-text" style="font-family: arapey;">{{ post.body|truncatewords:40|linebreaks }}</p>
-        
+          {% if post.video %}
+            <div class="embed-responsive embed-responsive-16by9">
+              <video class="embed-responsive-item" controls>
+                <source src="{{ post.video.url }}" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          {% endif %}
+
+          <div class="card-body p-4">
+            <h4 class="card-title" style="font-family: merriweather;">
+              <a href="{{post.get_absolute_url}}">{{post.title}}</a>
+            </h4>
+            <p style="font-family: arapey;">{{ post.content }}</p>
+            <p class="card-text" style="font-family: arapey;">
+              {{ post.body|truncatewords:10|linebreaks }}
+            </p>
             <p class="text-muted mb-0">Published {{ post.publish }} by {{ post.author }}</p>
           </div>
         </div>
       </div>
-    </div>
+    {% endfor %}
   </div>
 </div>
-{% endfor %}
-{% include "shop/product/pagination.html" with page=posts %}    
+
+{% include "shop/product/pagination.html" with page=posts %}
+
+   
 
 
 

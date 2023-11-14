@@ -10,6 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+import os
+import braintree
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -30,7 +32,7 @@ ALLOWED_HOSTS = ['127.0.0.1', 'mydjango.com']
 SITE_ID = 1
 
 
-#Email Set-up
+# Email Set-up
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
@@ -41,7 +43,7 @@ CURRENT_SITE = 'http://localhost:8000'
 EMAIL_HOST_USER = 'josephnjorogendegwa@gmail.com'
 EMAIL_HOST_PASSWORD = 'mastermind01'
 
-#Accounts setup
+# Accounts setup
 LOGIN_REDIRECT_URL = 'shop:homepage'
 LOGIN_URL = 'accounts:login'
 LOGOUT_URL = 'accounts:logout'
@@ -68,14 +70,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-   
+
 ]
 
-import braintree
 
 # Braintree settings
 BRAINTREE_MERCHANT_ID = '9qfqnds2ssh3mrrs'
-BRAINTREE_PUBLIC_KEY = 'djg8y9y6smhfjbr9' 
+BRAINTREE_PUBLIC_KEY = 'djg8y9y6smhfjbr9'
 BRAINTREE_PRIVATE_KEY = '0144b21359d123d612d55a491659f57e'
 
 
@@ -86,7 +87,7 @@ BRAINTREE_CONF = braintree.Configuration(
     BRAINTREE_PUBLIC_KEY
 )
 
-#Cart set-up
+# Cart set-up
 CART_SESSION_ID = 'cart'
 
 # Twilio setting
@@ -95,8 +96,6 @@ TWILIO_AUTH_TOKEN = 'your_auth_token'
 
 
 # settings.py
-
-
 
 
 MIDDLEWARE = [
@@ -112,8 +111,8 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'farmfeeds.urls'
 
 AUTHENTICATION_BACKENDS = [
-'django.contrib.auth.backends.ModelBackend',
-'accounts.authentication.EmailAuthBackend',
+    'django.contrib.auth.backends.ModelBackend',
+    'accounts.authentication.EmailAuthBackend',
 ]
 
 TEMPLATES = [
@@ -180,7 +179,6 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
-import os
 STATIC_URL = 'static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -189,5 +187,3 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-

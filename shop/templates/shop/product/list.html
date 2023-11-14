@@ -5,6 +5,10 @@
 {% endblock %}
 
 {% block content %}
+<div class="introduction-section">
+  <h2 style="font-family: Cookie; font-size: 60px;">Welcome to Our Product Page</h2>
+  <p style="font-family: arapey; font-size: 20px;">Discover our amazing selection of products that will meet all your needs and desires. Explore our high-quality products and find the perfect solution for you.</p>
+</div>
 
 
 {% endblock content %}
@@ -47,8 +51,13 @@
               {% for product in products %}
               <div class="col-md-4">
                   <div class="m-2 shadow">
-                      <img src="/static/img/product1.webp" style="height: 170px;" class="card-img-top"
+                    {% if product.image %}
+                      <img src="{{product.image.url}}" style="height: 300px;" class="card-img-top"
                           alt="Product Image">
+                    {% else %}
+                    <img src="/static/img/product1.webp" style="height: 300px;" class="card-img-top"
+                          alt="Product Image">
+                    {% endif %}
                       <div class="card-body">
                           <h5 style="font-family: merriweather;">{{product.name}}</h5>
                           <p class="card-text">Ksh{{product.price}}</p>
@@ -69,9 +78,9 @@
 <div class="section text-center m-2">
   <h2 class="text-center" style="font-family: arapey;">Animal Feeds Nutrition Specification</h2>
   <div id="accordion-1" class="accordion" role="tablist">
-    <div class="accordion-item">
+    <div class="accordion-item" style="background-color: #457B9D;">
       <h2 class="accordion-header" role="tab"><button class="accordion-button"
-          style="background-color: rgb(114, 110, 104);" type="button" data-bs-toggle="collapse"
+           type="button" data-bs-toggle="collapse"
           data-bs-target="#accordion-1 .item-1" aria-expanded="true" aria-controls="accordion-1 .item-1">Farm Feeds
           Poultry Products</button></h2>
       <div class="accordion-collapse collapse show item-1" role="tabpanel" data-bs-parent="#accordion-1">
@@ -151,8 +160,8 @@
         </div>
       </div>
     </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header" role="tab"><button style="background-color: rgb(114, 110, 104);"
+    <div class="accordion-item" style="background-color: #457B9D;">
+      <h2 class="accordion-header" role="tab"><button 
           class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
           data-bs-target="#accordion-1 .item-2" aria-expanded="false" aria-controls="accordion-1 .item-2">More on Pig
           Feeds</button></h2>
@@ -188,8 +197,8 @@
         </div>
       </div>
     </div>
-    <div class="accordion-item ">
-      <h2 class="accordion-header text-center" role="tab"><button style="background-color: rgb(114, 110, 104);"
+    <div class="accordion-item " style="background-color: #457B9D;">
+      <h2 class="accordion-header text-center" role="tab"><button 
           class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
           data-bs-target="#accordion-1 .item-3" aria-expanded="false" aria-controls="accordion-1 .item-3">More on Dairy
           Products</button></h2>
@@ -243,8 +252,8 @@
         </div>
       </div>
     </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header text-center" role="tab"><button style="background-color: rgb(114, 110, 104);"
+    <div class="accordion-item" style="background-color: #457B9D;">
+      <h2 class="accordion-header text-center" role="tab"><button 
           class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
           data-bs-target="#accordion-1 .item-4" aria-expanded="false" aria-controls="accordion-1 .item-3">More on Dog
           food</button></h2>
@@ -294,122 +303,72 @@
 {% block services %}
 
 <div class="section text-center m-2">
-  <h3 class="text-center" style="font-family: arapey;">Feeding Instructions</h3>
+  <h3 class="text-center" style="font-family: 'Arapey', serif; color: #3D5A80;">Feeding Instructions</h3>
   <div id="accordion-1" class="accordion" role="tablist">
-    <div class="accordion-item">
-
-      <h2 class="accordion-header" role="tab"><button class="accordion-button"
-          style="background-color: rgb(151, 202, 144);" type=" button" data-bs-toggle="collapse"
-          data-bs-target="#accordion-1 .item-6" aria-expanded="true" aria-controls="accordion-1 .item-6">Feeding
-          Instructions-Poultry</button></h2>
-      <div class="accordion-collapse collapse show item-6" role="tabpanel" data-bs-parent="#accordion-6">
-        <div class="accordion-body">
-          <table>
-            <tr>
-                <th>Product Type</th>
-                <th>Feeding Frequency</th>
-                <th>Feeding Amount</th>
-            </tr>
-            <tr>
-                <td>Layer Pellets</td>
-                <td>2 times a day</td>
-                <td>As much as they can consume in 20-30 minutes</td>
-            </tr>
-            <tr>
-                <td>Broiler Feed</td>
-                <td>3 times a day</td>
-                <td>As much as they can consume in 10-15 minutes</td>
-            </tr>
-            <tr>
-                <td>Chick Starter Feed</td>
-                <td>4-5 times a day</td>
-                <td>As much as they can consume in 10-15 minutes</td>
-            </tr>
-            <tr>
-                <td>Scratch Grains</td>
-                <td>Once a day</td>
-                <td>1-2 ounces per bird per feeding</td>
-            </tr>
-        </table>
-        </div>
+      <div class="accordion-item">
+          <h2 class="accordion-header" role="tab">
+              <button class="accordion-button" style="background-color: #98C1D9; color: #2A363B;" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#accordion-1 .item-6" aria-expanded="true"
+                  aria-controls="accordion-1 .item-6">Feeding Instructions - Poultry
+              </button>
+          </h2>
+          <div class="accordion-collapse collapse show item-6" role="tabpanel" data-bs-parent="#accordion-6">
+              <div class="accordion-body">
+                  <table class="table table-bordered" style="background-color: #EE6C4D; color: #F0EBCC;">
+                      <tr>
+                          <th>Product Type</th>
+                          <th>Feeding Frequency</th>
+                          <th>Feeding Amount</th>
+                      </tr>
+                      <!-- Table content here -->
+                  </table>
+              </div>
+          </div>
       </div>
-    </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header" role="tab"><button class="accordion-button collapsed"
-          style="background-color:rgb(139, 194, 132);" type=" button" data-bs-toggle="collapse"
-          data-bs-target="#accordion-1 .item-7" aria-expanded="false" aria-controls="accordion-1 .item-7">Feeding
-          Istructions-Pig Feeds</button></h2>
-      <div class="accordion-collapse collapse item-7" role="tabpanel" data-bs-parent="#accordion-1">
-        <div class="accordion-body">
-          <table>
-            <tr>
-                <th>Feed Type</th>
-                <th>Feeding Frequency</th>
-                <th>Feeding Amount</th>
-            </tr>
-            <tr>
-                <td>Starter Feed</td>
-                <td>3 times a day</td>
-                <td>1/4 to 1/2 pound per pig per feeding</td>
-            </tr>
-            <tr>
-                <td>Grower Feed</td>
-                <td>2 times a day</td>
-                <td>1/2 to 1 pound per pig per feeding</td>
-            </tr>
-            <tr>
-                <td>Finisher Feed</td>
-                <td>2 times a day</td>
-                <td>1 to 2 pounds per pig per feeding</td>
-            </tr>
-            <tr>
-                <td>Supplemental Vegetables</td>
-                <td>Once a day</td>
-                <td>2-3 pounds per pig per feeding</td>
-            </tr>
-        </table>
-        </div>
+      <div class="accordion-item">
+          <h2 class="accordion-header" role="tab">
+              <button class="accordion-button collapsed" style="background-color: #F18D9E; color: #2A363B;" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#accordion-1 .item-7" aria-expanded="false"
+                  aria-controls="accordion-1 .item-7">Feeding Instructions - Pig Feeds
+              </button>
+          </h2>
+          <div class="accordion-collapse collapse item-7" role="tabpanel" data-bs-parent="#accordion-1">
+              <div class="accordion-body">
+                  <table class="table table-bordered" style="background-color: #FCB9B2; color: #2A363B;">
+                      <tr>
+                          <th>Feed Type</th>
+                          <th>Feeding Frequency</th>
+                          <th>Feeding Amount</th>
+                      </tr>
+                      <!-- Table content here -->
+                  </table>
+              </div>
+          </div>
       </div>
-    </div>
-    <div class="accordion-item">
-      <h2 class="accordion-header" role="tab"><button class="accordion-button collapsed"
-          style="background-color: rgb(178, 206, 174);" type=" button" data-bs-toggle="collapse"
-          data-bs-target="#accordion-1 .item-8" aria-expanded="false" aria-controls="accordion-1 .item-8">Feeding
-          Instructions-Tilapia</button></h2>
-      <div class="accordion-collapse collapse item-8" role="tabpanel" data-bs-parent="#accordion-1">
-        <div class="accordion-body">
-          <table>
-            <tr>
-                <th>Food Type</th>
-                <th>Feeding Frequency</th>
-                <th>Feeding Amount</th>
-            </tr>
-            <tr>
-                <td>Pellets</td>
-                <td>2 times a day</td>
-                <td>As much as they can consume in 5 minutes</td>
-            </tr>
-            <tr>
-                <td>Flakes</td>
-                <td>2 times a day</td>
-                <td>Small pinch per fish</td>
-            </tr>
-            <tr>
-                <td>Live Food (e.g., worms)</td>
-                <td>Once a day</td>
-                <td>A few worms per fish</td>
-            </tr>
-            <tr>
-                <td>Vegetables (e.g., lettuce)</td>
-                <td>Every other day</td>
-                <td>Small pieces per fish</td>
-            </tr>
-        </table>
-        </div>
+      <div class="accordion-item">
+          <h2 class="accordion-header" role="tab">
+              <button class="accordion-button collapsed" style="background-color: #6B4226; color: #F0EBCC;" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#accordion-1 .item-8" aria-expanded="false"
+                  aria-controls="accordion-1 .item-8">Feeding Instructions - Tilapia
+              </button>
+          </h2>
+          <div class="accordion-collapse collapse item-8" role="tabpanel" data-bs-parent="#accordion-1">
+              <div class="accordion-body">
+                  <table class="table table-bordered" style="background-color: #AB83A1; color: #F0EBCC;">
+                      <tr>
+                          <th>Food Type</th>
+                          <th>Feeding Frequency</th>
+                          <th>Feeding Amount</th>
+                      </tr>
+                      <!-- Table content here -->
+                  </table>
+              </div>
+          </div>
       </div>
-    </div>
   </div>
 </div>
+
+
 
 {% endblock services %}
 
@@ -422,7 +381,7 @@
           <div class="col-md-4">
               <div class="product-card">
                   <span class="badge badge-primary">Top Products</span>
-                  <img src="/static/img/product1.webp" alt="{{ product.name }}" class="img-fluid">
+                  <img style="height: 300px; width: 400px;" src="{{product.image.url}}" alt="{{ product.name }}" class="img-fluid">
                   <h3 class="lead">{{ product.name }}</h3>
                   <p>{{ product.description }}</p>
                   <a href="{{product.get_absolute_url}}" class="btn btn-info">Details</a>
