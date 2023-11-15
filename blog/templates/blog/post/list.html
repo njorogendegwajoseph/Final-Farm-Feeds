@@ -40,10 +40,11 @@
             </div>
           {% endif %}
 
-          <div class="card-body p-4">
+          <div class="card-body p-4" style="background-color: black; color: white; height: 250px; border-radius: 10px;">
             <h4 class="card-title" style="font-family: merriweather;">
               <a href="{{post.get_absolute_url}}">{{post.title}}</a>
             </h4>
+            <hr>
             <p style="font-family: arapey;">{{ post.content }}</p>
             <p class="card-text" style="font-family: arapey;">
               {{ post.body|truncatewords:10|linebreaks }}

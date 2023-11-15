@@ -37,43 +37,6 @@
         <a href="{% url 'shop:homepage' %}">
             <div class="container custom-fade-in"><img src="/static/img/socials/FarmFeedsLogo.svg" style="height: 80px;" alt="">
         </a>
-        <ul class="navbar-nav flex-row ms-auto order-lg-1 ps-2 pe-2">
-            <li class="nav-item"><a class="nav-link p-2 pb-3 ps-2 pe-2 pt-3" href="{% url  'cart:cart_detail' %}"
-                    title="View Cart"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
-                        viewBox="0 0 24 24" fill="none" style="font-size: 23px;">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M5.79166 2H1V4H4.2184L6.9872 16.6776H7V17H20V16.7519L22.1932 7.09095L22.5308 6H6.6552L6.08485 3.38852L5.79166 2ZM19.9869 8H7.092L8.62081 15H18.3978L19.9869 8Z"
-                            fill="currentColor"></path>
-                        <path
-                            d="M10 22C11.1046 22 12 21.1046 12 20C12 18.8954 11.1046 18 10 18C8.89543 18 8 18.8954 8 20C8 21.1046 8.89543 22 10 22Z"
-                            fill="currentColor"></path>
-                        <path
-                            d="M19 20C19 21.1046 18.1046 22 17 22C15.8954 22 15 21.1046 15 20C15 18.8954 15.8954 18 17 18C18.1046 18 19 18.8954 19 20Z"
-                            fill="currentColor"></path>
-                    </svg><span class="small text-warning">
-                        {% with total_items=cart|length %}
-                        {% if total_items > 0 %}
-                        ({{ total_items }})
-
-                        {% else %}
-                        (0)
-                        {% endif %}
-                        {% endwith %}
-                    </span></a></li>
-            <li class="nav-item"><a class="nav-link pb-3 ps-2 pe-2 pt-3" href="{% url 'accounts:edit' %}" title="Account"><svg
-                        xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="1em"
-                        viewBox="0 0 24 24" width="1em" fill="currentColor" style="font-size: 23px;">
-                        <g>
-                            <rect fill="none" height="24" width="24"></rect>
-                        </g>
-                        <g>
-                            <path
-                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 4c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm0 14c-2.03 0-4.43-.82-6.14-2.88C7.55 15.8 9.68 15 12 15s4.45.8 6.14 2.12C16.43 19.18 14.03 20 12 20z">
-                            </path>
-                        </g>
-                    </svg>{% if request.user.is_authenticated %}Hi,
-                    {{request.user.username|title}}!{%else%}{%endif%}</a></li>
-        </ul>
         <button data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown-3" class="navbar-toggler"
             type="button" aria-controls="navbarNavDropdown-3" aria-expanded="false" aria-label="Toggle navigation"><span
                 class="navbar-toggler-icon"></span></button>
@@ -85,11 +48,9 @@
                 </li>
                 <li class="nav-item"><a class="nav-link px-lg-3 py-lg-4" href="{% url 'shop:team' %}">Team</a>
                 </li>
-                <li class="nav-item"><a class="nav-link px-lg-3 py-lg-4" href="{% url 'shop:production' %}">Production</a>
-                </li>
                 <li class="nav-item"><a class="nav-link px-lg-3 py-lg-4" href="{% url 'shop:distributors' %}"> Distributors</a>
                 </li>
-                <li class="nav-item"><a class="nav-link px-lg-3 py-lg-4" href="{% url 'shop:product_list' %}">Shop</a>
+                <li class="nav-item"><a class="nav-link px-lg-3 py-lg-4" href="{% url 'shop:product_list' %}">Products</a>
                 </li>
                 {% if request.user.is_authenticated%}
                 <li class="nav-item"><a class="nav-link px-lg-3 py-lg-4" href="{% url 'accounts:logout' %}">Logout</a>
@@ -114,13 +75,19 @@
 
    <div class="row">
     <div class="col-lg-12">
-        {% block messages %}
-        {% if messages %}
-        {% for message in messages %}
-        {{message}}
-        {% endfor %}
-        {% endif %}
-        {% endblock messages %}
+      {% block messages %}
+    {% if messages %}
+        <div class="alert alert-dismissible fade show" role="alert">
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            <ul class="list-unstyled mb-0">
+                {% for message in messages %}
+                    <li class="alert-message">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+{% endblock messages %}
+
         
         {% block content %}
         
@@ -163,7 +130,6 @@
                     <h5 style='font-family: arapey;'>Quick Links</h5>
                     <ul class="list-unstyled">
                         <li style='font-family: arapey;'><a href="{% url 'shop:homepage' %}">Home</a></li>
-                        <li style='font-family: arapey;'><a href="{% url 'shop:production' %}">Production</a></li>
                         <li style='font-family: arapey;'><a href="{% url 'shop:product_list' %}">Products</a></li>
                         <li style='font-family: arapey;'><a href="#">Services</a></li>
                         <li style='font-family: arapey;'><a href="{% url 'shop:about' %}">Contact</a></li>

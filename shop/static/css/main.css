@@ -118,7 +118,7 @@ body {
 
 .custom-table a {
   text-decoration: none;
-  color: #5aee7a; /* Link color */
+  color: #111111; /* Link color */
   font-weight: bold;
 }
 
@@ -297,4 +297,99 @@ body {
 
 .animate-bounce {
   animation: bounce 2s infinite;
+}
+
+.hero-section {
+  background: url("/static/img/big5.jpg") center/cover no-repeat;
+  padding: 100px 0; /* Adjust the padding as needed */
+  color: #fff; /* Set the text color to contrast with the background */
+}
+
+.hero-content {
+  max-width: 80%; /* Adjust the content width as needed */
+}
+.nice_text {
+  font-family: arapey;
+}
+
+/* styles.css */
+.product-section {
+  background-color: #fdf7f7;
+  /* Replace with your background image path */
+  background-size: cover;
+  background-position: center;
+  padding: 50px 0;
+  /* make image static */
+  background-attachment: fixed;
+}
+
+.container {
+  position: relative;
+}
+
+.section-title {
+  color: #0a0a0a;
+  font-family: arapey;
+  font-size: 200px;
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+.product-container {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.products {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.product {
+  flex: 0 0 auto;
+  padding: 0 20px;
+  text-align: center;
+  color: #0f0f0f;
+  font-family: arapey;
+}
+
+.product img {
+  max-width: 100%;
+  height: 400px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+
+.price {
+  font-weight: bold;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  font-size: 24px;
+  color: #05ff3b;
+  cursor: pointer;
+  user-select: none;
+}
+
+.left-arrow {
+  left: 10px;
+}
+
+.right-arrow {
+  right: 10px;
+}
+
+/* Custom styles for hiding the carousel items initially */
+.carousel-item {
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+/* Class to apply fade-in animation */
+.fade-in {
+  opacity: 1 !important;
 }

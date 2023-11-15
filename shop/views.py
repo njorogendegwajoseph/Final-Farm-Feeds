@@ -10,13 +10,15 @@ from django.views.generic.base import TemplateView
 from django.views.generic import View
 from django.http import JsonResponse
 from django.contrib import messages
-from .forms import SubscriptionForm
+from .forms import SubscriptionForm, OrderForm
 
 
 # Create your views here.
 
 def home(request):
-    return render(request, 'shop/product/homepage.html')
+    products = Product.objects.all()
+    form = OrderForm()
+    return render(request, 'shop/product/homepage.html', {'products': products, 'form': form})
 
 
 def team(request):
@@ -27,8 +29,6 @@ def about(request):
     return render(request, 'shop/product/about.html')
 
 
-def production(request):
-    return render(request, 'shop/product/production.html')
 
 
 def product_list(request, category_slug=None):
@@ -150,3 +150,18 @@ def subscribe(request):
         form = SubscriptionForm()
 
     return render(request, 'shop:distributors', {'form': form})
+
+
+def create_order(request):
+    '''A function to create an order'''
+    if request.method == 'POST':
+        form = OrderForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(
+                request, 'Your order has been placed successfully')
+            return render(request, 'shop/product/homepage.html')
+
+    else:
+        form = OrderForm()
+    return render(request, 'shop/product/order.html', {'form': form})

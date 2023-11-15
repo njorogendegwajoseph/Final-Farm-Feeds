@@ -1,24 +1,25 @@
-# Use an official Python runtime as a parent image
-FROM python:3.8-alpine
+# Use the official Python image as the base image
+FROM python:3.9-alpine
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
-# Set the working directory to /app
+# Set the working directory inside the container
 WORKDIR /app
 
-# Copy the current directory contents into the container at /app
-COPY . /app
+# Copy the dependencies file to the working directory
+COPY requirements.txt .
 
-# Install any needed packages specified in requirements.txt
-RUN apk add --no-cache postgresql-libs \
-    && apk add --no-cache --virtual .build-deps gcc musl-dev postgresql-dev \
-    && pip install --no-cache-dir -r requirements.txt \
-    && apk --purge del .build-deps
+# Install dependencies
+RUN pip install --upgrade pip && \
+    pip install -r requirements.txt
 
-# Make port 8000 available to the world outside this container
-EXPOSE 8000
+# Copy the project files to the working directory
+COPY . .
 
-# Define the command to run your application
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+# Collect static files
+RUN python manage.py collectstatic --noinput
+
+# Run the application
+CMD ["gunicorn", "farmfeeds:application", "--bind", "0.0.0.0:8000"]

@@ -7,16 +7,6 @@
 {% endblock title %}
 
 {% block content %}
-{% comment %} <div class="text-center imaging text-white d-flex masthead" style="background: linear-gradient(to right, rgb(198, 235, 203), #817979);">
-    <div class="container my-auto">
-        <div class="row">
-            <div class="col-lg-10 mx-auto">
-                <h1 class="text-uppercase animate__animated animate__bounce" style="color: rgb(27, 26, 25); font-family: Arapey; font-size: 50px; "><strong>More On {{product.name}}</Details></strong></h1>
-                <hr />
-            </div>
-        </div>
-    </div>
-</div> {% endcomment %}
 
 {% endblock content %}
 
@@ -27,25 +17,25 @@
     <!-- Add a dropdown menu for weight categories -->
     
 
-    <img style="height: 500px; width: 600px;" src="{% if product.image %}{{ product.image.url }}{% else %}{% static '/img/product1.webp' %}{% endif %}" alt="">
-    <h2 style="font-family: arapey;">{{ product.name }}</h2>
+    <img style="height: 500px; width: 80%; border-radius: 20px;" src="{% if product.image %}{{ product.image.url }}{% else %}{% static '/img/product1.webp' %}{% endif %}" alt="">
+    <h2 style="font-family: arapey; color: green; font-size: 40px;">{{ product.name }}</h2>
     <a href="{{ product.category.get_absolute_url }}">{{ product.category }}</a>
     <p>Description: {{ product.description|linebreaks }}.</p>
-    <label for="weight_category">Enter weight:</label>
-    <select id="weight_category" class="form-select mb-3" style="width: 150px; margin: 0 auto;">
+    <a href="{% url 'shop:create_order' %}" class="btn btn-success">Create Order Now!!</a>
+    {% comment %} <label for="weight_category">Enter weight:</label>
+    <select id="weight_category" class="form-select mb-3" style="width: 150px; margin: 0 auto;"> {% endcomment %}
 
 
-        <option value="">Weight</option>
+        {% comment %} <option value="">Weight</option>
         {% for category in weight_categories %}
             <option value="{{ category.name }}">{{ category.name }}</option>
         {% endfor %}
-    </select>
-    <p><strong>Ksh.{{ product.price }}</strong></p>
-    <form action="{% url 'cart:cart_add' product.id %}" method="post">
+    </select> {% endcomment %}
+    {% comment %} <form action="{% url 'cart:cart_add' product.id %}" method="post">
         {{ cart_product_form }}
         {% csrf_token %}
         <input type="submit" value="Add to Cart">
-    </form>
+    </form> {% endcomment %}
 </div>
 
 <script>
@@ -71,7 +61,7 @@
 
 {% block contactus %}
 <div class="section text-center m-2">
-  <h2 class="text-center" style="font-family: arapey;">Animal Feeds Nutrition Specification</h2>
+  <h2 class="text-center" style="font-family: arapey; color: green;">Animal Feeds Nutrition Specification</h2>
   <div id="accordion-1" class="accordion" role="tablist">
     <div class="accordion-item" style="background-color: #457B9D;">
       <h2 class="accordion-header" role="tab"><button class="accordion-button"
