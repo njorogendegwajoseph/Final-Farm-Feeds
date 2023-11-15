@@ -16,7 +16,7 @@ from .forms import SubscriptionForm, OrderForm
 # Create your views here.
 
 def home(request):
-    products = Product.objects.all()
+    products = Product.objects.all()[:10]
     form = OrderForm()
     return render(request, 'shop/product/homepage.html', {'products': products, 'form': form})
 

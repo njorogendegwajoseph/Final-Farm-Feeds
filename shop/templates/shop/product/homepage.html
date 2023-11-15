@@ -140,42 +140,42 @@
   <hr />
 {% endblock %} {% block team %}
   <!-- product_section.html -->
-<!-- product_carousel.html -->
+
+
+
+  <!-- product_gallery.html -->
 <section class="product-section">
   <div class="container">
-      <h2 class="section-title">Our Products</h2>
+      <h2 class="section-title" style="font-size: 40px;"><b>Our Product Gallery</b></h2>
 
-      <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-              {% for product in products %}
-                  <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                      <div class="product">
-                          {% if product.image %}
-                              <img src="{{ product.image.url }}" alt="{{ product.title }}">
-                          {% else %}
-                              <img src="https://via.placeholder.com/150" alt="{{ product.title }}">
-                          {% endif %}
-                          <h4>{{ product.name }}</h4>
-                          <p>{{ product.description }}</p>
-                          <a href="{{product.get_absolute_url}}" class="btn btn-success btn-lg">More info on {{product.name}}</a>
-                      </div>
-                  </div>
-              {% endfor %}
-          </div>
-
-          <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-          </button>
+      <div class="photo-gallery">
+        <div class="photo">
+            <img src="/static/img/products/beta_high_yielder_dairy_meal.JPG" alt="Photo 1">
+            <div class="caption">Beta High yielder</div>
+        </div>
+        <div class="photo">
+            <img src="/static/img/products/breeder_chick_starter_mash.JPG" alt="Photo 2">
+            <div class="caption">Chick Starter Mash</div>
+        </div>
+        <div class="photo">
+            <img src="/static/img/products/broiler_starter_mash.JPG" alt="Photo 3">
+            <div class="caption">Broiler Starter Crumbs</div>
+        </div>
+        <div class="photo">
+          <img src="/static/img/products/chick_starter_crumbs.JPG" alt="Photo 3">
+          <div class="caption">Chick Starter Crumbs</div>
       </div>
+        <!-- Add more photos as needed -->
+    </div>
+
+
+
+
+
+
+
+
   </div>
-</section>
-
-
 {% endblock %} {% block contactus %}
   <h1 class="text-center mt-4" style="font-family: merriweather">Our Numbers</h1>
   <div class="container-fluid">

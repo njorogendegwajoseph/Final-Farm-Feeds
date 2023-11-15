@@ -30,10 +30,6 @@
 <body style="background-color: aliceblue;">
     {% block nav %}
     <nav class="navbar navbar-expand-lg navbar-light py-lg-1" style="background-color: green; color: aqua;" >
-      <div class="contact-details">
-        <span class="contact-item"><i class="fas fa-phone"></i> Contact us: (254) 07222209838</span>
-        <span class="contact-item"><i class="far fa-envelope"></i> Email: sales@farmfeedslimited.com</span>
-    </div>
         <a href="{% url 'shop:homepage' %}">
             <div class="container custom-fade-in"><img src="/static/img/socials/FarmFeedsLogo.svg" style="height: 80px;" alt="">
         </a>
@@ -42,24 +38,17 @@
                 class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown-3">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link active px-lg-3 py-lg-4" aria-current="page"
-                        href="{% url 'shop:homepage' %}">Home</a></li>
-                <li class="nav-item"><a class="nav-link px-lg-3 py-lg-4" href="{% url 'shop:about' %}">About</a>
+                <li class="nav-item"><a style="color: white;" class="nav-link active px-lg-3 py-lg-4" aria-current="page"
+                        href="{% url 'shop:homepage' %}"><b>Home</b></a></li>
+                <li class="nav-item"><a style="color: white;" class="nav-link px-lg-3 py-lg-4" href="{% url 'shop:about' %}"><b>About</b></a>
                 </li>
-                <li class="nav-item"><a class="nav-link px-lg-3 py-lg-4" href="{% url 'shop:team' %}">Team</a>
+                <li class="nav-item"><a style="color: white;" class="nav-link px-lg-3 py-lg-4" href="{% url 'shop:team' %}"><b>Team</b></a>
                 </li>
-                <li class="nav-item"><a class="nav-link px-lg-3 py-lg-4" href="{% url 'shop:distributors' %}"> Distributors</a>
+                <li class="nav-item"><a style="color: white;" class="nav-link px-lg-3 py-lg-4" href="{% url 'shop:distributors' %}"><b>Distributors</b></a>
                 </li>
-                <li class="nav-item"><a class="nav-link px-lg-3 py-lg-4" href="{% url 'shop:product_list' %}">Products</a>
+                <li class="nav-item"><a style="color: white;" class="nav-link px-lg-3 py-lg-4" href="{% url 'shop:product_list' %}"><b>Products</b></a>
                 </li>
-                {% if request.user.is_authenticated%}
-                <li class="nav-item"><a class="nav-link px-lg-3 py-lg-4" href="{% url 'accounts:logout' %}">Logout</a>
-                </li>
-                {% else %}
-                <li class="nav-item"><a class="nav-link px-lg-3 py-lg-4" href="{% url 'accounts:login' %}">Login</a>
-                </li>
-                {% endif %}
-                <li class="nav-item"><a class="nav-link px-lg-3 py-lg-4" href="{% url 'blog:post_list' %}">Blog</a>
+                <li class="nav-item"><a style="color: white;" class="nav-link px-lg-3 py-lg-4" href="{% url 'blog:post_list' %}"><b>News</b></a>
                 </li>
             </ul>
 
