@@ -59,12 +59,16 @@ class Distributors(models.Model):
     location = models.CharField(max_length=200)
     contacts = models.CharField(max_length=12)
     tag = TaggableManager()
+    active = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name
 
     def get_absolute_url(self):
         return reverse('shop:distributors', args=[self.id, self.slug])
+
+    class Meta:
+        verbose_name_plural = 'Distributors'
 
 
 class Subscription(models.Model):
@@ -73,6 +77,9 @@ class Subscription(models.Model):
 
     def __str__(self):
         return self.email
+
+    class Meta:
+        verbose_name_plural = 'Subscriptions'
 
 
 class Order(models.Model):
@@ -85,3 +92,16 @@ class Order(models.Model):
 
     def __str__(self):
         return self.product_name
+
+
+class ContactUs(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    subject = models.CharField(max_length=100)
+    message = models.TextField()
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name_plural = 'Contact Us'

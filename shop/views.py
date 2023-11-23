@@ -1,7 +1,7 @@
 from django.conf import settings
 from twilio.rest import Client
-from django.shortcuts import render, get_object_or_404
-from .models import Category, Product, Distributors
+from django.shortcuts import render, get_object_or_404, redirect
+from .models import Category, Product, Distributors, ContactUs
 from cart.forms import CartAddProductForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from taggit.models import Tag
@@ -10,7 +10,7 @@ from django.views.generic.base import TemplateView
 from django.views.generic import View
 from django.http import JsonResponse
 from django.contrib import messages
-from .forms import SubscriptionForm, OrderForm
+from .forms import SubscriptionForm, OrderForm, ContactUsForm
 
 
 # Create your views here.
@@ -27,8 +27,6 @@ def team(request):
 
 def about(request):
     return render(request, 'shop/product/about.html')
-
-
 
 
 def product_list(request, category_slug=None):
@@ -59,7 +57,7 @@ def product_detail(request, id, slug):
 
 
 def distributors(request):
-    distributors = Distributors.objects.all()
+    distributors = Distributors.objects.filter(active=True)
     paginator = Paginator(distributors, 10)
     page = request.GET.get('page')
     try:
@@ -147,9 +145,10 @@ def subscribe(request):
             messages.success(request, 'You have been subscribed successfully')
 
     else:
+        messages.error(request, 'Please correct the errors in the form')
         form = SubscriptionForm()
 
-    return render(request, 'shop:distributors', {'form': form})
+    return render(request, 'shop/products/distributors.html', {'form': form})
 
 
 def create_order(request):
@@ -159,9 +158,38 @@ def create_order(request):
         if form.is_valid():
             form.save()
             messages.success(
-                request, 'Your order has been placed successfully')
+                request, 'Your order has been placed successfully, We will call you soon!!')
             return render(request, 'shop/product/homepage.html')
 
     else:
         form = OrderForm()
     return render(request, 'shop/product/order.html', {'form': form})
+
+
+def contactus(request):
+    '''A view for the contact us page'''
+
+    form = ContactUsForm()  # Create an instance of the form
+
+    if request.method == 'POST':
+        form = ContactUsForm(request.POST)
+        if form.is_valid():
+            # Create a ContactUs model instance but don't save it yet
+            contact_us_instance = ContactUs(
+                name=form.cleaned_data['name'],
+                email=form.cleaned_data['email'],
+                subject=form.cleaned_data['subject'],
+                message=form.cleaned_data['message']
+            )
+
+            # Save the instance to the database
+            contact_us_instance.save()
+
+            messages.success(
+                request, 'Your message has been sent successfully')
+            # Replace with the actual URL name to redirect to
+            return redirect('shop:homepage')
+        else:
+            messages.error(request, 'Please correct the errors in the form')
+
+    return render(request, 'shop/product/contact.html', {'form': form})

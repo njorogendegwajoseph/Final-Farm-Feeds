@@ -5,11 +5,12 @@
           <!-- Left Column -->
           <div class="col-md-12 animate__animated animate__fadeInLeft">
               <div class="hero-content">
-                  <h1 class="hero-title nice_text" style="font-size: 90px; color: red;"><b>Economy Farm Feeds Limited</b></h1>
+                  <h1 class="hero-title nice_text" style="font-size: 90px; color: red;"><b>Economy Farm Products Limited</b></h1>
                   <p class="hero-subtitle" style="color: red; font-size: 40px;">Healthy, high yielding livestock!</p>
-                  <a href="{% url 'shop:about' %}" class="btn btn-success btn-lg">About Us</a>
+                  <a href="{% url 'shop:about' %}" class="btn btn-success btn-sm">About Us</a>
+                  <button class="btn btn-sm btn-success my-4" data-bs-toggle="modal" data-bs-target="#whatsappModal" title="WhatsApp">WhatsApp us! <i class="fab fa-whatsapp" style="font-size: 23px;"></i></button>
               </div>
-              <button class="btn btn-success my-4 animate-bounce" data-bs-toggle="modal" data-bs-target="#whatsappModal" title="WhatsApp">WhatsApp us! <i class="fab fa-whatsapp" style="font-size: 23px;"></i></button>
+              
           </div>
       </div>
   </div>
@@ -17,7 +18,7 @@
 
 
         <!-- Right Column with Carousel -->
-        <div class="col-md-12 m-2">
+        <div class="col-fluid" style="height: 500px;">
           <!-- Insert your carousel code here -->
           <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
@@ -32,7 +33,7 @@
               <div class="carousel-item active fade-in animate__animated animate__fadeIn">
                 <img src="/static/img/newanimes/betterchicks.avif" style="height: 400px;" alt="Image 1" />
                 <div class="carousel-caption">
-                  <h3 class="carousel-title" style="font-family: arapey; font-size: 80px;">Our Products</h3>
+                  <h3 class="carousel-title" style="font-family: arapey; font-size: 80px; color: green;">Our Products</h3>
                   <a href="{% url 'shop:product_list' %}" class="btn btn-success">See Products</a>
                   <a href="{% url 'shop:create_order' %}" class="btn btn-success">Create Order</a>
                 </div>
@@ -41,7 +42,7 @@
               <div class="carousel-item fade-in animate__animated animate__fadeIn">
                 <img src="/static/img/newanimes/dog.png" style="height: 400px;" alt="Image 2" />
                 <div class="carousel-caption">
-                  <h3 class="carousel-title" style="font-family: arapey; font-size: 80px;">Our Products</h3>
+                  <h3 class="carousel-title" style="font-family: arapey; font-size: 80px; color: green;">Our Products</h3>
                   <a href="{% url 'shop:product_list' %}" class="btn btn-success">See Products</a>
                   <a href="{% url 'shop:create_order' %}" class="btn btn-success">Create Order</a>
                 </div>
@@ -50,7 +51,7 @@
               <div class="carousel-item fade-in animate__animated animate__fadeIn">
                 <img src="/static/img/newanimes/pigs-Duroc-farm-Highlands-of-Scotland.webp" style="height: 400px;" alt="Image 2" />
                 <div class="carousel-caption">
-                  <h3 class="carousel-title" style="font-family: arapey; font-size: 80px;">Our Products</h3>
+                  <h3 class="carousel-title" style="font-family: arapey; font-size: 80px; color: green;">Our Products</h3>
                   <a href="{% url 'shop:product_list' %}" class="btn btn-success">See Products</a>
                   <a href="{% url 'shop:create_order' %}" class="btn btn-success">Create Order</a>
                 </div>
@@ -76,7 +77,7 @@
   <div class="container py-4 py-xl-5">
     <div class="row mb-5">
       <div class="col-md-8 col-xl-6 text-center mx-auto">
-        <h2 style="font-family: arapey; font-size: 60px;">Our Stories</h2>
+        <h2 style="font-family: arapey; font-size: 60px; color: green;">Our Stories</h2>
         <p class="w-lg-50">We have come a long way, with our dear customers in mind, and as we improve our products, we update you and want to hear from you!</p>
       </div>
     </div>
@@ -146,7 +147,7 @@
   <!-- product_gallery.html -->
 <section class="product-section">
   <div class="container">
-      <h2 class="section-title" style="font-size: 40px;"><b>Our Product Gallery</b></h2>
+      <h2 class="section-title" style="font-size: 40px; color: green;"><b>Our Product Gallery</b></h2>
 
       <div class="photo-gallery">
         <div class="photo">
@@ -177,7 +178,7 @@
 
   </div>
 {% endblock %} {% block contactus %}
-  <h1 class="text-center mt-4" style="font-family: merriweather">Our Numbers</h1>
+  <h1 class="text-center mt-4" style="font-family: merriweather; color:green">Our Numbers</h1>
   <div class="container-fluid">
     <div class="row">
       <div class="col-lg-12">
@@ -218,7 +219,7 @@
 
   <!-- Product promo -->
 
-  <h1 class="text-center mt-4" style="font-family: merriweather">Our products</h1>
+  <h1 class="text-center mt-4" style="font-family: merriweather; color: green;">Our Store</h1>
   <section class="container">
     <div class="row">
       <div class="col-lg-6">
@@ -235,7 +236,7 @@
   </section>
   {% comment %}companys we have worked with{% endcomment %}
   <div class="container">
-    <h2 class="my-4" style="font-family: merriweather; font-size: 30px; text-align: center;">Companies We Work With...</h2>
+    <h2 class="my-4" style="font-family: merriweather; font-size: 30px; text-align: center; color: green;">Companies We Work With...</h2>
     <div class="row justify-content-center">
       <div class="col-md-3">
         <div class="company-logo text-center">
@@ -262,84 +263,29 @@
     </form>
 
 
-
-
-  {% comment %}reviews{% endcomment %}
-  <section class="reviews-section m-2">
+  {% comment %} lead section {% endcomment %}
+  <section class="lead-section mt-3" style="height: 400px;">
     <div class="container">
-      <h2 class="reviews-title display-4 text-center mb-5" style="font-family: merriweather; font-size: 30px;">Customer Reviews</h2>
-
-      <!-- Review Cards -->
-      <div class="row">
-        <div class="col-md-4">
-          <div class="review-card text-center p-4">
-            <img src="/static/img/people/DSC_0003.JPG" alt="Reviewer 1" class="review-avatar img-fluid mb-3 rounded-circle" />
-            <div class="reviewer-name h5 mb-2">John Doe</div>
-            <div class="review-text lead">"Exceptional service! I couldn't be happier with the results. Highly recommended."</div>
-          </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h2 style="font-family: arapey; color: green;">Need to contact us...</h2>
+                <p style="font-family: arapey;">
+                    Discover high-quality farm feeds for your livestock. Our feeds are specially crafted to meet the nutritional needs of your animals, ensuring their health and productivity.
+                </p>
+                <p style="font-family: arapey;">
+                    Explore our wide range of feeds, and feel free to <a href="{% url 'shop:contactus' %}">contact us</a> for any inquiries or assistance.
+                </p>
+            </div>
+            <div class="col-md-6">
+                <!-- You can add an image or any other visual elements here -->
+                <img src="/static/img/needcontact.jpg" alt="" style="height: 200px; width: 80%; border-radius: 10px;">
+            </div>
         </div>
-
-        <div class="col-md-4">
-          <div class="review-card text-center p-4">
-            <img src="/static/img/people/DSC_0006.JPG" alt="Reviewer 2" class="review-avatar img-fluid mb-3 rounded-circle" />
-            <div class="reviewer-name h5 mb-2">Jane Smith</div>
-            <div class="review-text lead">"I was amazed by the quality of the product. Thank you for exceeding my expectations!"</div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="review-card text-center p-4">
-            <img src="/static/img/people/DSC_0054.JPG" alt="Reviewer 3" class="review-avatar img-fluid mb-3 rounded-circle" />
-            <div class="reviewer-name h5 mb-2">Anna Johnson</div>
-            <div class="review-text lead">"The service provided by this company is top-notch. I will definitely return for more."</div>
-          </div>
-        </div>
-      </div>
     </div>
-  </section>
+</section>
 
-  <!-- Contact us section -->
+ 
 
-  <div class="container mt-5">
-    <div class="row">
-      <div class="col-lg-12">
-        <h2 style="font-family: merriweather">Contact Us <i class="fas fa-envelope"></i></h2>
-        <form>
-          <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" class="form-control" id="name" placeholder="Your Name" />
-          </div>
-          <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" class="form-control" id="email" placeholder="Your Email" />
-          </div>
-          <div class="form-group">
-            <label for="message">Message:</label>
-            <textarea class="form-control" id="message" rows="4" placeholder="Your Message"></textarea>
-          </div>
-          <button type="submit" class="btn btn-info"><i class="fas fa-paper-plane"></i> Submit</button>
-        </form>
-      </div>
-      <div class="col-lg-6 mt-5">
-        <h2 style="font-family: merriweather">Visit Us <i class="fas fa-map-marker-alt"></i></h2>
-        <p style="font-family: merriweather">Economy Farm Feeds</p>
-        <p style="font-family: merriweather">Ndeiya, Limuru</p>
-        <p style="font-family: merriweather">Kenya</p>
 
-        <h2 style="font-family: merriweather">Contact Information <i class="fas fa-phone"></i></h2>
-        <p style="font-family: merriweather">
-          Email: sales@ecnomyfarmproducts.com <i class="fas fa-envelope"></i>
-        </p>
-        <p style="font-family: merriweather">
-          Phone: 0722209838 <i class="fas fa-phone"></i>
-        </p>
-      </div>
-    </div>
-    <div class="row mt-4">
-      <div class="col-lg-12">
-        <!-- Embed Google Map iframe -->
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12345.678901234567!2d-0.12345678901234567!3d12.345678901234567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDAyJzI4LjAiTiAwwrAyMCcwMy44IkU!5e0!3m2!1sen!2sus!4v1234567890123" width="100%" height="450" frameborder="0" style="border: 0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-      </div>
-    </div>
-  </div>
+
 {% endblock %}

@@ -29,7 +29,7 @@
 
 <body style="background-color: aliceblue;">
     {% block nav %}
-    <nav class="navbar navbar-expand-lg navbar-light py-lg-1" style="background-color: green; color: aqua;" >
+    <nav class="navbar navbar-expand-lg navbar-light py-lg-1" style="background-color: rgb(0, 100, 0); color: aqua;" >
         <a href="{% url 'shop:homepage' %}">
             <div class="container custom-fade-in"><img src="/static/img/socials/FarmFeedsLogo.svg" style="height: 80px;" alt="">
         </a>
@@ -38,17 +38,17 @@
                 class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown-3">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a style="color: white;" class="nav-link active px-lg-3 py-lg-4" aria-current="page"
+                <li class="nav-item"><a style="color: red;" class="nav-link active px-lg-3 py-lg-4" aria-current="page"
                         href="{% url 'shop:homepage' %}"><b>Home</b></a></li>
-                <li class="nav-item"><a style="color: white;" class="nav-link px-lg-3 py-lg-4" href="{% url 'shop:about' %}"><b>About</b></a>
+                <li class="nav-item"><a style="color: red;" class="nav-link px-lg-3 py-lg-4" href="{% url 'shop:about' %}"><b>About</b></a>
                 </li>
-                <li class="nav-item"><a style="color: white;" class="nav-link px-lg-3 py-lg-4" href="{% url 'shop:team' %}"><b>Team</b></a>
+                <li class="nav-item"><a style="color: red;" class="nav-link px-lg-3 py-lg-4" href="{% url 'shop:distributors' %}"><b>Distributors</b></a>
                 </li>
-                <li class="nav-item"><a style="color: white;" class="nav-link px-lg-3 py-lg-4" href="{% url 'shop:distributors' %}"><b>Distributors</b></a>
+                <li class="nav-item"><a style="color: red;" class="nav-link px-lg-3 py-lg-4" href="{% url 'shop:contactus' %}"><b>Contact Us</b></a>
                 </li>
-                <li class="nav-item"><a style="color: white;" class="nav-link px-lg-3 py-lg-4" href="{% url 'shop:product_list' %}"><b>Products</b></a>
+                <li class="nav-item"><a style="color: red;" class="nav-link px-lg-3 py-lg-4" href="{% url 'shop:product_list' %}"><b>Products</b></a>
                 </li>
-                <li class="nav-item"><a style="color: white;" class="nav-link px-lg-3 py-lg-4" href="{% url 'blog:post_list' %}"><b>News</b></a>
+                <li class="nav-item"><a style="color: red;" class="nav-link px-lg-3 py-lg-4" href="{% url 'blog:post_list' %}"><b>News</b></a>
                 </li>
             </ul>
 
@@ -112,15 +112,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
-                    <h5 style='font-family: arapey;'>About Us</h5>
+                    <h5 style="font-family: arapey;">About Us</h5>
                     <p style='font-family: arapey;'>We strive to bring you the best in every produce, a promise we made from inception of this company!</p>
                 </div>
                 <div class="col-md-3">
                     <h5 style='font-family: arapey;'>Quick Links</h5>
                     <ul class="list-unstyled">
-                        <li style='font-family: arapey;'><a href="{% url 'shop:homepage' %}">Home</a></li>
+                        <li style='font-family: arapey; color: white;'><a href="{% url 'shop:homepage' %}">Home</a></li>
                         <li style='font-family: arapey;'><a href="{% url 'shop:product_list' %}">Products</a></li>
-                        <li style='font-family: arapey;'><a href="#">Services</a></li>
+                        <li style='font-family: arapey;'><a href="{% url 'blog:post_list' %}">News</a></li>
                         <li style='font-family: arapey;'><a href="{% url 'shop:about' %}">Contact</a></li>
                     </ul>
                 </div>

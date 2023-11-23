@@ -21,4 +21,6 @@ def post_list(request):
 def post_detail(request, year, month, day, post):
     post = get_object_or_404(Post, slug=post, status='published',
                              publish__year=year, publish__month=month, publish__day=day)
-    return render(request, 'blog/post/detail.html', {'post': post})
+    '''get all post excpt the current post'''
+    related_posts = Post.objects.all().exclude(id=post.id)[:4]
+    return render(request, 'blog/post/detail.html', {'post': post, 'related_posts': related_posts})

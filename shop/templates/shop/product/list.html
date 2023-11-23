@@ -49,11 +49,12 @@
           <div class="row">
               <!-- Product Cards -->
               {% for product in products %}
-              <div class="col-md-4">
+              <div class="col-md-6">
                   <div class="m-2 shadow">
                     {% if product.image %}
-                      <img src="{{product.image.url}}" style="height: 300px;" class="card-img-top"
-                          alt="Product Image">
+                    <a href="{{ product.image.url }}">
+                      <img src="{{ product.image.url }}" style="height: 400px; width: 100%" class="card-img-top" alt="Product Image">
+                  </a>
                     {% else %}
                     <img src="/static/img/product1.webp" style="height: 300px;" class="card-img-top"
                           alt="Product Image">
@@ -301,7 +302,7 @@
 
 {% block services %}
 
-<div class="section text-center m-2">
+{% comment %} <div class="section text-center m-2">
   <h3 class="text-center" style="font-family: 'Arapey', serif; color: #3D5A80;">Feeding Instructions</h3>
   <div id="accordion-1" class="accordion" role="tablist">
       <div class="accordion-item">
@@ -365,7 +366,7 @@
           </div>
       </div>
   </div>
-</div>
+</div> {% endcomment %}
 
 
 
@@ -380,9 +381,11 @@
           <div class="col-md-4">
               <div class="product-card">
                   <span class="badge badge-primary">Top Products</span>
-                  <img style="height: 300px; width: 400px;" src="{{product.image.url}}" alt="{{ product.name }}" class="img-fluid">
+                  <a href="{{ product.image.url }}">
+                    <img src="{{ product.image.url }}" style="height: 400px; width: 100%" class="card-img-top" alt="Product Image">
+                </a>
                   <h3 class="lead" style="color: green; font-family: arapey; font-size: 30px;">{{ product.name }}</h3>
-                  <p>{{ product.description }}</p>
+                  <p>{{ product.description|truncatewords:10 }}</p>
                   <a href="{{product.get_absolute_url}}" class="btn btn-success">Details</a>
                   <!-- Add more product details here -->
               </div>

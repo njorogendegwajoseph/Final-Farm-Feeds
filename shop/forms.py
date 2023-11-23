@@ -1,6 +1,6 @@
 from django import forms
 from .models import Subscription
-from .models import Order
+from .models import Order, ContactUs
 
 
 class SubscriptionForm(forms.ModelForm):
@@ -27,3 +27,9 @@ class OrderForm(forms.ModelForm):
         self.fields['email'].widget.attrs.update({'class': 'form-control'})
         self.fields['additional_notes'].widget.attrs.update(
             {'class': 'form-control', 'rows': '4'})
+
+
+class ContactUsForm(forms.ModelForm):
+    class Meta:
+        model = ContactUs
+        fields = ['name', 'email', 'subject', 'message']

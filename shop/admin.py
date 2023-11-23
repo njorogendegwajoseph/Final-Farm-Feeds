@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Product, Distributors, Subscription, Order
+from .models import Category, Product, Distributors, Subscription, Order, ContactUs
 # Register your models here.
 
 
@@ -19,8 +19,8 @@ class ProductAdmin(admin.ModelAdmin):
 
 @admin.register(Distributors)
 class DistributorAdmin(admin.ModelAdmin):
-    list_display = ['name', 'location']
-    list_filter = ['location']
+    list_display = ['name', 'location', 'active']
+    list_filter = ['location', 'active']
     prepopulated_fields = {'slug': ('name',)}
 
 
@@ -36,3 +36,10 @@ class OrderAdmin(admin.ModelAdmin):
     list_filter = ['product_name', 'customer_name', 'contact_number', 'email']
     list_editable = ['quantity']
     prepopulated_fields = {'product_name': ('product_name',)}
+
+
+@admin.register(ContactUs)
+class ContactUsAdmin(admin.ModelAdmin):
+    list_display = ['name', 'email', 'subject', 'message']
+    list_filter = ['name', 'email', 'subject']
+    prepopulated_fields = {'subject': ('subject',)}

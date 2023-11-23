@@ -434,3 +434,21 @@ body {
 .photo:hover .caption {
   opacity: 1;
 }
+.lead-section {
+  background-color: #f8f9fa;
+  padding: 50px 0;
+}
+
+.lead-section h2 {
+  color: #07fa27;
+}
+
+.lead-section p {
+  font-size: 18px;
+  color: #555;
+}
+
+.lead-section a {
+  color: #1208a3;
+  text-decoration: underline;
+}
