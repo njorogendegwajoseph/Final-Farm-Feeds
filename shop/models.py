@@ -83,6 +83,8 @@ class Subscription(models.Model):
 
 
 class Order(models.Model):
+    '''Order model for placing orders, want order to be a list of products, so we use many to many field'''
+
     product_name = models.CharField(max_length=100)
     quantity = models.PositiveIntegerField()
     customer_name = models.CharField(max_length=100)
