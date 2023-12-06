@@ -73,6 +73,6 @@ vine==5.0.0
 wcwidth==0.2.6
 weasyprint==60.0
 webencodings==0.5.1
-Werkzeug==2.3.7
+Werkzeug==3.0.1
 yarl==1.9.2
 zopfli==0.2.3
