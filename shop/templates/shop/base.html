@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Arapey&family=Cookie&family=Dancing+Script:wght@700&family=Frank+Ruhl+Libre:wght@300;900&family=Merriweather:wght@700&family=Roboto+Slab:wght@200&display=swap" rel="stylesheet">
     
     
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,6 +38,8 @@
           <a href="{% url 'shop:homepage' %}">
               <img src="/static/img/socials/FarmFeedsLogo.svg" style="height: 80px;" alt="FarmFeeds Logo">
           </a>
+          <p class="m-3" style="color: white; font-family: Dancing script; font-size: 30px;">Economy Farm Products</p>
+          <div class="vertical-line"></div>
           <button data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown-3" class="navbar-toggler"
               type="button" aria-controls="navbarNavDropdown-3" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -59,6 +64,10 @@
                   <li class="nav-item">
                       <a style="color: white; font-family: arapey;" class="nav-link px-lg-3 py-lg-4" href="{% url 'blog:post_list' %}"><b>News</b></a>
                   </li>
+                  <li class="nav-item">
+                    <a style="color: white; font-family: arapey;" class="nav-link px-lg-3 py-lg-4" href="{% url 'shop:generate_pdf' filename='filenewdavidson.pdf' %}" download><b>Get Creditor Form</b></a>
+                </li>
+                  
               </ul>
           </div>
       </div>
@@ -136,9 +145,9 @@
                 </div>
                 <div class="col-md-3">
                     <h5 style='font-family: arapey;'>Contact Us</h5>
-                    <p style='font-family: arapey;' style='font-family: arapey;'>Email: sales@farmfeeds.com<br>Phone: 0722209838</p>
-                    
+                    <p style='font-family: arapey;' style='font-family: arapey;'>Email: sales@farmfeeds.com<br>Phone: 0722209838</p>  
                 </div>
+                
                 <div class="col-md-3">
                     <h5 style='font-family: arapey;'>Follow Us</h5>
                     <ul class="list-inline">
@@ -154,6 +163,9 @@
                     <p class="text-center" style='font-family: arapey;'>© 2023 Farm Feeds. All rights reserved.</p>
                 </div>
             </div>
+        </div>
+        <div>
+          
         </div>
     </footer>
     {% endblock footer %}

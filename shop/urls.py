@@ -19,6 +19,8 @@ urlpatterns = [
     path('tag/<slug:tag_slug>/', views.distributors, name='post_list_by_tag'),
     path('map/', views.show_map, name='map'),
     path('subscribe/', views.subscribe, name='subscribe'),
+    path('download_file/<str:filename>/',
+         views.download_external_pdf, name='generate_pdf'),
     path('team/', views.team, name='team'),
     path('order/', views.create_order, name='create_order'),
     path('contact/', views.contactus, name='contactus'),

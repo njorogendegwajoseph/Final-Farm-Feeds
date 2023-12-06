@@ -1,5 +1,5 @@
 {% extends 'shop/base.html' %} {% load static %} {% block content %}
-<div class="hero-section">
+{% comment %} <div class="hero-section">
   <div class="container">
       <div class="row">
           <!-- Left Column -->
@@ -15,7 +15,7 @@
           </div>
       </div>
   </div>
-</div>
+</div> {% endcomment %}
 
 
         <!-- Right Column with Carousel -->
@@ -34,7 +34,7 @@
               <div class="carousel-item active fade-in animate__animated animate__fadeIn">
                 <img src="/static/img/chickshd6.jpg" style="height: 400px;" alt="Image 1" />
                 <div class="carousel-caption">
-                  <h3 class="carousel-title" style="font-family: arapey; font-size: 80px; color: green;">Our Products</h3>
+                  <h3 class="carousel-title" style="font-family: arapey; font-size: 80px; color: green;">Economy Farm Products</h3>
                   <a href="{% url 'shop:product_list' %}" class="btn btn-success">See Products</a>
                   <a href="{% url 'shop:create_order' %}" class="btn btn-success">Create Order</a>
                 </div>
@@ -43,7 +43,7 @@
               <div class="carousel-item fade-in animate__animated animate__fadeIn">
                 <img src="/static/img/newanimes/dog.png" style="height: 400px;" alt="Image 2" />
                 <div class="carousel-caption">
-                  <h3 class="carousel-title" style="font-family: arapey; font-size: 80px; color: green;">Our Products</h3>
+                  <h3 class="carousel-title" style="font-family: arapey; font-size: 80px; color: green;">Economy Farm Products</h3>
                   <a href="{% url 'shop:product_list' %}" class="btn btn-success">See Products</a>
                   <a href="{% url 'shop:create_order' %}" class="btn btn-success">Create Order</a>
                 </div>
@@ -52,7 +52,7 @@
               <div class="carousel-item fade-in animate__animated animate__fadeIn">
                 <img src="/static/img/newanimes/pigs-Duroc-farm-Highlands-of-Scotland.webp" style="height: 400px;" alt="Image 2" />
                 <div class="carousel-caption">
-                  <h3 class="carousel-title" style="font-family: arapey; font-size: 80px; color: green;">Our Products</h3>
+                  <h3 class="carousel-title" style="font-family: arapey; font-size: 80px; color: green;">Economy Farm Products</h3>
                   <a href="{% url 'shop:product_list' %}" class="btn btn-success">See Products</a>
                   <a href="{% url 'shop:create_order' %}" class="btn btn-success">Create Order</a>
                 </div>
@@ -70,10 +70,25 @@
             </a>
           </div>
         </div>
+        <section class="container-fluid">
+          <h1 class="text-center" style="font-family: merriweather; color: green;">Introducing Economy Farm Products</h1>
+          <div class="row">
+              <div class="col-md-8 mx-auto">
+                  <div class="embed-responsive embed-responsive-16by9">
+                      <video class="embed-responsive-item" controls>
+                          <!-- Replace 'your_video_url' with the correct path to your video -->
+                          <source src="media/blog_videos/60-30-10_Color_Rule.mp4" type="video/mp4">
+                          Your browser does not support the video tag.
+                      </video>
+                  </div>
+              </div>
+          </div>
+      </section>
       </div>
     </div>
   </div>
   <hr />
+
 {% endblock %} {% block portfolio %}
   <div class="container py-4 py-xl-5">
     <div class="row mb-5">

@@ -1,3 +1,6 @@
+import os
+from django.shortcuts import get_object_or_404
+from django.http import FileResponse
 from django.conf import settings
 from twilio.rest import Client
 from django.shortcuts import render, get_object_or_404, redirect
@@ -8,9 +11,10 @@ from taggit.models import Tag
 import json
 from django.views.generic.base import TemplateView
 from django.views.generic import View
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse, HttpResponseNotFound
 from django.contrib import messages
 from .forms import SubscriptionForm, OrderForm, ContactUsForm
+from reportlab.pdfgen import canvas
 
 
 # Create your views here.
@@ -193,3 +197,20 @@ def contactus(request):
             messages.error(request, 'Please correct the errors in the form')
 
     return render(request, 'shop/product/contact.html', {'form': form})
+
+
+def download_external_pdf(request, filename):
+    # Assuming the PDF files are stored in the 'media' folder
+    file_path = os.path.join(settings.MEDIA_ROOT, filename)
+
+    # Check if the file exists
+    if os.path.exists(file_path):
+        # Open the file and create a FileResponse with appropriate headers
+        with open(file_path, 'rb') as file:
+            response = FileResponse(file)
+            response['Content-Type'] = 'application/pdf'
+            response['Content-Disposition'] = f'inline; filename="{filename}"'
+            return response
+    else:
+        # Return a 404 Not Found response if the file does not exist
+        return HttpResponseNotFound('File not found')

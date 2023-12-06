@@ -32,3 +32,5 @@ setInterval(nextSlide, 5000);
 
 // Initial setup
 updateCarousel();
+
+

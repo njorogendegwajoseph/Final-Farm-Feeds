@@ -13,30 +13,17 @@
 
 {% block portfolio %}
 <!-- Product Details -->
-<div class="col text-center m-3">
-    <!-- Add a dropdown menu for weight categories -->
-    
+<div class="col text-center m-3" style="background-color: #f8f9fa; padding: 20px; border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+  <!-- Add a dropdown menu for weight categories -->
 
-    <img style="height: 500px; width: 50%; border-radius: 10px;" src="{% if product.image %}{{ product.image.url }}{% else %}{% static '/img/product1.webp' %}{% endif %}" alt="">
-    <h2 style="font-family: arapey; color: green; font-size: 40px;">{{ product.name }}</h2>
-    <a class="btn btn-sm btn-success" href="{{ product.category.get_absolute_url }}" style="font-family: arapey;"> All {{ product.category }}</a>
-    <p style="font-family: merriweather;">{{ product.description | linebreaks}}.</p>
-    <a href="{% url 'shop:create_order' %}" class="btn btn-success" style="font-family: arapey;">Create Order Now!!</a>
-    {% comment %} <label for="weight_category">Enter weight:</label>
-    <select id="weight_category" class="form-select mb-3" style="width: 150px; margin: 0 auto;"> {% endcomment %}
-
-
-        {% comment %} <option value="">Weight</option>
-        {% for category in weight_categories %}
-            <option value="{{ category.name }}">{{ category.name }}</option>
-        {% endfor %}
-    </select> {% endcomment %}
-    {% comment %} <form action="{% url 'cart:cart_add' product.id %}" method="post">
-        {{ cart_product_form }}
-        {% csrf_token %}
-        <input type="submit" value="Add to Cart">
-    </form> {% endcomment %}
+  <img style="height: 500px; width: 50%; border-radius: 10px; margin-bottom: 20px;" src="{% if product.image %}{{ product.image.url }}{% else %}{% static '/img/product1.webp' %}{% endif %}" alt="">
+  <h2 style="font-family: 'arapey', sans-serif; color: #d9534f; font-size: 40px; margin-bottom: 10px;">{{ product.name }}</h2>
+  <a class="btn btn-sm btn-success" href="{{ product.category.get_absolute_url }}" style="font-family: 'arapey', sans-serif; background-color: #218838; border-color: #218838;"> All {{ product.category }}</a>
+  <p style="font-family: 'merriweather', serif; color: #495057;">{{ product.description | linebreaks}}.</p>
+  <a href="{% url 'shop:create_order' %}" class="btn btn-success" style="font-family: 'arapey', sans-serif; background-color: #d9534f; border-color: #d9534f;">Create Order Now!!</a>
 </div>
+
+
 
 <script>
     // JavaScript to handle the weight category selection and filtering
