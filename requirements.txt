@@ -6,7 +6,6 @@ asgiref==3.7.2
 async-timeout==4.0.3
 attrs==23.1.0
 billiard==4.1.0
-braintree==4.22.0
 Brotli==1.1.0
 cachetools==5.3.1
 cairocffi==1.6.1
@@ -28,7 +27,6 @@ Django==4.2.5
 django-extensions==3.2.3
 django-taggit==4.0.0
 django-weasyprint==2.2.1
-flower==2.0.1
 fonttools==4.42.1
 frozenlist==1.4.0
 google-api-core==2.12.0
