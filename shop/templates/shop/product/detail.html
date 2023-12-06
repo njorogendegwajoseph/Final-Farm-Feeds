@@ -19,9 +19,9 @@
 
     <img style="height: 500px; width: 50%; border-radius: 10px;" src="{% if product.image %}{{ product.image.url }}{% else %}{% static '/img/product1.webp' %}{% endif %}" alt="">
     <h2 style="font-family: arapey; color: green; font-size: 40px;">{{ product.name }}</h2>
-    <a class="btn btn-sm btn-success" href="{{ product.category.get_absolute_url }}"> All {{ product.category }}</a>
-    <p style="margin: 10px; font-family: merriweather;" >{{ product.description}}.</p>
-    <a href="{% url 'shop:create_order' %}" class="btn btn-success">Create Order Now!!</a>
+    <a class="btn btn-sm btn-success" href="{{ product.category.get_absolute_url }}" style="font-family: arapey;"> All {{ product.category }}</a>
+    <p style="font-family: merriweather;">{{ product.description | linebreaks}}.</p>
+    <a href="{% url 'shop:create_order' %}" class="btn btn-success" style="font-family: arapey;">Create Order Now!!</a>
     {% comment %} <label for="weight_category">Enter weight:</label>
     <select id="weight_category" class="form-select mb-3" style="width: 150px; margin: 0 auto;"> {% endcomment %}
 

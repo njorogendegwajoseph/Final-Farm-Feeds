@@ -1,19 +1,17 @@
 {% extends 'shop/base.html' %}
 
-
 {% block content %}
 
 {% endblock content %}
-{% block portfolio %}
 
+{% block portfolio %}
 <div class="container mt-5">
   <div class="row">
     <div class="col-md-8 col-xl-6 text-center mx-auto animate__animated animate__zoomIn animate__slow">
-      <h2 style="font-family: 'Arapey', serif; font-size: 70px;">Our Distributors</h2>
-      <p class="w-lg-75 mx-auto mb-4">We have efficient distributors who are always stocked with your products so that you never lack! Below is the list. Want to register as a distributor?
+      <h2 style="font-family: 'Arapey', serif; font-size: 70px; color: #4CAF50;">Explore Our Distributors</h2>
+      <p class="w-lg-75 mx-auto mb-4 text-muted" style="font-family: merriweather;">Discover our efficient distributors who are always stocked with your favorite products. Never run out of supplies! Check out the list below. Interested in becoming a distributor?
       </p>
-      <p><i class="fas fa-arrow-down"></i>
-      </p>
+  
       <button class="btn btn-success my-4 animate-bounce" data-bs-toggle="modal" data-bs-target="#whatsappModal" title="WhatsApp">WhatsApp us! <i class="fab fa-whatsapp" style="font-size: 23px;"></i></button>
     </div>
 
@@ -28,7 +26,7 @@
     </div>
 
     <div class="col-md-12 table-responsive">
-      <table class="table custom-table">
+      <table class="table custom-table table-bordered table-striped">
         <thead class="thead-dark">
           <tr>
             <th>Name</th>
@@ -39,8 +37,8 @@
         <tbody>
           {% for c in distributors %}
           <tr>
-            <td><a href="#">{{ c.name }}</a></td>
-            <td>{{ c.location }}</td>
+            <td><a href="#" style="color: black; font-family: merriweather;">{{ c.name }}</a></td>
+            <td style="color: black; font-family: merriweather;">{{ c.location }}</td>
             <td>{{ c.contacts }}</td>
           </tr>
           {% endfor %}
@@ -53,34 +51,4 @@
     </div>
   </div>
 </div>
-
 {% endblock portfolio %}
-
-
-{% comment %} {% block modal %}
-<div class="container-mt-5 my-2">
-    <div class="row">
-      <div class="col-lg-12 offset-lg-0">
-        <div class="card text-center">
-          <div class="card-header">
-            <h5 style="font-family: arapey;">Subscribe to Our Newsletter</h5>
-          </div>
-          <div class="card-body">
-            <p style="font-family: arapey;">Get the latest updates and news delivered to your inbox.</p>
-            <form method="post", action="{% url 'shop:subscribe' %}">
-              {% csrf_token %}
-              <div class="input-group mb-3">
-                <input type="email" class="form-control" placeholder="Your Email" aria-label="Your Email" aria-describedby="button-addon">
-                <div class="input-group-append">
-                  <button class="btn btn-outline-info" type="button" id="button-addon">Subscribe</button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-{% endblock modal %} {% endcomment %}

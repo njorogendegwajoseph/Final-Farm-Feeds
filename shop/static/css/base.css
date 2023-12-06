@@ -458,3 +458,9 @@ form div.field {
   background-color: #f8f9fa; /* Light background color */
   padding: 60px 0;
 }
+
+.bg-image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+}

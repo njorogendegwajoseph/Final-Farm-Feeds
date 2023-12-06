@@ -6,9 +6,10 @@
           <div class="col-md-12 animate__animated animate__fadeInLeft">
               <div class="hero-content">
                   <h1 class="hero-title nice_text" style="font-size: 90px; color: red;"><b>Economy Farm Products Limited</b></h1>
-                  <p class="hero-subtitle" style="color: red; font-size: 40px;">Healthy, high yielding livestock!</p>
-                  <a href="{% url 'shop:about' %}" class="btn btn-success btn-sm">About Us</a>
-                  <button class="btn btn-sm btn-success my-4" data-bs-toggle="modal" data-bs-target="#whatsappModal" title="WhatsApp">WhatsApp us! <i class="fab fa-whatsapp" style="font-size: 23px;"></i></button>
+                  <p class="hero-subtitle" style="color: red; font-size: 40px; font-family: merriweather;">Healthy, high yielding livestock!</p>
+                  <a href="{% url 'shop:about' %}" class="btn btn-success btn-sm" style="font-family: arapey;">About Us</a>
+                  <button style="font-family: arapey;" class="btn btn-sm btn-success my-4" data-bs-toggle="modal" data-bs-target="#whatsappModal" title="WhatsApp">whatsapp? </button>
+                  <i class="fab fa-whatsapp" style="font-size: 23px;"></i>
               </div>
               
           </div>
@@ -78,7 +79,7 @@
     <div class="row mb-5">
       <div class="col-md-8 col-xl-6 text-center mx-auto">
         <h2 style="font-family: arapey; font-size: 60px; color: green;">Our Stories</h2>
-        <p class="w-lg-50">We have come a long way, with our dear customers in mind, and as we improve our products, we update you and want to hear from you!</p>
+        <p class="w-lg-50" style="font-family: merriweather;">We have come a long way, with our dear customers in mind, and as we improve our products, we update you and want to hear from you!</p>
       </div>
     </div>
     <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3">
@@ -188,7 +189,7 @@
             <div class="progress">
               <div class="progress-bar bg-success" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">95%</div>
             </div>
-            <p class="card-text" style="font-family: arapey">95% of our sales target achieved.</p>
+            <p class="card-text" style="font-family: merriweather">95% of our sales target achieved.</p>
           </div>
         </div>
       </div>
@@ -199,7 +200,7 @@
             <div class="progress">
               <div class="progress-bar bg-info" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
             </div>
-            <p class="card-text" style="font-family: arapey">90% of total orders sold.</p>
+            <p class="card-text" style="font-family: merriweather">90% of total orders sold.</p>
           </div>
         </div>
       </div>
@@ -210,7 +211,7 @@
             <div class="progress">
               <div class="progress-bar bg-warning" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
             </div>
-            <p class="card-text" style="font-family: arapey">90% of customers are satisfied with our services.</p>
+            <p class="card-text" style="font-family: merriweather">90% of customers are satisfied with our services.</p>
           </div>
         </div>
       </div>
@@ -227,8 +228,8 @@
       </div>
       <div class="col-lg-6">
         <h2 style="font-family: merriweather">Welcome to Our Farm Feeds Store</h2>
-        <p style="font-family: arapey">At Farm Feeds Company, we offer a wide range of high-quality feeds for your livestock. Our products are carefully crafted to meet the nutritional needs of your animals, ensuring their health and productivity.</p>
-        <p style="font-family: arapey">Explore our selection of feeds, from poultry and livestock to specialty feeds, and find the perfect solution for your farm. We are committed to providing the best nutrition for your animals.</p>
+        <p style="font-family: merriweather">At Farm Feeds Company, we offer a wide range of high-quality feeds for your livestock. Our products are carefully crafted to meet the nutritional needs of your animals, ensuring their health and productivity.</p>
+        <p style="font-family: merriweather">Explore our selection of feeds, from poultry and livestock to specialty feeds, and find the perfect solution for your farm. We are committed to providing the best nutrition for your animals.</p>
         <a href="{% url 'shop:product_list' %}" class="btn btn-info">View Products</a>
         <a href="{% url 'shop:create_order' %}" class="btn btn-info">Create Order</a>
       </div>
@@ -268,12 +269,12 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <h2 style="font-family: arapey; color: green;">Need to contact us...</h2>
-                <p style="font-family: arapey;">
+                <h2 style="font-family: merriweather; color: green;">Need to contact us...</h2>
+                <p style="font-family: merriweather;">
                     Discover high-quality farm feeds for your livestock. Our feeds are specially crafted to meet the nutritional needs of your animals, ensuring their health and productivity.
                 </p>
-                <p style="font-family: arapey;">
-                    Explore our wide range of feeds, and feel free to <a href="{% url 'shop:contactus' %}">contact us</a> for any inquiries or assistance.
+                <p style="font-family: merriweather;">
+                    Explore our wide range of feeds, and feel free to <a href="{% url 'shop:contactus' %}">contact us</a> for any inquiries or assistance, or make any <a href="{% url 'shop:create_order' %}">orders.</a>
                 </p>
             </div>
             <div class="col-md-6">

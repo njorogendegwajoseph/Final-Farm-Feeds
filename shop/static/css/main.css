@@ -306,7 +306,7 @@ body {
 }
 
 .hero-content {
-  max-width: 80%; /* Adjust the content width as needed */
+  max-width: 100%; /* Adjust the content width as needed */
 }
 .nice_text {
   font-family: arapey;
@@ -451,4 +451,25 @@ body {
 .lead-section a {
   color: #1208a3;
   text-decoration: underline;
+}
+
+/* Navbar Animation on Load */
+.custom-fade-in {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Links Pop Bounce Animation */
+.navbar-nav .nav-item a {
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-item a:hover {
+  transform: scale(1.1);
 }
