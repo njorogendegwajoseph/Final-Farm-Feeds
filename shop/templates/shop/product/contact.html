@@ -5,52 +5,54 @@
     <div class="row justify-content-center">
       <div class="col-md-8">
         <div class="card shadow p-4">
-          <h2 class="text-center mb-4" style="font-family: 'Merriweather', serif; color: #4CAF50;">Contact Us</h2>
+          <fieldset>
+            <legend class="text-center mb-4" style="font-family: 'Merriweather', serif; color: #4CAF50; font-size: 2rem;">Contact Us</legend>
 
-          <form method="post" action="{% url 'shop:contactus' %}">
-            {% csrf_token %}
+            <form method="post" action="{% url 'shop:contactus' %}">
+              {% csrf_token %}
 
-            <div class="mb-3">
-              <label for="{{ form.name.id_for_label }}" class="form-label" style="font-family: 'Arapey', serif; color: #4CAF50;">Your Name</label>
-              {{ form.name }}
-              <div class="invalid-feedback">{{ form.name.errors }}</div>
+              <div class="mb-3">
+                <label for="{{ form.name.id_for_label }}" class="form-label" style="font-family: 'Arapey', serif; color: #4CAF50;">Your Name</label>
+                {{ form.name }}
+                <div class="invalid-feedback">{{ form.name.errors }}</div>
+              </div>
+
+              <div class="mb-3">
+                <label for="{{ form.email.id_for_label }}" class="form-label" style="font-family: 'Arapey', serif; color: #4CAF50;">Your Email</label>
+                {{ form.email }}
+                <div class="invalid-feedback">{{ form.email.errors }}</div>
+              </div>
+
+              <div class="mb-3">
+                <label for="{{ form.subject.id_for_label }}" class="form-label" style="font-family: 'Arapey', serif; color: #4CAF50;">Subject</label>
+                {{ form.subject }}
+                <div class="invalid-feedback">{{ form.subject.errors }}</div>
+              </div>
+
+              <div class="mb-3">
+                <label for="{{ form.message.id_for_label }}" class="form-label" style="font-family: 'Arapey', serif; color: #4CAF50;">Your Message</label>
+                {{ form.message }}
+                <div class="invalid-feedback">{{ form.message.errors }}</div>
+              </div>
+
+              <div class="text-center">
+                <button type="submit" class="btn btn-success" style="font-family: 'Arapey', serif; background-color: #4CAF50; border-color: #4CAF50;">Submit</button>
+              </div>
+            </form>
+
+            <hr class="mt-5" />
+
+            <div class="text-center mt-4">
+              <h4 class="mb-3" style="font-family: 'Merriweather', serif; color: #4CAF50;">Contact Information</h4>
+              <p class="mb-1" style="font-family: 'Arapey', serif; color: #4CAF50;">
+                Email: <a href="mailto:info@farmfeeds.com" style="color: #4CAF50;">info@farmfeeds.com</a>
+              </p>
+              <p class="mb-1" style="font-family: 'Arapey', serif; color: #4CAF50;">
+                Phone: <a href="tel:0722209838" style="color: #4CAF50;">0722209838</a>
+              </p>
+              <!-- Add more contact information as needed -->
             </div>
-
-            <div class="mb-3">
-              <label for="{{ form.email.id_for_label }}" class="form-label" style="font-family: 'Arapey', serif; color: #4CAF50;">Your Email</label>
-              {{ form.email }}
-              <div class="invalid-feedback">{{ form.email.errors }}</div>
-            </div>
-
-            <div class="mb-3">
-              <label for="{{ form.subject.id_for_label }}" class="form-label" style="font-family: 'Arapey', serif; color: #4CAF50;">Subject</label>
-              {{ form.subject }}
-              <div class="invalid-feedback">{{ form.subject.errors }}</div>
-            </div>
-
-            <div class="mb-3">
-              <label for="{{ form.message.id_for_label }}" class="form-label" style="font-family: 'Arapey', serif; color: #4CAF50;">Your Message</label>
-              {{ form.message }}
-              <div class="invalid-feedback">{{ form.message.errors }}</div>
-            </div>
-
-            <div class="text-center">
-              <button type="submit" class="btn btn-success" style="font-family: 'Arapey', serif; background-color: #4CAF50; border-color: #4CAF50;">Submit</button>
-            </div>
-          </form>
-
-          <hr class="mt-5" />
-
-          <div class="text-center mt-4">
-            <h4 class="mb-3" style="font-family: 'Merriweather', serif; color: #4CAF50;">Contact Information</h4>
-            <p class="mb-1" style="font-family: 'Arapey', serif; color: #4CAF50;">
-              Email: <a href="mailto:info@farmfeeds.com" style="color: #4CAF50;">info@farmfeeds.com</a>
-            </p>
-            <p class="mb-1" style="font-family: 'Arapey', serif; color: #4CAF50;">
-              Phone : <a href="mailto:info@farmfeeds.com" style="color: #4CAF50;">0722209838</a>
-            </p>
-            <!-- Add more contact information as needed -->
-          </div>
+          </fieldset>
         </div>
       </div>
     </div>
