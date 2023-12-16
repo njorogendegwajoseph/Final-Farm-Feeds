@@ -19,7 +19,8 @@
   <img style="height: 500px; width: 50%; border-radius: 10px; margin-bottom: 20px;" src="{% if product.image %}{{ product.image.url }}{% else %}{% static '/img/product1.webp' %}{% endif %}" alt="">
   <h2 style="font-family: 'arapey', sans-serif; color: #d9534f; font-size: 40px; margin-bottom: 10px;">{{ product.name }}</h2>
   <a class="btn btn-sm btn-success" href="{{ product.category.get_absolute_url }}" style="font-family: 'arapey', sans-serif; background-color: #218838; border-color: #218838;"> All {{ product.category }}</a>
-  <p style="font-family: 'merriweather', serif; color: #495057;">{{ product.description | linebreaks}}.</p>
+  <p style="font-family: 'merriweather', serif; color: #495057;"><b>{{ product.description | linebreaks}}.</b>
+  </p>
   <a href="{% url 'shop:create_order' %}" class="btn btn-success" style="font-family: 'arapey', sans-serif; background-color: #d9534f; border-color: #d9534f;">Create Order Now!!</a>
 </div>
 
