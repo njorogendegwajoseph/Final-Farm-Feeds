@@ -17,50 +17,44 @@
 
 {% endblock content %}
 
-
 {% block portfolio %}
 <div class="container-fluid py-2 py-xl-2" style="background-color: oldlace;">
   <h1 class="text-center mt-2" style="font-family: merriweather; color: green;">News Section</h1>
   <div class="row mb-5"></div>
-  <div class="row gy-4">
-    {% for post in posts %}
-      <div class="col-12 col-md-6 col-xl-4">
-        <div class="shadow shadow-2 my-2" style="background-color: aliceblue; border-radius: 10px;">
-          {% if post.image %}
-            <div class="card">
-              <img class="card-img-top w-100 d-block fit-cover" style="height: 400px; width: 100px;" src="{{ post.image.url }}" />
-            </div>
-          {% endif %}
 
-          {% if post.video %}
-            <div class="embed-responsive embed-responsive-16by9">
-              <video class="embed-responsive-item" controls>
-                <source src="{{ post.video.url }}" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          {% endif %}
+  <table class="table">
+    <tbody>
+      {% for post in posts %}
+        <tr>
+          <td>
+            {% if post.image %}
+              <img class="w-100 d-block fit-cover" style="height: 100px; width: 100px;" src="{{ post.image.url }}" alt="Post Image" />
+            {% endif %}
 
-          <div class="card-body p-4" style="background-color: honeydew; color: black; height: 250px; border-radius: 10px;">
+            {% if post.video %}
+              <div class="embed-responsive embed-responsive-16by9">
+                <video class="embed-responsive-item" controls>
+                  <source src="{{ post.video.url }}" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            {% endif %}
+          </td>
+          <td>
             <h4 class="card-title" style="font-family: merriweather;">
-              <a href="{{post.get_absolute_url}}" style="color: green;">{{post.title}}</a>
+              <a href="{{ post.get_absolute_url }}" style="color: green;">{{ post.title }}</a>
             </h4>
             <p style="font-family: arapey;">{{ post.content|truncatewords:10 }}</p>
             <p class="card-text" style="font-family: arapey;">
               {{ post.body|truncatewords:15 }}
             </p>
             <p class="text-muted mb-0">Published {{ post.publish }} by {{ post.author }}</p>
-          </div>
-        </div>
-      </div>
-    {% endfor %}
-  </div>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  {% include "shop/product/pagination.html" with page=posts %}
 </div>
-
-{% include "shop/product/pagination.html" with page=posts %}
-
-   
-
-
-
 {% endblock portfolio %}

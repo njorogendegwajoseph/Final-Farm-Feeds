@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 
-<body style="background-color: aliceblue;">
+<body>
     {% block nav %}
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: green;">
       <div class="container custom-fade-in">
@@ -64,9 +64,9 @@
                   <li class="nav-item">
                       <a style="color: white; font-family: arapey;" class="nav-link px-lg-3 py-lg-4" href="{% url 'blog:post_list' %}">News</a>
                   </li>
-                  <li class="nav-item">
+                  {% comment %} <li class="nav-item">
                     <a style="color: white; font-family: arapey;" class="nav-link px-lg-3 py-lg-4" href="{% url 'shop:generate_pdf' filename='filenewdavidson.pdf' %}" download>Get Creditor Form</a>
-                </li>
+                </li> {% endcomment %}
                   
               </ul>
           </div>
@@ -242,7 +242,7 @@ window.addEventListener("scroll", function () {
 
     </script>
 
-    <script>
+    {% comment %} <script>
       document.addEventListener('DOMContentLoaded', function () {
         // Add the 'animate__animated' and 'animate__fadeIn' classes when the page is loaded
         document.querySelector('.custom-fade-in').classList.add('animate__animated', 'animate__fadeIn');
@@ -259,7 +259,7 @@ window.addEventListener("scroll", function () {
           });
         });
       });
-    </script>
+    </script> {% endcomment %}
     
 
    

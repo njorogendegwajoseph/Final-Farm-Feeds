@@ -34,7 +34,7 @@
               <div class="carousel-item active fade-in animate__animated animate__fadeIn">
                 <img src="/static/img/chickshd6.jpg" style="height: 400px;" alt="Image 1" />
                 <div class="carousel-caption">
-                  <h3 class="carousel-title" style="font-family: arapey; font-size: 80px; color: red;"><b>Economy Farm Products Limited</b></h3>
+                  <h3 class="carousel-title" style="font-family: arapey; font-size: 6em; color: red;"><b>Economy Farm Products Limited</b></h3>
                   <a href="{% url 'shop:product_list' %}" class="btn btn-success" style="background-color: green;">See Products</a>
                   <a href="{% url 'shop:create_order' %}" class="btn btn-success" style="background-color: green;">Create Order</a>
                 </div>
@@ -43,7 +43,7 @@
               <div class="carousel-item fade-in animate__animated animate__fadeIn">
                 <img src="/static/img/newanimes/dog.png" style="height: 400px;" alt="Image 2" />
                 <div class="carousel-caption">
-                  <h3 class="carousel-title" style="font-family: arapey; font-size: 80px; color: red;"><b>Economy Farm Products Limited</b></h3>
+                  <h3 class="carousel-title" style="font-family: arapey; font-size: 6em; color: red;"><b>Economy Farm Products Limited</b></h3>
                   <a href="{% url 'shop:product_list' %}" class="btn btn-success" style="background-color: green;">See Products</a>
                   <a href="{% url 'shop:create_order' %}" class="btn btn-success" style="background-color: green;">Create Order</a>
                 </div>
@@ -52,7 +52,7 @@
               <div class="carousel-item fade-in animate__animated animate__fadeIn">
                 <img src="/static/img/newanimes/pigs-Duroc-farm-Highlands-of-Scotland.webp" style="height: 400px;" alt="Image 2" />
                 <div class="carousel-caption">
-                  <h3 class="carousel-title" style="font-family: arapey; font-size: 80px; color: red;"><b>Economy Farm Products Limited</b></h3>
+                  <h3 class="carousel-title" style="font-family: arapey; font-size: 6em; color: red;"><b>Economy Farm Products Limited</b></h3>
                   <a href="{% url 'shop:product_list' %}" class="btn btn-success" style="background-color: green;">See Products</a>
                   <a href="{% url 'shop:create_order' %}" class="btn btn-success" style="background-color: green;">Create Order</a>
                 </div>
@@ -73,20 +73,26 @@
       </div>
     </div>
   </div>
-  <section class="container-fluid">
-    <h1 class="text-center" style="font-family: merriweather; color: green;">Introducing Economy Farm Products</h1>
-    <div class="row">
-        <div class="col-md-8 mx-auto">
-            <div class="embed-responsive embed-responsive-16by9">
-                <video class="embed-responsive-item" controls>
-                    <!-- Replace 'your_video_url' with the correct path to your video -->
-                    <source src="media/blog_videos/60-30-10_Color_Rule.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-        </div>
+  <div class="row" style="position: relative; background-color: #f8f9fa; padding: 0; border-radius: 10px; overflow: hidden; color: #ff0000; font-family: 'Merriweather', serif; height: 500px;">
+
+    <!-- Content Overlapping Image -->
+    <div class="col-lg-12 position-absolute" style="z-index: 1; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+      <div class="text-center">
+        <h3 class="display-3" style="font-size: 80px; color: #ff0000;"><b>Our Products</b></h3>
+        <p class="lead" style="font-size: 24px; color: #ff0000;"><b>Healthy, high-yielding livestock</b></p>
+      </div>
     </div>
-</section>
+  
+    <!-- Image -->
+    <div class="col-lg-12" style="z-index: 0;">
+      <img src="/static/img/products/DSC_0048.jpg" alt="Farm Products" class="img-fluid rounded" style="max-width: 100%; height: auto; filter: brightness(120%);">
+    </div>
+  
+  </div>
+  
+
+
+
 
 {% endblock %} {% block portfolio %}
   <div class="container py-4 py-xl-5">
@@ -99,7 +105,7 @@
     <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3">
       <div class="col">
         <div>
-          <img class="card-img-top w-100 d-block fit-cover" style="height: 200px; border-radius: 10px" src="/static/img/newimages/IMG_20191027_160907.jpg" />
+          <img class="card-img-top w-100 d-block fit-cover" style="height: 200px; border-radius: 10px" src="/static/img/products/DSC_0083.JPG" />
           <div class="card-body p-4">
             <h4 class="card-title" style="font-family: arapey">A word from the Director</h4>
             <blockquote class="card-text">
@@ -117,7 +123,7 @@
       </div>
       <div class="col">
         <div>
-          <img class="card-img-top w-100 d-block fit-cover" style="height: 200px; border-radius: 10px" src="/static/img/newimages/IMG_20191027_160538.jpg" />
+          <img class="card-img-top w-100 d-block fit-cover" style="height: 200px; border-radius: 10px" src="/static/img/people/DSC_0220.jpg" />
           <div class="card-body p-4">
             <h4 class="card-title" style="font-family: arapey">A word from the Production Manager</h4>
             <blockquote class="card-text">
@@ -135,7 +141,7 @@
       </div>
       <div class="col">
         <div>
-          <img class="card-img-top w-100 d-block fit-cover" style="height: 200px; border-radius: 10px" src="/static/img/newimages/engineer.jpg" />
+          <img class="card-img-top w-100 d-block fit-cover" style="height: 200px; border-radius: 10px" src="/static/img/people/DSC_0001.jpg" />
           <div class="card-body p-4">
             <h4 class="card-title" style="font-family: arapey">A word from the General Manager</h4>
             <blockquote class="card-text">
@@ -160,33 +166,7 @@
 
 
   <!-- product_gallery.html -->
-<section class="product-section">
-  <div class="container-fluid">
-      <h2 class="section-title" style="font-size: 40px; color: green;"><b>Our Product Gallery</b></h2>
 
-      <div class="photo-gallery">
-        <div class="photo">
-            <img src="/static/img/products/beta_high_yielder_dairy_meal.JPG" alt="Photo 1">
-            <div class="caption">Beta High yielder</div>
-        </div>
-        <div class="photo">
-            <img src="/static/img/products/breeder_chick_starter_mash.JPG" alt="Photo 2">
-            <div class="caption">Chick Starter Mash</div>
-        </div>
-        <div class="photo">
-            <img src="/static/img/products/broiler_starter_mash.JPG" alt="Photo 3">
-            <div class="caption">Broiler Starter Crumbs</div>
-        </div>
-        <div class="photo">
-          <img src="/static/img/products/chick_starter_crumbs.JPG" alt="Photo 3">
-          <div class="caption">Chick Starter Crumbs</div>
-      </div>
-      <div class="photo">
-        <img src="/static/img/products/chick_starter_crumbs.JPG" alt="Photo 3">
-        <div class="caption">Chick Starter Crumbs</div>
-    </div>
-        <!-- Add more photos as needed -->
-    </div>
 
 
 
@@ -242,7 +222,7 @@
   <section class="container">
     <div class="row">
       <div class="col-lg-6">
-        <img src="/static/img/newimages/Bags.jpg" alt="Farm Feeds" class="img-fluid rounded" />
+        <img src="/static/img/products/DSC_0067.jpg" alt="Farm Feeds" class="img-fluid rounded" />
       </div>
       <div class="col-lg-6">
         <h2 style="font-family: merriweather">Welcome to Our Farm Feeds Store</h2>

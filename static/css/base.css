@@ -3,7 +3,6 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: helvetica, sans-serif;
 }
 
 h1,
@@ -463,4 +462,17 @@ form div.field {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: right;
+}
+.product-gallery {
+  margin-top: 10px;
+}
+
+.product-item {
+  margin-bottom: 10px;
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
 }

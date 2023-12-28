@@ -1,8 +1,31 @@
 {% extends 'shop/base.html' %}
 
 {% block content %}
-  <div class="container mt-5">
+  <div class="container m-4">
     <div class="row justify-content-center">
+      <!-- Left Column - Company Information -->
+      <div class="col-md-4 mb-4">
+        <div class="card shadow p-4">
+          <h4 class="text-center mb-4" style="font-family: 'Merriweather', serif; color: #4CAF50;">Company Information</h4>
+          <div class="text-center">
+            <!-- Add relevant icons or images for company information -->
+            <p>
+              <i class="fas fa-building" style="font-size: 2rem; color: #4CAF50;"></i> Economy Farm Products
+            </p>
+            <p>
+              <i class="fas fa-map-marker-alt" style="font-size: 2rem; color: #4CAF50;"></i> Limuru, Ndeiya
+            </p>
+            <p>
+              <i class="fas fa-envelope" style="font-size: 2rem; color: #4CAF50;"></i> Email: <a href="mailto:info@farmfeeds.com" style="color: #4CAF50;">info@farmfeeds.com</a>
+            </p>
+            <p>
+              <i class="fas fa-phone" style="font-size: 2rem; color: #4CAF50;"></i> Phone: <a href="tel:0722209838" style="color: #4CAF50;">0722209838</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column - Contact Form -->
       <div class="col-md-8">
         <div class="card shadow p-4">
           <fieldset>
@@ -42,6 +65,7 @@
 
             <hr class="mt-5" />
 
+            <!-- Contact Information -->
             <div class="text-center mt-4">
               <h4 class="mb-3" style="font-family: 'Merriweather', serif; color: #4CAF50;">Contact Information</h4>
               <p class="mb-1" style="font-family: 'Arapey', serif; color: #4CAF50;">
