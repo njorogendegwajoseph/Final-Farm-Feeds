@@ -2,19 +2,15 @@ import os
 from django.shortcuts import get_object_or_404
 from django.http import FileResponse
 from django.conf import settings
-from twilio.rest import Client
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Category, Product, Distributors, ContactUs
-from cart.forms import CartAddProductForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from taggit.models import Tag
 import json
 from django.views.generic.base import TemplateView
 from django.views.generic import View
 from django.http import JsonResponse, HttpResponse, HttpResponseNotFound
 from django.contrib import messages
-from .forms import SubscriptionForm, OrderForm, ContactUsForm
-from reportlab.pdfgen import canvas
+from .forms import SubscriptionForm, ContactUsForm, OrderForm
 
 
 # Create your views here.
@@ -56,8 +52,7 @@ def product_list(request, category_slug=None):
 
 def product_detail(request, id, slug):
     product = get_object_or_404(Product, id=id, slug=slug, available=True)
-    cart_product_form = CartAddProductForm()
-    return render(request, 'shop/product/detail.html', {'product': product, 'cart_product_form': cart_product_form})
+    return render(request, 'shop/product/detail.html', {'product': product})
 
 
 def distributors(request):

@@ -33,7 +33,7 @@
             <div class="carousel-inner">
               <div class="carousel-item active fade-in animate__animated animate__fadeIn">
                 <img src="/static/img/chickshd6.jpg" style="height: 400px;" alt="Image 1" />
-                <div class="carousel-caption">
+                <div class="carousel-caption" style="background-color: lightgreen; opacity: 0.7; border-radius: 10px;">
                   <h3 class="carousel-title" style="font-family: arapey; font-size: 6em; color: red;"><b>Economy Farm Products Limited</b></h3>
                   <a href="{% url 'shop:product_list' %}" class="btn btn-success" style="background-color: green;">See Products</a>
                   <a href="{% url 'shop:create_order' %}" class="btn btn-success" style="background-color: green;">Create Order</a>
@@ -42,7 +42,7 @@
 
               <div class="carousel-item fade-in animate__animated animate__fadeIn">
                 <img src="/static/img/newanimes/dog.png" style="height: 400px;" alt="Image 2" />
-                <div class="carousel-caption">
+                <div class="carousel-caption" style="background-color: lightgreen; opacity: 0.7; border-radius: 10px;">
                   <h3 class="carousel-title" style="font-family: arapey; font-size: 6em; color: red;"><b>Economy Farm Products Limited</b></h3>
                   <a href="{% url 'shop:product_list' %}" class="btn btn-success" style="background-color: green;">See Products</a>
                   <a href="{% url 'shop:create_order' %}" class="btn btn-success" style="background-color: green;">Create Order</a>
@@ -51,7 +51,7 @@
               <!-- Add more slides as needed -->
               <div class="carousel-item fade-in animate__animated animate__fadeIn">
                 <img src="/static/img/newanimes/pigs-Duroc-farm-Highlands-of-Scotland.webp" style="height: 400px;" alt="Image 2" />
-                <div class="carousel-caption">
+                <div class="carousel-caption" style="background-color: lightgreen; opacity: 0.7; border-radius: 10px;">
                   <h3 class="carousel-title" style="font-family: arapey; font-size: 6em; color: red;"><b>Economy Farm Products Limited</b></h3>
                   <a href="{% url 'shop:product_list' %}" class="btn btn-success" style="background-color: green;">See Products</a>
                   <a href="{% url 'shop:create_order' %}" class="btn btn-success" style="background-color: green;">Create Order</a>
@@ -107,7 +107,7 @@
         <div>
           <img class="card-img-top w-100 d-block fit-cover" style="height: 200px; border-radius: 10px" src="/static/img/products/DSC_0083.JPG" />
           <div class="card-body p-4">
-            <h4 class="card-title" style="font-family: arapey">A word from the Director</h4>
+            <h4 class="card-title" style="font-family: arapey;">A word from the Director</h4>
             <blockquote class="card-text">
               <em>"As the director of our farm feeds company, I am dedicated to our mission of nourishing healthier livestock, ensuring the highest yields, and supporting the success of our farming partners. Our commitment to quality, innovation, and sustainability remains unwavering."</em>
             </blockquote>
@@ -177,7 +177,7 @@
 
   </div>
 {% endblock %} {% block contactus %}
-  <h1 class="text-center mt-4" style="font-family: merriweather; color:green">Our Numbers</h1>
+  <h1 class="text-center " style="font-family: merriweather; color:green">Our Numbers</h1>
   <div class="container-fluid">
     <div class="row">
       <div class="col-lg-12">
@@ -218,8 +218,9 @@
 
   <!-- Product promo -->
 
-  <h1 class="text-center mt-4" style="font-family: merriweather; color: green;">Our Store</h1>
+  
   <section class="container">
+    <h1 class="text-center m-4" style="font-family: merriweather; color: green;">Our Store</h1>
     <div class="row">
       <div class="col-lg-6">
         <img src="/static/img/products/DSC_0067.jpg" alt="Farm Feeds" class="img-fluid rounded" />
@@ -235,7 +236,7 @@
   </section>
   {% comment %}companys we have worked with{% endcomment %}
   <div class="container">
-    <h2 class="my-4" style="font-family: merriweather; font-size: 30px; text-align: center; color: green;">Companies We Work With...</h2>
+    <h2 class="my-4 mx-4" style="font-family: merriweather; font-size: 30px; text-align: center; color: green;">Companies We Work With...</h2>
     <div class="row justify-content-center">
       <div class="col-md-3">
         <div class="company-logo text-center">

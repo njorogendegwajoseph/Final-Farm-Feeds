@@ -1,6 +1,5 @@
 from django.db import models
 from django.urls import reverse
-from taggit.managers import TaggableManager
 # Create your models here.
 
 
@@ -58,7 +57,6 @@ class Distributors(models.Model):
     slug = models.SlugField(max_length=200, db_index=True)
     location = models.CharField(max_length=200)
     contacts = models.CharField(max_length=12)
-    tag = TaggableManager()
     active = models.BooleanField(default=False)
 
     def __str__(self):

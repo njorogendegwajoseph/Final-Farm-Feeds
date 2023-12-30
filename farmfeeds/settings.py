@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 import os
-import braintree
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -27,7 +26,7 @@ SECRET_KEY = 'django-insecure-eu*_5o6-*wyt@718oic(%ta-9%4&70emneteja(nmx^utxreds
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'mydjango.com']
+ALLOWED_HOSTS = []
 
 SITE_ID = 1
 
@@ -52,15 +51,8 @@ LOGOUT_URL = 'accounts:logout'
 # Application definition
 
 INSTALLED_APPS = [
-    'chat',
-    'django_extensions',
-    'social_django',
-    'payment',
-    'blog',
-    'accounts',
-    'orders',
-    'cart',
     'taggit',
+    'blog',
     'shop',
     'django.contrib.sites',
     'django.contrib.sitemaps',
@@ -72,31 +64,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
 ]
-
-
-# Braintree settings
-BRAINTREE_MERCHANT_ID = '9qfqnds2ssh3mrrs'
-BRAINTREE_PUBLIC_KEY = 'djg8y9y6smhfjbr9'
-BRAINTREE_PRIVATE_KEY = '0144b21359d123d612d55a491659f57e'
-
-
-BRAINTREE_CONF = braintree.Configuration(
-    braintree.Environment.Sandbox,
-    BRAINTREE_MERCHANT_ID,
-    BRAINTREE_PRIVATE_KEY,
-    BRAINTREE_PUBLIC_KEY
-)
-
-# Cart set-up
-CART_SESSION_ID = 'cart'
-
-# Twilio setting
-TWILIO_ACCOUNT_SID = 'your_account_sid'
-TWILIO_AUTH_TOKEN = 'your_auth_token'
-
-
-# settings.py
-
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -122,7 +89,6 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
-                'cart.context_processors.cart',
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',

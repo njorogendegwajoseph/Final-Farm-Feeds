@@ -16,7 +16,6 @@ urlpatterns = [
     path('products/filtered/', views.filter_products_by_name,
          name='filtered_products'),
     path('about/', views.about, name='about'),
-    path('tag/<slug:tag_slug>/', views.distributors, name='post_list_by_tag'),
     path('map/', views.show_map, name='map'),
     path('subscribe/', views.subscribe, name='subscribe'),
     path('download_file/<str:filename>/',
