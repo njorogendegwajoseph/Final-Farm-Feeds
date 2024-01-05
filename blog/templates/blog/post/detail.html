@@ -5,8 +5,8 @@
 {% endblock %}
 
 {% block content %}
-  <div class="container-fluid py-4 py-xl-5 shadow shadow-2 my-2" style="background-color: #eaf5ff; border-radius: 10px;">
-    <div class="row mb-5">
+  <div class="container-fluid py-4 py-xl-5" style="border-radius: 10px; padding:5rem">
+    <div class="row">
       <div class="col-md-8 col-xl-6 text-center mx-auto">
         {% if post.video %}
           <div class="embed-responsive embed-responsive-16by9 mb-4" style="background-color: #d4ebf2; border-radius: 10px; overflow: hidden;">
@@ -15,7 +15,7 @@
             </video>
           </div>
         {% endif %}
-        <h2 class="animate__animated animate__bounce" style="font-family: 'Merriweather', serif; font-size: 40px; color: #2a8fbd;">{{ post.title }}</h2>
+        <h2 class="animate__animated animate__bounce" style="font-family: 'Merriweather', serif; font-size: 40px  ">{{ post.title }}</h2>
         <hr class="my-2" />
       </div>
     </div>
@@ -55,9 +55,9 @@
   </div>
 
   {% comment %}related posts{% endcomment %}
-  <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3 m-2">
+  <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3 m-2" style="padding: 5rem;">
     <div class="col">
-      <h3 class="mb-4 text-center" style="font-family: merriweather;">Other Posts</h3>
+      <h3 class="mb-4 text-center" style="font-family: merriweather;">Related Posts</h3>
 
       {% for related_post in related_posts %}
         <div class="card m-2">

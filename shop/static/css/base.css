@@ -476,3 +476,31 @@ form div.field {
   height: auto;
   border-radius: 8px;
 }
+
+/* Add brightness and remove box-shadow for the image */
+img {
+  /* Adjust brightness (100% means no change) */
+  filter: brightness(120%);
+
+  /* Remove box-shadow */
+  box-shadow: none;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px; /* Increased gap for better separation */
+}
+
+.photo {
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%; /* Maintains a square aspect ratio */
+  object-fit: contain;
+  border-radius: 8px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.photo:hover {
+  transform: scale(1.05);
+}

@@ -6,76 +6,76 @@
 
 {% block content %}
 <div  style="background-image: url('/static/img/big4.jpg');" class="introduction-section bg-image">
-  <h2 style="font-family: Cookie; font-size: 60px; color: green;">Welcome to Our Product Page</h2>
-  <p style="font-family: arapey; font-size: 20px; color: black;">Discover our amazing selection of products that will meet all your needs and desires. Explore our high-quality products and find the perfect solution for you.</p>
+  <h2 style="font-family: Cookie; font-size: 60px; color: black;">Welcome to Our Product Page</h2>
+  <p style="font-family: arapey; font-size: 20px; color: white;">Discover our amazing selection of products that will meet all your needs and desires. Explore our high-quality products and find the perfect solution for you.</p>
 </div>
 
 
 {% endblock content %}
 {% block portfolio %}
-<div class="container-fluid bg-image" style="background-color: whitesmoke;">
-    <div class="row animate__animated animate__zoomIn">
+<div class="container-fluid bg-image">
+  <div class="row animate__animated animate__zoomIn">
+      
+      <!-- Categories Section (Left) -->
+      <div class="col-md-3">
+          <h1 class="text-center mb-4" style="font-family: arapey; color: black;">Categories</h1>
+          <div class="list-group">
+              <a href="{% url 'shop:product_list' %}" class="list-group-item {% if not category %}active{% endif %}" style="background-color: green; color:white; font-family: arapey;">All</a>
+              {% for c in categories %}
+                  <a href="{{ c.get_absolute_url }}" class="list-group-item {% if category.slug == c.slug %}active{% endif %}" style="background-color: green; color:white; font-family: arapey;">{{ c.name }}</a>
+              {% endfor %}
+          </div>
+      </div>
 
-        <!-- Categories Section (Left) -->
-        <div class="col-md-3 p-4" style="background-color: lightgray;" >
-            <h1 class="text-center mb-4" style="font-family: arapey; color: #3498db;">Categories</h1>
-            <?xml version="1.0" ?>
-            <div id="sidebar">
-                <ul class="list-group list-group-flush">
-                    <li {% if not category %} {% endif %}>
-                        <a style="background-color: green; color:white;" class="btn btn-block" style="font-family: arapey;"
-                            href="{% url 'shop:product_list' %}">All</a>
-                    </li>
-                    {% for c in categories %}
-                    <li {% if category.slug == c.slug %} {% endif %}>
-                        <a style="background-color: green; color:white;" class="btn  btn-pill" href="{{ c.get_absolute_url }}">{{ c.name }}</a>
-                    </li>
-                    {% endfor %}
-                    <?xml version="1.0" ?>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Products Section (Right) -->
-        <div class="col-md-9 p-2">
-          <h1 class="text-center mb-4" style="font-family: 'arapey'; color: #3498db;">
+      <!-- Products Section (Right) -->
+      <div class="col-md-9">
+          <h1 class="text-center mb-4" style="font-family: 'arapey'; color: black;">
               {% if category %}{{ category.name }}{% else %}Products {% endif %}
           </h1>
-          <form method="GET" action="{% url 'shop:filtered_products' %}" class="form-inline">
-              <div class="form-group">
-                  <hr>
-                  <input type="text" class="form-control m-2" id="name" name="name" placeholder="Enter name">
-              </div>
+          <form method="GET" action="{% url 'shop:filtered_products' %}" class="form-inline mb-3">
+              <input type="text" class="form-control mr-2" id="name" name="name" placeholder="Enter name">
               <button type="submit" class="btn btn-success">Filter</button>
           </form>
-          <div class="row">
-            <!-- Product Cards -->
-            {% for product in products %}
-              <div class="col-md-4">
-                <div class="m-2 shadow rounded" style="overflow: hidden;">
-                  {% if product.image %}
-                    <a href="{{ product.image.url }}" class="d-block">
-                      <img src="{{ product.image.url }}" style="max-height: 250px; width: 100%; object-fit: contain; margin: 5px;" class="img-fluid rounded" alt="Product Image">
-                    </a>
-                  {% else %}
-                    <img src="/static/img/product1.webp" style="max-height: 150px; width: 100%; object-fit: contain;" class="img-fluid rounded" alt="Product Image">
-                  {% endif %}
-                  <div class="card-body" style="background-color: #000; border-radius: 10px; margin: 10px;">
-                    <h5 style="font-family: 'merriweather'; color: #ff0000;">{{ product.name }}</h5>
-                    <a href="{{ product.get_absolute_url }}" style="font-family: 'arapey'; color: #fff;"><b>Read More</b></a>
-                  </div>
-                </div>
-              </div>
-            {% endfor %}
-          </div>
-          
-          
-          
+
+          <!-- Product Table -->
+          <table class="table">
+              <thead>
+                  <tr>
+                      <th>Image</th>
+                      <th>Name</th>
+                      <th>Description</th>
+                      <th>Action</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  {% for product in products %}
+                      <tr>
+                          <td>
+                              {% if product.image %}
+                                  <a href="{{ product.image.url }}" class="d-block" target="_blank">
+                                      <img src="{{ product.image.url }}" style="max-height: 200px; width: 100%; object-fit: cover;" class="img-fluid" alt="Product Image">
+                                  </a>
+                              {% else %}
+                                  <img src="/static/img/product1.webp" style="max-height: 200px; width: 100%; object-fit: contain;" class="img-fluid" alt="Product Image">
+                              {% endif %}
+                          </td>
+                          <td>{{ product.name }}</td>
+                          <td>{{ product.description }}</td>
+                          <td>
+                              <a href="{{ product.get_absolute_url }}" class="btn btn-success">Read More</a>
+                          </td>
+                      </tr>
+                  {% endfor %}
+              </tbody>
+          </table>
+
           {% include "shop/product/pagination.html" with page=products %}
       </div>
-      
-    </div>
+  </div>
 </div>
+
+
+
 
 
 {% endblock portfolio %}

@@ -42,11 +42,6 @@ CURRENT_SITE = 'http://localhost:8000'
 EMAIL_HOST_USER = 'josephnjorogendegwa@gmail.com'
 EMAIL_HOST_PASSWORD = 'mastermind01'
 
-# Accounts setup
-LOGIN_REDIRECT_URL = 'shop:homepage'
-LOGIN_URL = 'accounts:login'
-LOGOUT_URL = 'accounts:logout'
-
 
 # Application definition
 
@@ -79,7 +74,7 @@ ROOT_URLCONF = 'farmfeeds.urls'
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
-    'accounts.authentication.EmailAuthBackend',
+    # 'accounts.authentication.EmailAuthBackend',
 ]
 
 TEMPLATES = [

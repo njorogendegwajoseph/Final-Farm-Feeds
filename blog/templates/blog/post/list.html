@@ -20,8 +20,8 @@
 {% block portfolio %}
 <div class="container-fluid py-2 py-xl-2" style="background-color: #B0E0E6
 ;">
-  <h1 class="text-center mt-2" style="font-family: merriweather; color: green;">News Section</h1>
-  <div class="row mb-5"></div>
+  <h1 class="text-center mt-2" style="font-family: merriweather; color: black;">News Section</h1>
+  <div class="row mb-2"></div>
 
   <table class="table">
     <tbody>
@@ -43,10 +43,10 @@
           </td>
           <td>
             <h4 class="card-title" style="font-family: merriweather;">
-              <a href="{{ post.get_absolute_url }}" style="color: green;">{{ post.title }}</a>
+              <a href="{{ post.get_absolute_url }}" style="color: black;">{{ post.title }}</a>
             </h4>
             <p style="font-family: arapey;">{{ post.content|truncatewords:10 }}</p>
-            <p class="card-text" style="font-family: arapey;">
+            <p class="card-text" style="font-family: arapey; font-size: 1.5em;">
               {{ post.body|truncatewords:15 }}
             </p>
             <p class="text-muted mb-0">Published {{ post.publish }} by {{ post.author }}</p>
