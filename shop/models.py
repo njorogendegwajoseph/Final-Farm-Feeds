@@ -87,7 +87,7 @@ class Order(models.Model):
     quantity = models.PositiveIntegerField()
     customer_name = models.CharField(max_length=100)
     contact_number = models.CharField(max_length=15)
-    email = models.EmailField()
+    email = models.EmailField(blank=True)
     additional_notes = models.TextField(blank=True)
 
     def __str__(self):
