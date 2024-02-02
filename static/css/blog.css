@@ -91,3 +91,22 @@ input[type="submit"] {
   font-size: 12px;
   color: #666;
 }
+
+.carousel-caption {
+  background: rgba(0, 128, 0, 0.7); /* Green background with 70% opacity */
+  padding: 20px; /* Adjust the padding as needed */
+  border-radius: 10px; /* Rounded corners for the caption */
+}
+
+.carousel-title {
+  color: white; /* White text color */
+}
+
+.carousel-item img {
+  opacity: 0.7; /* Adjust the opacity as needed */
+  transition: opacity 0.5s ease-in-out; /* Smooth transition effect */
+}
+
+.carousel-item:hover img {
+  opacity: 1; /* Make the image fully visible on hover */
+}

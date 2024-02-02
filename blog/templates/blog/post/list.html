@@ -1,60 +1,50 @@
 {% extends "shop/base.html" %}
 {% load static %}
+
 {% block title %}My Blog{% endblock %}
 
 {% block content %}
-<!-- <div class="text-center text-white d-flex masthead" style="height: 300px; background-color: green;">
-  <div class="container my-auto">
-    <div class="row">
-      <div class="col-lg-10 mx-auto">
-        <h1 class="text-uppercase animate__animated animate__flip"
-          style="color: rgb(248, 43, 7); font-family: Arapey; font-size: 80px;"><strong>Our Stories</strong></h1>
-        <hr />
-      </div>
-    </div>
-  </div>
-</div> -->
-
 {% endblock content %}
 
 {% block portfolio %}
-<div class="container-fluid py-2 py-xl-2" style="background-color: #B0E0E6
-;">
+<div class="container-fluid py-2 py-xl-2" style="background-color: beige;">
   <h1 class="text-center mt-2" style="font-family: merriweather; color: black;">News Section</h1>
   <div class="row mb-2"></div>
 
-  <table class="table">
-    <tbody>
-      {% for post in posts %}
-        <tr>
-          <td>
-            {% if post.image %}
-              <img class="w-100 d-block fit-cover" style="height: 100px; width: 100px;" src="{{ post.image.url }}" alt="Post Image" />
-            {% endif %}
+  <div class="table-responsive">
+    <table class="table">
+      <tbody>
+        {% for post in posts %}
+          <tr>
+            <td>
+              {% if post.image %}
+                <img class="w-100 d-block fit-cover" style="max-height: 100px; width: 100px; object-fit: cover;" src="{{ post.image.url }}" alt="Post Image" />
+              {% endif %}
 
-            {% if post.video %}
-              <div class="embed-responsive embed-responsive-16by9">
-                <video class="embed-responsive-item" controls>
-                  <source src="{{ post.video.url }}" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-            {% endif %}
-          </td>
-          <td>
-            <h4 class="card-title" style="font-family: merriweather;">
-              <a href="{{ post.get_absolute_url }}" style="color: black;">{{ post.title }}</a>
-            </h4>
-            <p style="font-family: arapey;">{{ post.content|truncatewords:10 }}</p>
-            <p class="card-text" style="font-family: arapey; font-size: 1.5em;">
-              {{ post.body|truncatewords:15 }}
-            </p>
-            <p class="text-muted mb-0">Published {{ post.publish }} by {{ post.author }}</p>
-          </td>
-        </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+              {% if post.video %}
+                <div class="embed-responsive embed-responsive-16by9">
+                  <video class="embed-responsive-item" controls>
+                    <source src="{{ post.video.url }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              {% endif %}
+            </td>
+            <td>
+              <h4 class="card-title" style="font-family: merriweather; font-size: 1.5em;">
+                <a href="{{ post.get_absolute_url }}" style="color: black;">{{ post.title }}</a>
+              </h4>
+              <p style="font-family: arapey; font-size: 1em;">{{ post.content|truncatewords:10 }}</p>
+              <p class="card-text" style="font-family: arapey; font-size: 1.2em;">
+                {{ post.body|truncatewords:15 }}
+              </p>
+              <p class="text-muted mb-0" style="font-size: 0.9em;">Published {{ post.publish }} by {{ post.author|title }}.</p>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
 
   {% include "shop/product/pagination.html" with page=posts %}
 </div>

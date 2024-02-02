@@ -30,29 +30,28 @@
             </ol>
 
             <!-- Slides -->
-            <div class="carousel-inner">
-              <div class="carousel-item active fade-in animate__animated animate__fadeIn">
-                <img class="img" src="/static/img/chickshd6.jpg" style="height: 400px;" alt="Image 1" />
-                <div class="carousel-caption">
-                  <h3 class="carousel-title" style="font-family: arapey; font-size: 6em; color: red;"><b>Economy Farm Products Limited</b></h3>
-                  <a href="{% url 'shop:product_list' %}" class="btn btn-success" style="background-color: green;">See Products</a>
-                  <a href="{% url 'shop:create_order' %}" class="btn btn-success" style="background-color: green;">Create Order</a>
-                </div>
+            <div class="carousel-item active fade-in animate__animated animate__fadeIn">
+              <img class="img" src="/static/img/chickshd6.jpg" style="height: 400px;" alt="Image 1" />
+              <div class="carousel-caption">
+                <h3 class="carousel-title" style="font-family: arapey; font-size: 5rem;"><b>ECONOMY FARM PRODUCTS</b></h3>
+                <a href="{% url 'shop:product_list' %}" class="btn btn-success">See Products</a>
+                <a href="{% url 'shop:create_order' %}" class="btn btn-success">Create Order</a>
               </div>
-
-              <div class="carousel-item fade-in animate__animated animate__fadeIn">
-                <img class="img" src="/static/img/newanimes/dog.png" style="height: 400px;" alt="Image 2" />
-                <div class="carousel-caption">
-                  <h3 class="carousel-title" style="font-family: arapey; font-size: 6em; color: red;"><b>Economy Farm Products Limited</b></h3>
-                  <a href="{% url 'shop:product_list' %}" class="btn btn-success" style="background-color: green;">See Products</a>
-                  <a href="{% url 'shop:create_order' %}" class="btn btn-success" style="background-color: green;">Create Order</a>
-                </div>
+            </div>
+          
+            <div class="carousel-item fade-in animate__animated animate__fadeIn">
+              <img class="img" src="/static/img/newanimes/dog.png" style="height: 400px;" alt="Image 2" />
+              <div class="carousel-caption">
+                <h3 class="carousel-title" style="font-family: arapey; font-size: 5rem;"><b>ECONOMY FARM PRODUCTS</b></h3>
+                <a href="{% url 'shop:product_list' %}" class="btn btn-success">See Products</a>
+                <a href="{% url 'shop:create_order' %}" class="btn btn-success">Create Order</a>
               </div>
+            </div>
               <!-- Add more slides as needed -->
               <div class="carousel-item fade-in animate__animated animate__fadeIn">
                 <img class="img" src="/static/img/newanimes/pigs-Duroc-farm-Highlands-of-Scotland.webp" style="height: 400px;" alt="Image 2" />
                 <div class="carousel-caption">
-                  <h3 class="carousel-title" style="font-family: arapey; font-size: 6em; color: red;"><b>Economy Farm Products Limited</b></h3>
+                  <h3 class="carousel-title" style="font-family: arapey; font-size: 5rem; color: white;"><b>ECONOMY FARM PRODUCTS</b></h3>
                   <a href="{% url 'shop:product_list' %}" class="btn btn-success" style="background-color: green;">See Products</a>
                   <a href="{% url 'shop:create_order' %}" class="btn btn-success" style="background-color: green;">Create Order</a>
                 </div>
@@ -74,21 +73,22 @@
     </div>
   </div>
   {% comment %} images product_gallery {% endcomment %}
-  <div class="container-fluid text-center" style="background-color: white; color: black; padding: 5rem;">
-    <h1>Product Gallery</h1>
+ <div class="container-fluid text-center" style="background-color: white; color: black; padding: 5rem;">
+  <h1>Product Gallery</h1>
 
+  <div class="gallery-container">
     <div class="gallery">
-        {% for product in products %}
-            <div class="photo">
-                <img src="{{ product.image.url }}" alt="{{ photo.description }}">
-            </div>
-            {% comment %} <div><p>{{product.description|truncatewords:20}}</p></div> {% endcomment %}
-        {% endfor %}
+      {% for product in products %}
+        <div class="photo">
+          <img src="{{ product.image.url }}" alt="{{ product.description }}">
+        </div>
+      {% endfor %}
     </div>
   </div>
+</div>
 
 {% endblock %} {% block portfolio %}
-  <div class="container-fluid py-4 py-xl-5">
+  <div class="container-fluid py-4 py-xl-5" style="background-color: rgba(0, 0, 0, 0.2); color: #fff;">
     <div class="row mb-5">
       <div class="col-md-8 col-xl-6 text-center mx-auto">
         <h2 style="font-family: arapey; font-size: 60px; color: black;">Our Stories</h2>
@@ -102,7 +102,7 @@
           <div class="card-body p-4">
             <h4 class="card-title" style="font-family: arapey;">A word from the Director</h4>
             <blockquote class="card-text">
-              <em>"As the director of our farm feeds company, I am dedicated to our mission of nourishing healthier livestock, ensuring the highest yields, and supporting the success of our farming partners. Our commitment to quality, innovation, and sustainability remains unwavering."</em>
+              <em>"I am dedicated to our mission of nourishing healthier livestock, ensuring the highest yields, and supporting the success of our farming partners. Our commitment to quality, innovation, and sustainability remains unwavering."</em>
             </blockquote>
             <div class="d-flex">
               <img class="rounded-circle flex-shrink-0 me-3 fit-cover img" width="50" height="50" src="/static/img/people/DSC_0054.JPG" />
@@ -120,7 +120,7 @@
           <div class="card-body p-4">
             <h4 class="card-title" style="font-family: arapey">A word from the Production Manager</h4>
             <blockquote class="card-text">
-              <em>"As the production Manager of our esteemed farm feeds company, I am privileged to lead a team dedicated to delivering exceptional services to our valued clients. We take great pride in our commitment to consistency, quality, integrity, and success all the way."</em>
+              <em>"I am privileged to lead a team dedicated to delivering exceptional services to our valued clients. We take great pride in our commitment to consistency, quality, integrity, and success all the way."</em>
             </blockquote>
             <div class="d-flex">
               <img class="rounded-circle flex-shrink-0 me-3 fit-cover" width="50" height="50" src="/static/img/people/murumba.jpg" />
@@ -213,23 +213,31 @@
 
   
   <section class="container">
-    <h1 class="text-center m-4" style="font-family: merriweather; color: black;">Our Store</h1>
+    <h1 class="text-center m-4" style="font-family: 'Merriweather', sans-serif; color: black;">Explore Our Store</h1>
     <div class="row">
-      <div class="col-lg-6">
-        <img src="/static/img/products/DSC_0067.jpg" alt="Farm Feeds" class="img-fluid rounded" />
-      </div>
-      <div class="col-lg-6">
-        <h2 style="font-family: merriweather">Welcome to Our Farm Feeds Store</h2>
-        <p style="font-family: merriweather">At Farm Feeds Company, we offer a wide range of high-quality feeds for your livestock. Our products are carefully crafted to meet the nutritional needs of your animals, ensuring their health and productivity.</p>
-        <p style="font-family: merriweather">Explore our selection of feeds, from poultry and livestock to specialty feeds, and find the perfect solution for your farm. We are committed to providing the best nutrition for your animals.</p>
-        <a href="{% url 'shop:product_list' %}" class="btn btn-success">View Products</a>
-        <a href="{% url 'shop:create_order' %}" class="btn btn-success">Create Order</a>
-      </div>
+        <div class="col-lg-6">
+            <img src="/static/img/products/DSC_0067.jpg" alt="Farm Feeds" class="img-fluid rounded" />
+        </div>
+        <div class="col-lg-6">
+            <h2 style="font-family: 'Merriweather', sans-serif; color: black;">Welcome to Our Farm Feeds Store</h2>
+            <p style="font-family: 'Merriweather', sans-serif; font-size: 1.1rem; color: black;">
+                Discover a world of high-quality feeds crafted for the well-being of your livestock. Our products are meticulously designed to meet the nutritional needs of your animals, ensuring their health and productivity.
+            </p>
+            <p style="font-family: 'Merriweather', sans-serif; font-size: 1.1rem; color: black;">
+                Explore our diverse selection of feeds, ranging from poultry and livestock to specialty feeds. Find the perfect solution for your farm, and rest assured that we are dedicated to providing the best nutrition for your animals.
+            </p>
+            <div class="mt-4">
+                <a href="{% url 'shop:product_list' %}" class="btn btn-success me-3">View Products</a>
+                <a href="{% url 'shop:create_order' %}" class="btn btn-success">Create Order</a>
+            </div>
+        </div>
     </div>
-  </section>
+</section>
+
+
   {% comment %}companys we have worked with{% endcomment %}
   <div class="container">
-    <h2 class="my-4 mx-4" style="font-family: merriweather; font-size: 30px; text-align: center; color: black;">Companies We Work With...</h2>
+    <h2 class="my-4 mx-4" style="font-family: merriweather; font-size: 30px; text-align: center; color: black;">Companies We Work With</h2>
     <div class="row justify-content-center">
       <div class="col-md-3">
         <div class="company-logo text-center">
@@ -257,25 +265,26 @@
 
 
   {% comment %} lead section {% endcomment %}
-  <section class="lead-section mt-3" style="height: 400px;">
+  <section class="lead-section mt-3" style="min-height: 400px; background-color: #f8f9fa;">
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
-                <h2 style="font-family: merriweather; color: black;">Need to contact us...</h2>
-                <p style="font-family: merriweather;">
+            <div class="col-lg-6">
+                <h2 class="mb-4" style="font-family: 'Merriweather', serif; color: #000;">Need to contact us?</h2>
+                <p class="lead" style="font-family: 'Merriweather', serif; color: #333;">
                     Discover high-quality farm feeds for your livestock. Our feeds are specially crafted to meet the nutritional needs of your animals, ensuring their health and productivity.
                 </p>
-                <p style="font-family: merriweather;">
-                    Explore our wide range of feeds, and feel free to <a href="{% url 'shop:contactus' %}">contact us</a> for any inquiries or assistance, or make any <a href="{% url 'shop:create_order' %}">orders.</a>
+                <p class="lead" style="font-family: 'Merriweather', serif; color: #333;">
+                    Explore our wide range of feeds, and feel free to <a href="{% url 'shop:contactus' %}" style="color: #007bff; text-decoration: none;">contact us</a> for any inquiries or assistance, or make any <a href="{% url 'shop:create_order' %}" style="color: #007bff; text-decoration: none;">orders.</a>
                 </p>
             </div>
-            <div class="col-md-6">
+            <div class="col-lg-6">
                 <!-- You can add an image or any other visual elements here -->
-                <img class="img" src="/static/img/needcontact.jpg" alt="" style="height: 200px; width: 80%; border-radius: 10px;">
+                <img class="img-fluid rounded" src="/static/img/needcontact.jpg" alt="" style="max-height: 300px; width: 100%; border-radius: 10px;">
             </div>
         </div>
     </div>
 </section>
+
 
  
 

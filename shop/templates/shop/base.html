@@ -31,13 +31,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 
-<body style="background-color: #B4DCE7
+<body style="background-color: beige
 ; color: black; font-family: merriweather;">
     {% block nav %}
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: green;">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: green; font-size: 1.2rem;">
       <div class="container custom-fade-in">
           <a href="{% url 'shop:homepage' %}">
-              <img src="/static/img/socials/FarmFeedsLogo.svg" style="height: 80px;" alt="FarmFeeds Logo">
+              <img src="/static/img/WhatsApp Image 2024-01-16 at 04.37.58.jpeg" style="height: 80px;" alt="FarmFeeds Logo">
           </a>
           <p class="m-3" style="color: white; font-family: Dancing script; font-size: 30px;">Economy Farm Products</p>
           <div class="vertical-line"></div>
@@ -122,53 +122,52 @@
    </div>
 
     {% block footer %}
-    <footer class="text-light py-4" style="background-color: green;">
-        <div>
-            <a href="{% url 'shop:homepage' %}">
-                <div class="container custom-fade-in"><img src="/static/img/socials/FarmFeedsLogo.svg" style="height: 80px;" alt="">
-            </a>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3">
-                    <h5 style="font-family: arapey;">About Us</h5>
-                    <p style='font-family: arapey;'>We strive to bring you the best in every produce, a promise we made from inception of this company!</p>
-                </div>
-                <div class="col-md-3">
-                    <h5 style='font-family: arapey;'>Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li style='font-family: arapey; color: white;'><a href="{% url 'shop:homepage' %}" style="color: white;">Home</a></li>
-                        <li style='font-family: arapey;'><a href="{% url 'shop:product_list' %}" style="color: white;">Products</a></li>
-                        <li style='font-family: arapey;'><a href="{% url 'blog:post_list' %}" style="color: white;">News</a></li>
-                        <li style='font-family: arapey;'><a href="{% url 'shop:about' %}" style="color: white;">Contact</a></li>
-                        <li style='font-family: arapey;'><a href="{% url 'shop:create_order' %}" style="color: white;">Order</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3">
-                    <h5 style='font-family: arapey;'>Contact Us</h5>
-                    <p style='font-family: arapey;' style='font-family: arapey;'>Email: sales@farmfeeds.com<br>Phone: 0722209838</p>  
-                </div>
-                
-                <div class="col-md-3">
-                    <h5 style='font-family: arapey;'>Follow Us</h5>
-                    <ul class="list-inline">
-                        <li class="list-inline-item"><a href="https://www.facebook.com/profile.php?id=61552934873972" target="_blank" style="color: white;"><i class="bi bi-facebook"></i></a></li>
-                        <li class="list-inline-item"><a href="#" style="color: white;"><i class="bi bi-twitter"></i></a></li>
-                        <li class="list-inline-item"><a href="#" style="color: white;"><i class="bi bi-linkedin"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-            <hr class="mt-2">
-            <div class="row">
-                <div class="col-md-12">
-                    <p class="text-center" style='font-family: arapey;'>© 2023 Farm Feeds. All rights reserved.</p>
-                </div>
-            </div>
-        </div>
-        <div>
-          
-        </div>
-    </footer>
+    <footer class="text-light py-3" style="background-color: green;">
+      <div class="container">
+          <div class="row align-items-center">
+              <div class="col-md-3">
+                  <a href="{% url 'shop:homepage' %}">
+                      <img src="/static/img/WhatsApp Image 2024-01-16 at 04.37.58.jpeg" style="height: 60px;" alt="">
+                  </a>
+              </div>
+              <div class="col-md-3">
+                  <h5 style="font-family: 'Arapey';">About Us</h5>
+                  <p style="font-family: 'Arapey';">We strive to bring you the best in every produce, a promise we made from inception of this company!</p>
+              </div>
+              <div class="col-md-3">
+                  <h5 style="font-family: 'Arapey';">Quick Links</h5>
+                  <ul class="list-unstyled">
+                      <li><a href="{% url 'shop:homepage' %}" style="color: white;">Home</a></li>
+                      <li><a href="{% url 'shop:product_list' %}" style="color: white;">Products</a></li>
+                      <li><a href="{% url 'blog:post_list' %}" style="color: white;">News</a></li>
+                      <li><a href="{% url 'shop:about' %}" style="color: white;">Contact</a></li>
+                      <li><a href="{% url 'shop:create_order' %}" style="color: white;">Order</a></li>
+                  </ul>
+              </div>
+              <div class="col-md-3">
+                  <h5 style="font-family: 'Arapey';">Contact Us</h5>
+                  <p style="font-family: 'Arapey';">Email: sales@farmfeeds.org<br>Phone: 0722209838</p>  
+              </div>
+          </div>
+          <hr class="mt-2">
+          <div class="row">
+              <div class="col-md-12 text-center">
+                  <h5 style="font-family: 'Arapey';">Follow Us</h5>
+                  <ul class="list-inline">
+                      <li class="list-inline-item"><a href="https://www.facebook.com/profile.php?id=61552934873972" target="_blank" style="color: white;"><i class="bi bi-facebook"></i></a></li>
+                      <li class="list-inline-item"><a href="#" style="color: white;"><i class="bi bi-twitter"></i></a></li>
+                      <li class="list-inline-item"><a href="#" style="color: white;"><i class="bi bi-linkedin"></i></a></li>
+                  </ul>
+              </div>
+          </div>
+          <div class="row mt-3">
+              <div class="col-md-12 text-center">
+                  <p style="font-family: 'Arapey';">© 2023 Farm Feeds. All rights reserved.</p>
+              </div>
+          </div>
+      </div>
+  </footer>
+  
     {% endblock footer %}
 
 
@@ -243,24 +242,6 @@ window.addEventListener("scroll", function () {
 
     </script>
 
-    {% comment %} <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        // Add the 'animate__animated' and 'animate__fadeIn' classes when the page is loaded
-        document.querySelector('.custom-fade-in').classList.add('animate__animated', 'animate__fadeIn');
-    
-        // Add the 'animate__animated' and 'animate__bounce' classes when hovering over the links
-        const navLinks = document.querySelectorAll('.navbar-nav .nav-item a');
-        navLinks.forEach(function (link) {
-          link.addEventListener('mouseenter', function () {
-            this.classList.add('animate__animated', 'animate__bounce');
-          });
-    
-          link.addEventListener('mouseleave', function () {
-            this.classList.remove('animate__animated', 'animate__bounce');
-          });
-        });
-      });
-    </script> {% endcomment %}
     
 
    
