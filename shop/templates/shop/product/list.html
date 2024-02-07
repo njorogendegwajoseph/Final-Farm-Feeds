@@ -40,14 +40,14 @@
       <!-- Product List -->
       <div class="row">
         {% for product in products %}
-        <div class="col-md-4 mb-4">
+        <div class="col-md-4 mb-4"">
           <div class="card">
             <a href="{{ product.get_absolute_url }}">
               <img src="{% if product.image %}{{ product.image.url }}{% else %}/static/img/product1.webp{% endif %}" class="card-img-top" alt="Product Image">
             </a>
             <div class="card-body" style="background-color: black; color: white; opacity: 0.7;">
               <h5 class="card-title">{{ product.name }}</h5>
-              <p class="card-text">{{ product.description }}</p>
+              <p class="card-text">{{ product.description|truncatewords:10 }}</p>
               <a href="{{ product.get_absolute_url }}" class="btn btn-success">Read More</a>
             </div>
           </div>
