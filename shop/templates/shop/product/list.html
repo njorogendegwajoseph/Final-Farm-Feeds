@@ -15,22 +15,11 @@
 {% block portfolio %}
 <div class="container-fluid bg-image">
   <div class="row animate__animated animate__zoomIn">
-      
-    <!-- Categories Section (Left) -->
-    <div class="col-md-3">
-      <h1 class="text-center mb-4" style="font-family: arapey; color: black;">Categories</h1>
-      <div class="list-group">
-        <a href="{% url 'shop:product_list' %}" class="list-group-item {% if not category %}active{% endif %}" style="background-color: green; color:white; font-family: arapey;">All</a>
-        {% for c in categories %}
-        <a href="{{ c.get_absolute_url }}" class="list-group-item {% if category.slug == c.slug %}active{% endif %}" style="background-color: green; color:white; font-family: arapey;">{{ c.name }}</a>
-        {% endfor %}
-      </div>
-    </div>
 
-    <!-- Products Section (Right) -->
-    <div class="col-md-9">
-      <h1 class="text-center mb-4" style="font-family: 'arapey'; color: black;">
-        {% if category %}{{ category.name }}{% else %}Products {% endif %}
+    <!-- Products Section (Full Width) -->
+    <div class="col-md-12">
+      <h1 class="text-center mb-4" style="font-family: 'Arial', sans-serif; color: black;">
+        Products
       </h1>
       <form method="GET" action="{% url 'shop:filtered_products' %}" class="form-inline mb-3">
         <input type="text" class="form-control mr-2" id="name" name="name" placeholder="Enter name">
@@ -40,7 +29,7 @@
       <!-- Product List -->
       <div class="row">
         {% for product in products %}
-        <div class="col-md-4 mb-4"">
+        <div class="col-md-4 mb-4">
           <div class="card">
             <a href="{{ product.get_absolute_url }}">
               <img src="{% if product.image %}{{ product.image.url }}{% else %}/static/img/product1.webp{% endif %}" class="card-img-top" alt="Product Image">
@@ -59,9 +48,6 @@
     </div>
   </div>
 </div>
-
-
-
 
 
 

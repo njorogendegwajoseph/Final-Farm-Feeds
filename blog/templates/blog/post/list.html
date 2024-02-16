@@ -7,45 +7,32 @@
 {% endblock content %}
 
 {% block portfolio %}
-<div class="container-fluid py-2 py-xl-2" style="background-color: beige;">
-  <h1 class="text-center mt-2" style="font-family: merriweather; color: black;">News Section</h1>
-  <div class="row mb-2"></div>
-
-  <div class="table-responsive">
-    <table class="table">
-      <tbody>
-        {% for post in posts %}
-          <tr>
-            <td>
-              {% if post.image %}
-                <img class="w-100 d-block fit-cover" style="max-height: 100px; width: 100px; object-fit: cover;" src="{{ post.image.url }}" alt="Post Image" />
-              {% endif %}
-
-              {% if post.video %}
-                <div class="embed-responsive embed-responsive-16by9">
-                  <video class="embed-responsive-item" controls>
-                    <source src="{{ post.video.url }}" type="video/mp4">
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
-              {% endif %}
-            </td>
-            <td>
-              <h4 class="card-title" style="font-family: merriweather; font-size: 1.5em;">
-                <a href="{{ post.get_absolute_url }}" style="color: black;">{{ post.title }}</a>
-              </h4>
-              <p style="font-family: arapey; font-size: 1em;">{{ post.content|truncatewords:10 }}</p>
-              <p class="card-text" style="font-family: arapey; font-size: 1.2em;">
-                {{ post.body|truncatewords:15 }}
-              </p>
-              <p class="text-muted mb-0" style="font-size: 0.9em;">Published {{ post.publish }} by {{ post.author|title }}.</p>
-            </td>
-          </tr>
-        {% endfor %}
-      </tbody>
-    </table>
+<div class="container-fluid py-5" style="background-color: #f8f9fa;">
+  <div class="container">
+    <h1 class="text-center mb-4" style="font-family: 'Merriweather', serif; color: #333;">News Section</h1>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+      {% for post in posts %}
+      <div class="col">
+        <div class="card h-100">
+          {% if post.image %}
+          <img src="{{ post.image.url }}" class="card-img-top" alt="Post Image">
+          {% endif %}
+          <div class="card-body">
+            <h5 class="card-title" style="font-family: 'Merriweather', serif; color: #333;"><a href="{{ post.get_absolute_url }}" style="color: #333;">{{ post.title }}</a></h5>
+            <p class="card-text" style="font-family: 'Arapey', serif; color: #666;">{{ post.content|truncatewords:20 }}</p>
+          </div>
+          <div class="card-footer" style="background-color: #f8f9fa;">
+            <small class="text-muted" style="font-size: 0.8em;">Published {{ post.publish }} by {{ post.author|title }}.</small>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="row mt-4">
+      <div class="col text-center">
+        {% include "shop/product/pagination.html" with page=posts %}
+      </div>
+    </div>
   </div>
-
-  {% include "shop/product/pagination.html" with page=posts %}
 </div>
 {% endblock portfolio %}

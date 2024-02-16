@@ -485,3 +485,32 @@ body {
 
 
 
+.gallery-container {
+  overflow: hidden;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.photo {
+  flex: 0 0 calc(50% - 10px);
+  margin: 5px;
+  position: relative;
+  animation: rotatePhoto 10s linear infinite;
+}
+
+.photo img {
+  width: 100%;
+  height: auto;
+}
+
+@keyframes rotatePhoto {
+  0%, 100% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+}

@@ -5,69 +5,63 @@
 {% endblock %}
 
 {% block content %}
-  <div class="container-fluid py-4 py-xl-5" style="border-radius: 10px; padding: 2rem;">
-    <div class="row">
-      <div class="col-md-10 col-lg-8 mx-auto text-center">
-        {% if post.video %}
-          <div class="embed-responsive embed-responsive-16by9 mb-4" style="background-color: #d4ebf2; border-radius: 10px; overflow: hidden;">
-            <video class="embed-responsive-item" controls>
-              <source src="{{ post.video.url }}" type="video/mp4" />Your browser does not support the video tag.
-            </video>
-          </div>
-        {% endif %}
-        <h2 class="animate__animated animate__bounce" style="font-family: 'Merriweather', serif; font-size: 2rem;">{{ post.title }}</h2>
-        <hr class="my-2" />
-      </div>
-    </div>
-
-    <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 m-2">
-      <div class="col">
-        {% if post.image %}
-          <div class="card m-3 border-0">
-            <div class="card-body">
-              <div class="text-center col-lg-10 mx-auto" style="border-radius: 10px; overflow: hidden;">
-                <img class="card-img-top d-block mx-auto mb-3 fit-cover" style="max-height: 300px; width: 100%; object-fit: cover;" src="{{ post.image.url }}" alt="{{ post.title }}" />
-              </div>
-
-              {% if post.video %}
-                <div class="embed-responsive embed-responsive-16by9 mb-4" style="background-color: #d4ebf2; border-radius: 10px; overflow: hidden;">
-                  <video class="embed-responsive-item" controls>
-                    <source src="{{ post.video.url }}" type="video/mp4" />Your browser does not support the video tag.
-                  </video>
-                </div>
-              {% endif %}
-
-              <p class="card-text m-4" style="font-family: 'Arapey', serif; font-size: 1rem;">{{ post.body }}</p>
-
-              <div class="d-flex align-items-center">
-                <img class="rounded-circle me-3" width="50" height="50" src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png" style="object-fit: cover;" alt="Owner Image" />
-                <div>
-                  <p class="fw-bold mb-0">{{ post.owner }}</p>
-                  <p class="text-muted mb-0">Published {{ post.publish }} by {{ post.author }}</p>
-                </div>
-              </div>
-              <a class="btn btn-info btn-sm mt-3" href="{% url 'blog:post_list' %}"><i class="fas fa-arrow-left"></i> Back</a>
-            </div>
-          </div>
-        {% endif %}
-      </div>
+<div class="container-fluid py-4 py-xl-5" style="border-radius: 10px; padding: 2rem;">
+  <div class="row">
+    <div class="col-md-10 col-lg-8 mx-auto text-center">
+      {% if post.video %}
+        <div class="embed-responsive embed-responsive-16by9 mb-4" style="background-color: #d4ebf2; border-radius: 10px; overflow: hidden;">
+          <video class="embed-responsive-item" controls>
+            <source src="{{ post.video.url }}" type="video/mp4" />Your browser does not support the video tag.
+          </video>
+        </div>
+      {% endif %}
+      <h2 class="animate__animated animate__bounce" style="font-family: 'Merriweather', serif; font-size: 2rem;">{{ post.title }}</h2>
+      <hr class="my-2" />
     </div>
   </div>
 
-  {% comment %}related posts{% endcomment %}
+  <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 m-2">
+    <div class="col">
+      {% if post.image %}
+        <div class="card m-3 border-0">
+          <div class="card-body">
+            <div class="text-center col-lg-10 mx-auto" style="border-radius: 10px; overflow: hidden;">
+              <img class="card-img-top d-block mx-auto mb-3 fit-cover" style="max-height: 300px; width: 100%; object-fit: cover;" src="{{ post.image.url }}" alt="{{ post.title }}" />
+            </div>
+
+            <p class="card-text m-4" style="font-family: 'Arapey', serif; font-size: 1rem;">{{ post.body }}</p>
+
+            <div class="d-flex align-items-center">
+              <img class="rounded-circle me-3" width="50" height="50" src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png" style="object-fit: cover;" alt="Owner Image" />
+              <div>
+                <p class="fw-bold mb-0">{{ post.owner }}</p>
+                <p class="text-muted mb-0">Published {{ post.publish }} by {{ post.author }}</p>
+              </div>
+            </div>
+            <a class="btn btn-info btn-sm mt-3" href="{% url 'blog:post_list' %}"><i class="fas fa-arrow-left"></i> Back</a>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% comment %}related posts{% endcomment %}
+<div class="container">
   <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 m-2" style="padding: 2rem;">
     <div class="col">
       <h3 class="mb-4 text-center" style="font-family: 'Merriweather', serif;">Related Posts</h3>
 
       {% for related_post in related_posts %}
-        <div class="card m-2">
-          <div class="card-body p-4">
-            <h5 class="card-title" style="font-family: 'Merriweather', serif;">{{ related_post.title }}</h5>
-            <p class="card-text" style="font-family: 'Arapey', serif; font-size: 1rem;">{{ related_post.body|truncatewords:30 }}</p>
-            <a href="{{ related_post.get_absolute_url }}" class="btn btn-info btn-sm" style="font-family: 'Merriweather', serif;">Read More</a>
-          </div>
+      <div class="card m-2">
+        <div class="card-body p-4">
+          <h5 class="card-title" style="font-family: 'Merriweather', serif;">{{ related_post.title }}</h5>
+          <p class="card-text" style="font-family: 'Arapey', serif; font-size: 1rem;">{{ related_post.body|truncatewords:30 }}</p>
+          <a href="{{ related_post.get_absolute_url }}" class="btn btn-info btn-sm" style="font-family: 'Merriweather', serif;">Read More</a>
         </div>
+      </div>
       {% endfor %}
     </div>
   </div>
+</div>
 {% endblock %}

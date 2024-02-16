@@ -115,6 +115,29 @@ form p input {
   border-radius: 4px;
 }
 
+
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.photo {
+  position: relative;
+  overflow: hidden;
+}
+
+.photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
 ul.errorlist {
   float: left;
   color: #ff0000;
@@ -504,3 +527,4 @@ img {
 .photo:hover {
   transform: scale(1.05);
 }
+

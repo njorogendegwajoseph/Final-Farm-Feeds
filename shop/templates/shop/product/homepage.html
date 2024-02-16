@@ -73,85 +73,90 @@
     </div>
   </div>
   {% comment %} images product_gallery {% endcomment %}
- <div class="container-fluid text-center" style="background-color: white; color: black; padding: 5rem;">
-  <h1>Product Gallery</h1>
+  <div class="container-fluid text-center" style="background-color: #f5f5f5; color: #333; padding: 3rem;">
+    <h1 style="font-size: 3rem; margin-bottom: 2rem; font-weight: bold; color: #333;">Product Gallery</h1>
+  
+    <div class="gallery-container">
+      <div class="gallery">
+        {% for product in products %}
+          <div class="photo">
+            <img src="{{ product.image.url }}" alt="{{ product.description }}">
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  
+  
+  
 
-  <div class="gallery-container">
-    <div class="gallery">
-      {% for product in products %}
-        <div class="photo">
-          <img src="{{ product.image.url }}" alt="{{ product.description }}">
+{% endblock %} {% block portfolio %}
+<div class="container-fluid py-4 py-xl-5" style="background-color: rgba(0, 0, 0, 0.2); color: #fff;">
+  <div class="row mb-5">
+    <div class="col-md-8 col-xl-6 text-center mx-auto">
+      <h2 style="font-size: 2.5rem;">Our Stories</h2>
+      <p class="w-lg-50 mx-auto" style="color: black;">We have come a long way, with our dear customers in mind, and as we improve our products, we update you and want to hear from you!</p>
+    </div>
+  </div>
+  <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3">
+    <div class="col">
+      <div class="card text-white bg-dark">
+        <img class="card-img-top" src="/static/img/products/DSC_0083.JPG" alt="Card image cap" style="height: 200px; object-fit: cover; border-radius: 10px;">
+        <div class="card-body">
+          <h4 class="card-title" style="font-family: 'Arial', sans-serif;">A word from the Director</h4>
+          <blockquote class="card-text">
+            <em>"I am dedicated to our mission of nourishing healthier livestock, ensuring the highest yields, and supporting the success of our farming partners. Our commitment to quality, innovation, and sustainability remains unwavering."</em>
+          </blockquote>
+          <div class="d-flex align-items-center">
+            <img class="rounded-circle me-3" width="50" height="50" src="/static/img/people/DSC_0054.JPG" alt="Director Image">
+            <div>
+              <p class="fw-bold mb-0">Christine Nyambura</p>
+              <p class="text-muted mb-0">Director</p>
+            </div>
+          </div>
         </div>
-      {% endfor %}
+      </div>
+    </div>
+    <div class="col">
+      <div class="card text-white bg-dark">
+        <img class="card-img-top" src="/static/img/people/DSC_0220.jpg" alt="Card image cap" style="height: 200px; object-fit: cover; border-radius: 10px;">
+        <div class="card-body">
+          <h4 class="card-title" style="font-family: 'Arial', sans-serif;">A word from the Production Manager</h4>
+          <blockquote class="card-text">
+            <em>"I am privileged to lead a team dedicated to delivering exceptional services to our valued clients. We take great pride in our commitment to consistency, quality, integrity, and success all the way."</em>
+          </blockquote>
+          <div class="d-flex align-items-center">
+            <img class="rounded-circle me-3" width="50" height="50" src="/static/img/people/murumba.jpg" alt="Production Manager Image">
+            <div>
+              <p class="fw-bold mb-0">Mr. David Murumba</p>
+              <p class="text-muted mb-0">Production Manager</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card text-white bg-dark">
+        <img class="card-img-top" src="/static/img/people/DSC_0001.jpg" alt="Card image cap" style="height: 200px; object-fit: cover; border-radius: 10px;">
+        <div class="card-body">
+          <h4 class="card-title" style="font-family: 'Arial', sans-serif;">A word from the General Manager</h4>
+          <blockquote class="card-text">
+            <em>"As the G.M of our dynamic farm feeds company, I am privileged to lead an organization that is deeply rooted in a tradition of excellence and innovation. We are committed to fostering sustainable agricultural practices and empowering farmers to thrive in a dynamic industry."</em>
+          </blockquote>
+          <div class="d-flex align-items-center">
+            <img class="rounded-circle me-3" width="50" height="50" src="/static/img/people/DSC_0003.JPG" alt="General Manager Image">
+            <div>
+              <p class="fw-bold mb-0">Mr. Gachoki</p>
+              <p class="text-muted mb-0">General Manager</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
-{% endblock %} {% block portfolio %}
-  <div class="container-fluid py-4 py-xl-5" style="background-color: rgba(0, 0, 0, 0.2); color: #fff;">
-    <div class="row mb-5">
-      <div class="col-md-8 col-xl-6 text-center mx-auto">
-        <h2 style="font-family: arapey; font-size: 60px; color: black;">Our Stories</h2>
-        <p class="w-lg-50" style="font-family: merriweather;">We have come a long way, with our dear customers in mind, and as we improve our products, we update you and want to hear from you!</p>
-      </div>
-    </div>
-    <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3">
-      <div class="col">
-        <div>
-          <img class="card-img-top w-100 d-block fit-cover img" style="height: 200px; border-radius: 10px" src="/static/img/products/DSC_0083.JPG" />
-          <div class="card-body p-4">
-            <h4 class="card-title" style="font-family: arapey;">A word from the Director</h4>
-            <blockquote class="card-text">
-              <em>"I am dedicated to our mission of nourishing healthier livestock, ensuring the highest yields, and supporting the success of our farming partners. Our commitment to quality, innovation, and sustainability remains unwavering."</em>
-            </blockquote>
-            <div class="d-flex">
-              <img class="rounded-circle flex-shrink-0 me-3 fit-cover img" width="50" height="50" src="/static/img/people/DSC_0054.JPG" />
-              <div>
-                <p class="fw-bold mb-0">Christine Nyambura</p>
-                <p class="text-muted mb-0">Director</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div>
-          <img class="card-img-top w-100 d-block fit-cover" style="height: 200px; border-radius: 10px" src="/static/img/people/DSC_0220.jpg" />
-          <div class="card-body p-4">
-            <h4 class="card-title" style="font-family: arapey">A word from the Production Manager</h4>
-            <blockquote class="card-text">
-              <em>"I am privileged to lead a team dedicated to delivering exceptional services to our valued clients. We take great pride in our commitment to consistency, quality, integrity, and success all the way."</em>
-            </blockquote>
-            <div class="d-flex">
-              <img class="rounded-circle flex-shrink-0 me-3 fit-cover" width="50" height="50" src="/static/img/people/murumba.jpg" />
-              <div>
-                <p class="fw-bold mb-0">Mr. David Murumba</p>
-                <p class="text-muted mb-0">Production Manager</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div>
-          <img class="card-img-top w-100 d-block fit-cover" style="height: 200px; border-radius: 10px" src="/static/img/people/DSC_0001.jpg" />
-          <div class="card-body p-4">
-            <h4 class="card-title" style="font-family: arapey">A word from the General Manager</h4>
-            <blockquote class="card-text">
-              <em>"As the G.M of our dynamic farm feeds company, I am privileged to lead an organization that is deeply rooted in a tradition of excellence and innovation. We are committed to fostering sustainable agricultural practices and empowering farmers to thrive in a dynamic industry."</em>
-            </blockquote>
-            <div class="d-flex">
-              <img class="rounded-circle flex-shrink-0 me-3 fit-cover" width="50" height="50" src="/static/img/people/DSC_0003.JPG" />
-              <div>
-                <p class="fw-bold mb-0">Mr. Gachoki</p>
-                <p class="text-muted mb-0">General Manager</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+
   <hr />
 {% endblock %} {% block team %}
   <!-- product_section.html -->
